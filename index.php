@@ -1,15 +1,6 @@
 <?php
 	require_once 'core/init.php';
 $result = Home::get(1);
-//require 'classes/Slider.class.php';
-
-//$p = Slider::get(1);
-/*DB::getInstance()->query("SELECT username FROM users WHERE username = ?"), array('Vlado Matić'));*/
-/*$user = DB::getInstance()->get('users', array('username', '=', 'Vlado Matić'));
-	if($user->error()){
-		echo 'No user!';
-	}else {echo 'OK!';}
-	$user = "INSERT INTO users (username, password, salt) VALUES('Hyunjin','password','salt')";*/
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">

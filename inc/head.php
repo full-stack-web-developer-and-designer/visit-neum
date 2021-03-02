@@ -41,14 +41,14 @@
 <meta name="twitter:image:alt" content="<?php echo $image_alt;?>">
 
 <!-- lightslider css-->
-<link rel="stylesheet" type="text/css" href="./lightslider/lightslider.css">
+<link rel="stylesheet" type="text/css" href="lightslider/lightslider.css">
 
 <!-- jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <!-- lightslider js-->
-<script src="./lightslider/lightslider.js"></script> 
+<script src="lightslider/lightslider.js"></script> 
 <script defer>
-/*var navigation=$.noConflict();
+var navigation=$.noConflict();
 	navigation(document).ready(function($) {
 		var respmenu = $('#respmenu');
 		var menu = $('#nav>ul');
@@ -62,7 +62,7 @@
 				menu.removeAttr('style');
 			}
 		});
-	});*/
+	});
 </script>
 <script defer>
 window.onorientationchange = function() { 

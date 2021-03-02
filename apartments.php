@@ -1,6 +1,6 @@
 <?php
-/*	require_once 'core/init.php';
-$result = Apartments::get(1);*/
+require_once 'core/init.php';
+$result = Apartments::get(1);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -24,20 +24,17 @@ $result = Apartments::get(1);*/
 	//end #nav
 	?>
 <div id="main">
-<?php //echo $result->render(); ?> 
-<h1>Najbolji apartmani u Neumu</h1>
-	<section class="offers">
+<?php echo $result->render(); ?> 
+<section class="offers">
 	<!-- slider box -->
 	<ul id="autoplay" class="cs-hidden">
-      <li class="item-a"><article class="offer">
-		<a href="Apartments-Mampas.html"><img src="/images/Mampas/SMALL/ApartmaniMampas.jpg" alt="Apartmani Mampas"><span><h2>Apartmani Mampas</h2></span></a>
-		</article><!--end .offer--></li>
-      <li class="item-a"><article class="offer">
-		<a href="Apartments-Liberan.html"><img src="/images/Liberan/SMALL/ApartmaniLiberan.jpg" alt="Apartmani Liberan"><span><h2>Apartmani Liberan</h2></span></a>
-		</article><!--end .offer--></li>
+	<?php
+	$apart = new ApartSlide();
+	$apart->renderSlider();
+	?>
     </ul>
 	</section><!--end .offers-->
-	<script src="JS/slider.js"></script>
+	<script src='JS/slider.js'></script>
 </div><!-- end #main -->
 <aside id="sidebar"> 
 	<?php
