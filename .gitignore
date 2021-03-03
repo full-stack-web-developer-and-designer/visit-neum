@@ -1,11 +1,14 @@
 fonts/
 images/
 gallery/
+galleryAsside/
 lightbox2/
 lightslider/
 core/ 
+classes/DB.class.php
 classes/Dbh.class.php
 classes/Connect.class.php
+classes/ConnectGalleryAsside.class.php
 classes/Cookie.php
 classes/Hash.class.php
 classes/User.class.php
