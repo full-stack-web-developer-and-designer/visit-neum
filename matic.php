@@ -32,10 +32,12 @@ $result = Hotel::get(1);
 <?php echo $result->render(); ?> 
 <span id="a"></span>
 <script type="text/javascript" src="JS/review_rooms.js"></script>
-<div class="central"> <?php
-	$matic = new Gallery();
-	$matic->gallery();
-?></div><!--end .central-->
+
+<?php
+	$matic = new GalleryMatic();
+	$matic->renderGallery();
+?>
+
 <h2>Gdje se nalazimo?</h2>
 <iframe id="map_matic" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.4830002748577!2d17.624211315172573!3d42.91890390761864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134ba2520e6e6c61%3A0xcc90d46d336c0d38!2sVilla+Mati%C4%87!5e1!3m2!1sbs!2sba!4v1519715607404" frameborder="0" allowfullscreen></iframe></div><!-- end #main --><aside id="sidebar">
     <table id="contact">
@@ -68,18 +70,18 @@ $result = Hotel::get(1);
        </tr>
       </tfoot>
     </table>
+    
+<?php
+	$maticAsside = new GalleryAssideMatic();
+	$maticAsside->renderGalleryAsside();
+?>
 
-    <div class="central"><a href="images/Matic/BIG/VillaMatic_13.jpg" data-lightbox="image-group"><img src="images/Matic/SMALL/VillaMatic_13.jpg" alt="Hotel Villa Matić" class="imgRight"></a><a href="images/Matic/BIG/VillaMatic_14.jpg" data-lightbox="image-group"><img src="images/Matic/SMALL/VillaMatic_14.jpg" alt="Hotel Villa Matić" class="imgRight"></a><a href="images/Matic/BIG/VillaMatic_16.jpg" data-lightbox="image-group"><img src="images/Matic/SMALL/VillaMatic_16.jpg" alt="Hotel Villa Matić" class="imgRight disable"></a><a href="images/Matic/BIG/VillaMatic_15.jpg" data-lightbox="image-group"><img src="images/Matic/SMALL/VillaMatic_15.jpg" alt="Hotel Villa Matić" class="imgRight"></a></div><!--end .central-->
 </aside>
-
- 
  <script defer src="lightbox2/src/js/lightbox.js"></script>
 <?php
 	include 'inc/footer.php';
 	//end #footer
 ?>
-
 </div><!-- end #wrapper -->
-
 </body>
 </html>

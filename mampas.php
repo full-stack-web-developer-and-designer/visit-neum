@@ -1,12 +1,6 @@
 <?php
 	require_once 'core/init.php';
 $result = Apartment::get(1);
-/*
-$user = Connect::getInstance()->insertUser('users',array(
-	'fname' => 'Mirnes',
-	'email' => 'kontakt@visit-neum.com',
-	'password' => 'password'
-	));*/
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -37,7 +31,10 @@ $user = Connect::getInstance()->insertUser('users',array(
 <?php echo $result->render(); ?>		
 <span id="a"></span>
 <script type="text/javascript" src="JS/review_rooms.js" defer></script>
-<div class="central"><a href="images/Mampas/BIG/ApartmaniMampas_01.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_01.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_02.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_02.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_03.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_03.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_04.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_04.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_05.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_05.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_06.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_06.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_07.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_07.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_08.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_08.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_09.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_09.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_10.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_10.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_11.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_11.jpg" alt="Apartmani Mampas" class="imgCentral"></a><a href="images/Mampas/BIG/ApartmaniMampas_12.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_12.jpg" class="imgCentral" alt="Apartmani Mampas"></a></div><!--end .central-->
+<?php
+	$mampas = new GalleryMampas();
+	$mampas->renderGallery();
+?>
 <iframe class="video" src="https://www.youtube-nocookie.com/embed/qpOwh0lhqMQ?wmode=opaque&rel=0&autoplay=0&loop=1&showinfo=0&modestbranding=1&disablekb=1&controls=1&fs=0" frameborder="0" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow=accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <h2>Gdje se nalazimo?</h2>
 <iframe id="map_mampas" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.4509596984335!2d17.62174931523688!3d42.91965090757091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134ba25283a7f7b3%3A0x5b37fcf1acc1898!2sApartments+Mampas!5e1!3m2!1sbs!2sba!4v1519716141303" allowfullscreen></iframe>
@@ -74,7 +71,10 @@ $user = Connect::getInstance()->insertUser('users',array(
        </tr>
       </tfoot>    
       </table>
-<div class="central"><a href="images/Mampas/BIG/ApartmaniMampas_13.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_13.jpg" alt="Apartmani Mampas" class="imgRight"></a><a href="images/Mampas/BIG/ApartmaniMampas_14.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_14.jpg" alt="Apartmani Mampas" class="imgRight"></a><a href="images/Mampas/BIG/ApartmaniMampas_16.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_16.jpg" alt="Apartmani Mampas" class="imgRight"></a><a href="images/Mampas/BIG/ApartmaniMampas_15.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_15.jpg" alt="Apartmani Mampas" class="imgRight"></a><a href="images/Mampas/BIG/ApartmaniMampas_17.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_17.jpg" alt="Apartmani Mampas" class="imgRight"></a><a href="images/Mampas/BIG/ApartmaniMampas_18.jpg" data-lightbox="image-group"><img src="images/Mampas/SMALL/ApartmaniMampas_18.jpg" alt="Apartmani Mampas" class="imgRight disable"></a></div><!--end .central-->
+<?php
+	$mampasAsside = new GalleryAssideMampas();
+	$mampasAsside->renderGalleryAsside();
+?>
 </aside>
  <script defer src="lightbox2/src/js/lightbox.js"></script>
 <?php
