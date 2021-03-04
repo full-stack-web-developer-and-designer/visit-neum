@@ -95,12 +95,15 @@ a:active{
 	color:#333;
 	background:#FFF;
 	font-size:18px;
-	margin:12px 12px 0;
+	margin: 18px 18px 0;
 	padding:0 10px;
 	-webkit-border-radius:10px; /* Chrome 4.0 and Safari 3.1 */
 	-moz-border-radius:10px; /* Mozilla 3.0 */
 	border-radius:10px;
 	text-align: center;
+}
+#slogan p{
+	margin: 12px;
 }
 #loginW{
     float:right;    
@@ -108,7 +111,11 @@ a:active{
     right: 90px;
     top: 100px;
 }
-#loginW a{color:#FFF;}
+#loginW a{
+	color:#FFF;
+	margin-right: 104px;
+	margin-left: -35px;
+}
 #registration.modal,
 #login.modal{width:500px!important;}
 #nav{
@@ -461,7 +468,7 @@ keyframes blink {
 	box-sizing: border-box;
 	z-index: 10;
 }
-/*
+
 .form .halb:nth-of-type(2n){
 	margin:0;
 }
@@ -471,7 +478,6 @@ keyframes blink {
 .form.form-control.error input {
 	border-color: #e74c3c;
 }
-*/
 
 .form.form-control i{
 	position: absolute;
@@ -481,7 +487,7 @@ keyframes blink {
 	visibility: hidden;
 }
 
-.form input[type="submit"], .form input[type="submit"]#registration {
+input[type="submit"]{
 	background: #0B60D4;
 	border: 2px solid #0B60D4;
 	color:#FFF;
@@ -504,7 +510,29 @@ keyframes blink {
 	background: #032B62;
 	border: 2px solid #032B62;
 }
-
+#submit_register, #submit_login {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+#submit_login{
+	display: inherit;
+	width:92%;
+	text-align: center;
+}
+#submit_register{
+	width: 30%;
+    float: right;
+    margin: 10px 32px 0px;
+}
+#centerRegister{
+	margin: 15px 0 5px;
+    text-align: center;
+}
+#leftLogin{
+	float:left;
+	margin-top: 18px;
+    margin-bottom: 0;
+}
 .form fieldset{
 	padding-bottom: 0;
 }

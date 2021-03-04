@@ -4,12 +4,12 @@
       <p>REZERVIŠITE ONLINE ILI NAZOVITE<br>
         <span id="number"><a href="tel:+387 63 734 327" title="Pozovite sada">+387 63 734 327</a></span></p>
     </div>
-	<!--<div id="loginW">
+	<div id="loginW">
 	<?php
-	//include 'register.php';
+	include 'register.php';
 	?>
 	<?php
-	//include 'login.php';
+	include 'login.php';
 	?>
-	</div>end #loginW-->
+	</div><!--end #loginW-->
   </header>
