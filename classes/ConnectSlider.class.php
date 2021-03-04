@@ -5,7 +5,7 @@ private $dbUser = "visitneu_LightSlider";
 private $dbPassword = "slideR&545";
 private $dbName = "visitneu_slider";
 
-protected function connectSlide() {
+protected function connect() {
 	$dsn = "mysql:host=" . $this->dbHost . ";dbName=" . $this->dbName;
 	$pdo = new PDO($dsn, $this->dbUser, $this->dbPassword);
 	$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

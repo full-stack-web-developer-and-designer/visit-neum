@@ -1,5 +1,5 @@
 <?php
-class Slider extends Dbh {
+class Slider extends ConnectSlider {
 	// Fetch data from MySQL using PDO - PHP Data Object	
 	public function renderSlider(){
 	$sql = "SELECT * FROM visitneu_slider.lightslider ORDER BY rand();";
