@@ -7,7 +7,6 @@ lightslider/
 core/ 
 classes/DB.class.php
 classes/Connect.class.php
-classes/ConnectSlider.class.php
 classes/ConnectGallery.class.php
 classes/ConnectGalleryAsside.class.php
 classes/Cookie.php
