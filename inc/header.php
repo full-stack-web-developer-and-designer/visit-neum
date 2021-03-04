@@ -1,3 +1,6 @@
+  <?php
+ // require_once 'core/initRegister.php';
+  ?>
   <header id="header" class="cf">
     <div id="logo"> <a href="/Welcome-to-Neum.html"><img src="/images/logo.png" alt="logo" title="Za povratak na početnu stranicu kliknite ovdje"></a> </div>
     <div id="slogan">

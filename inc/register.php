@@ -1,5 +1,6 @@
 <?php
-	require_once 'core/init.php';
+
+	require_once 'core/initRegister.php';
 	if(Input::exists()){
 		$validate = new Validate();
 		$validation = $validate->check($_POST, array(
@@ -42,7 +43,7 @@
 <h2>Registracija novog korisnika</h2><a href="#" rel="modal:close"><button class="close_btn">&times;</button></a>
 </div><!-- end .modal_heading-->
 <div class="modal-body">
-
+<?php echo ConfigUsers::getuser('mysql/db'); ?>
 <fieldset>
 <legend>Vaši podaci</legend>
 <form class='form' name='form' action='' method='POST'>
