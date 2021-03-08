@@ -1,9 +1,9 @@
 <?php
 
-class ConfigUsers{
-	public static function getuser($paths = null){
+class ConfigUsers {
+	public static function get($paths = null){
 		if($paths){
-		$conf = $GLOBALS['configusers'];
+		$conf = $GLOBALS['ConfigUsers'];
 		$paths = explode("/", $paths);
 		foreach($paths as $bit){
 			if(isset($conf[$bit])){

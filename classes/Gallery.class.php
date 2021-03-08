@@ -4,7 +4,7 @@ class Gallery extends ConnectGallery {
 	// Fetch data from MySQL using PDO - PHP Data Object	
 	public function renderGallery(){
 		$question = "SELECT * FROM visitneu_gallery.lightbox;";
-		$resultat=$this->connection()->query($question) or die("Error: $query");
+		$resultat=$this->__connection()->query($question) or die("Error: $query");
 		
 		while ($row = $resultat->fetch()) {
 		$img = $row['img'];
