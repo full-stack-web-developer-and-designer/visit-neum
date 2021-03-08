@@ -13,10 +13,6 @@ classes/ConnectGalleryAsside.class.php
 classes/Cookie.php
 classes/Hash.class.php
 classes/User.class.php
-classes/Token.class.php
-classes/Session.class.php
-classes/test.php
-functions/
 soldo.php
 .htaccess
 inc/PHPMailer/
