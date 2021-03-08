@@ -11,11 +11,10 @@
 
 <div class="form-control"><input type="text" class="input mail" name="login_mail" id="login_mail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('login_mail')); ?>"><span class="error"><?php echo $errors['login_mail']??''?></span></div><!-- end .form-control -->
 
-<div class="form-control"><input minlength="6" type="password" class="input" name="register_password" id="register_password" placeholder="Unesite lozinku..."><span class="error"></span></div><!-- end .form-control -->
+<div class="form-control"><input minlength="6" type="password" class="input" name="user_password" id="user_password" placeholder="Unesite lozinku..."><span class="error"></span></div><!-- end .form-control -->
 
 </fieldset><!--div class="success">--></div><input type="submit" id="submit_login" class="btn_submit" name="submit_login" value="Prijava"/></form>
-<script src="/JS/form_color.js">
-</script><script src="/inc/form-validation.js"></script>
+<script src="/JS/form_color.js"></script>
 <p id="centerRegister">Nemate nalog? Registrujte se <a href="#register" rel="modal:open">ovdje</a></p>
 </div><!-- end .modal-body-->
 </div><!-- end #login.modal-->

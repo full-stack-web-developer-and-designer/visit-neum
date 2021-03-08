@@ -377,7 +377,10 @@
 		display:none;
 	}
 	#nav ul > li > a{pointer-events:all;}
-
+	#nav li#nav_right a button {
+		margin-top: 10px;
+		padding: 0 10px;
+	}
 	#respmenu {
 		display:block;
 	}
