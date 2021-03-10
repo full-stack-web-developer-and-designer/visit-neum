@@ -1,9 +1,10 @@
 <?php
 
-	require_once 'core/initRegister.php';
+	require_once 'core/init.php';
+	
 	if(Input::exists()){
-		/*if(Token::check(Input::get('token'))){
-			echo 'I have been run!';*/
+		if(Token::check(Input::get('token'))){
+			echo 'I have been run!';
 			$validate = new Validate();
 			$validation = $validate->check($_POST, array(
 				'register_name' => array(
@@ -31,9 +32,8 @@
 			));
 
 		if($validation->passed()){
-			echo "Bravo!";
-			/*Session::flash('success', 'You registered successfully!');
-		header('Location:index.php');*/
+			Session::flash('success', 'You registered successfully!');
+		header('Location:index.php');
 			//register user
 		/*	$user = new User();
 			
@@ -54,9 +54,9 @@
 			// output errors
 			foreach($validation->errors() as $error){
 			echo $error;
+			}
 		}
 	}
-	//}
 }
 ?>
 
@@ -68,7 +68,7 @@
 <div class="modal-body">
 <fieldset>
 <legend>Vaši podaci</legend>
-<form class='form' name='form' action='' method='POST' autocomplete='off'>
+<form class='form' name='form' action='' method='POST' auto_complete='off'>
 
 <div class="form-control halb"><input minlength="6" type="text" class="input username" name="register_name" id="register_name" placeholder="Vaše ime i prezime..." value="<?php echo escape(Input::get('register_name')); ?>" autofocus><span class="error"></span></div><!-- end .form-control -->
 
@@ -76,7 +76,8 @@
 
 <div class="form-control halb"><input type="text" class="input mail" name="register_mail" id="register_mail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('register_mail')); ?>"><span class="error"></span></div><!-- end .form-control -->
 
-<div class="form-control halb"><input minlength="6" type="password" class="input" name="confirm_password" id="confirm_password" placeholder="Potvrdite lozinku..."><span class="error"></span></div><!-- end .form-control -->
+<div class="form-control halb"><input minlength="6" type="password" class="input" name="confirm_password" id="confirm_password" placeholder="Potvrdite lozinku..."><span class="error"><?php if(isset($error['confirm_password'])) {
+			 echo $error['confirm_password'];} ?></span></div><!-- end .form-control -->
 
 </fieldset>
 <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">

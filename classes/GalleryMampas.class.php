@@ -4,8 +4,6 @@ class GalleryMampas extends Gallery {
 	public function renderGallery(){
 		$question = "SELECT * FROM visitneu_gallery.lightbox WHERE alt='Apartmani Mampas';";
 		$resultat=$this->__connection()->query($question);
-		//$resultat->execute();
-		//$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		while ($row = $resultat->fetch()) {
 		$img = $row['img'];
 		$alt = $row['alt'];

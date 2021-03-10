@@ -1,5 +1,5 @@
 <?php
-
+/*
 class ConfigUsers {
 	public static function get($paths = null){
 		if($paths){
@@ -15,3 +15,4 @@ class ConfigUsers {
 		return false;
 	}
 }
+*/

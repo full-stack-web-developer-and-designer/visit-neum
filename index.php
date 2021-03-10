@@ -1,6 +1,20 @@
 <?php
 	require_once 'core/init.php';
 $result = Home::get(1);
+$postArr = Header::get(1);
+/*if(Session::exists('success')){
+	echo Session::flash('success');
+}*/
+//User::update(2, array('register_name' => 'Matejko', 'register_password'=>'147852'));
+/*
+User::remove(4);
+$Ana = new User;
+$Ana->register_name = "Ana";
+$Ana->register_mail ="anaopet@gmail.com";
+$Ana->register_password ="pasword";
+$Ana->salt = "salt";
+$Ana->insert();
+*/
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -22,23 +36,25 @@ $result = Home::get(1);
 ?>
 <body class = "accomodation">
 <div id="wrapper">
-
-	<?php
-	include 'inc/header.php';
-	//end #header
-	include 'inc/nav.inc';
-	//end #nav
-	?>
+<header id="header" class="cf">
+<?php 
+  echo $postArr->render(); 	
+  include 'inc/header.php'; 
+?>
+</header><!-- end #header -->
+<?php
+  include 'inc/nav.inc'; //end #nav
+?>
 	
   <div id="main">
   <div id="p_left"><script>var d = new Date()
   var vrijeme=d.getHours()
   if (vrijeme>=6 && vrijeme<11)
-	{document.write("<h1>Dobro jutro," +  " dobrodošli u Neum..." + "</h1>");}
+	{document.write("<h1><small>Dobro jutro,</small>" +  " Dobrodošli u Neum..." + "</h1>");}
   else if(vrijeme>=11 && vrijeme<17)
-	  {document.write("<h1>Dobar dan," +  " dobrodošli u Neum..." + "</h1>");}
+	  {document.write("<h1><small>Dobar dan,</small>" +  " Dobrodošli u Neum..." + "</h1>");}
   else
-	  {document.write("<h1>Dobro veče," +  " dobrodošli u Neum..." + "</h1>");}</script>
+	  {document.write("<h1><small>Dobro veče,</small>" +  " Dobrodošli u Neum..." + "</h1>");}</script>
   <?php echo $result->render(); ?>		
 	<h2>IZDVAJAMO:</h2> 
 	</div><!-- end #p_left -->
@@ -52,8 +68,8 @@ $result = Home::get(1);
 	  <section class='products'>
 	  <ul id='autoplay' class='cs-hidden'>
 	  <?php
-	$test = new Slider();
-	$test->renderSlider();
+	$index = new Slider();
+	$index->renderSlider();
 ?>
 </ul>
 </section>

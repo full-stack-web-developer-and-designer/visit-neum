@@ -1,6 +1,6 @@
 <?php
 require_once 'core/init.php';
-
+$postArr = Header::get(1);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -21,12 +21,15 @@ require_once 'core/init.php';
 ?>
 <body>
 <div id="wrapper">
-  	<?php
-	include 'inc/header.php';
-	//end #header
-	include 'inc/nav.inc';
-	//end #nav
-	?>
+<header id="header" class="cf">
+<?php 
+  echo $postArr->render(); 	
+  include 'inc/header.php'; 
+?>
+</header><!-- end #header -->
+<?php
+  include 'inc/nav.inc'; //end #nav
+?>
   <div id="main">
   <h1>Brod Ivana - Panoramska vožnja</h1>
   <p>Uz <strong>brod Ivana</strong> mo&zcaron;ete da se opustite i otkrijete skrivene ljepote, netaknutu prirodu, uvale – pla&zcaron;e i srdačne domaćine. Panoramska vožnja neumskim kanalom je pravi odabir za ljubitelje prirode, mora, sunca i dobre zabave. Zaplovite zajedno s nama i uživajte u harmoničnom skladu boja i prirode.</p>

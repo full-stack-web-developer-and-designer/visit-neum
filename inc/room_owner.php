@@ -4,15 +4,18 @@
 </div><!-- end .contact_heading-->
 <div class="modal-body">
 <?php
-	//require_once 'core/initRegister.php';
+/*	require_once 'core/initRegister.php';
 	//form is submitted with POST method
-	/*
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	
+//if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		//validate entries
 		
 	if(Input::exists()){
-		if(Token::check(Input::get('token'))){
+		/*if(Token::check(Input::get('token'))){
 			$validate_owner = new Validate();
+			public function __construct(){
+		$this->_db = Connect::getInstance();
+	}
 			$validation = $validate_owner->check($_POST, array(
 				'fname' => array(
 					'name' => 'Ime i prezime',
@@ -38,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					'name' => 'email',
 					'required' => true,
 					'min' => 6,
-					'max' => 255,
+					'max' => 255
 					),
 				'userMessage' => array(
 					'name' => 'Poruka',
@@ -49,15 +52,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		if($validation->passed()){
 			//register user
 			echo 'passed';
-			/* echo '<div class="success"><?=$success;?></div>';*/
-		/*} else {
+			/* echo '<div class="success"><?=$success;?></div>';
+		} else {
 			// output errors
 			foreach($validation->errors()as $error){
 				return $error;
 			}
 		}
 	}
-}
+//}
 
 	/*	$errors = $validation->validateForm();
 		//save data to db
@@ -81,20 +84,20 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <h4 id="responseOwner" class="success"><!-- This will hold response from the server --></h4>
   <fieldset>
     <legend>Vaši podaci</legend>
-		<div class="form-control halb"><input minlength="6" type="text" class="input username" name="fname" placeholder="Vaše ime i prezime..." value="<?php echo escape(Input::get('fname')); ?>" ><span class="error"><?php echo $error ??'' ?></span></div><!-- end .form-control -->
+		<div class="form-control halb"><input minlength="6" type="text" class="input username" name="fname" placeholder="Vaše ime i prezime..." value="<?php echo escape(Input::get('fname')); ?>" ><span class="error"></span></div><!-- end .form-control -->
 			
-		<div class="form-control halb"><input minlength="9" type="text" class="input phone" name="tel" placeholder="Vaš broj telefona..." value="<?php echo escape(Input::get('tel')); ?>"><span class="error"><?php echo $error ??'' ?></span></div><!-- end .form-control -->
+		<div class="form-control halb"><input minlength="9" type="text" class="input phone" name="tel" placeholder="Vaš broj telefona..." value="<?php echo escape(Input::get('tel')); ?>"><span class="error"></span></div><!-- end .form-control -->
 			
-		<div class="form-control halb"><input type="text" id="txtFrom" class="input" name="txtFrom" placeholder="Datum dolaska..." value="<?php echo escape(Input::get('txtFrom')); ?>"><span class="error"><?php echo $error ??'' ?></span></div><!-- end .form-control -->
+		<div class="form-control halb"><input type="text" id="txtFrom" class="input" name="txtFrom" placeholder="Datum dolaska..." value="<?php echo escape(Input::get('txtFrom')); ?>"><span class="error"></span></div><!-- end .form-control -->
 
-		<div class="form-control halb"><input type="text" id="txtTo" class="input" name="txtTo" placeholder="Datum odlaska..." value="<?php echo escape(Input::get('txtTo')); ?>"><span class="error"><?php echo $error ??'' ?></span></div><!-- end .form-control -->
+		<div class="form-control halb"><input type="text" id="txtTo" class="input" name="txtTo" placeholder="Datum odlaska..." value="<?php echo escape(Input::get('txtTo')); ?>"><span class="error"></span></div><!-- end .form-control -->
 
-		<div class="form-control"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('userMail')); ?>"><span class="error"><?php echo $error ??'' ?></span></div><!-- end .form-control --> 
+		<div class="form-control"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('userMail')); ?>"><span class="error"></span></div><!-- end .form-control --> 
 			
-		<div class="form-control"><textarea maxlength="500" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo htmlspecialchars(Input::get('userMessage')); ?></textarea><span id="message_feedback" class="error"><?php echo $error ??'' ?></span></div><!-- end .form-control -->
+		<div class="form-control"><textarea maxlength="500" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo htmlspecialchars(Input::get('userMessage')); ?></textarea><span id="message_feedback" class="error"></span></div><!-- end .form-control -->
 			
 	</fieldset><div class="success"></div><!-- end .success -->
-	<input type="hidden" name="token" value="<?php //echo Token::generate(); ?>">
+	<!--<input type="hidden" name="token" value="<?php //echo Token::generate(); ?>">-->
 	<input type="submit" class="btn_submit" id="submitOwner" name="submitOwner" value="POŠALJI"/>
 </form>
 <script>

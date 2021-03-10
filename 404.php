@@ -1,3 +1,7 @@
+<?php
+	require_once 'core/init.php';
+$postArr = Header::get(1);
+?>
 <!DOCTYPE html>
 <html lang="bs-BA">
 <?php	
@@ -18,16 +22,19 @@
 
 <body class="accomodation">
 <div id="wrapper">
-	<?php
-	include 'inc/header.inc';
-	//end #header
-	include 'inc/nav.inc';
-	//end #nav
-	?>
+<header id="header" class="cf">
+<?php 
+  echo $postArr->render(); 	
+  include 'inc/header.php'; 
+?>
+</header><!-- end #header -->
+<?php
+  include 'inc/nav.inc'; //end #nav
+?>
 <div id="main"><p><b><i>"Tra&zcaron;ena stranica ne postoji! Provjerite da li ste dobro unijeli adresu!"</i></b></p></div>
 <aside id="sidebar"><?php include 'inc/weather.inc'; ?></aside><!-- end #sidebar --> 
 <?php
-	include 'inc/footer.inc';
+	include 'inc/footer.php';
 	//end #footer
 ?>
 </div><!-- end #wrapper -->
