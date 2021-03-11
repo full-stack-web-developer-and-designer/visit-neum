@@ -32,13 +32,26 @@
 			));
 
 		if($validation->passed()){
-			Session::flash('success', 'You registered successfully!');
-		header('Location:index.php');
 			//register user
-		/*	$user = new User();
+			$Ana = new User;
+//$salt = Hash::salt(32);
+$Ana->register_name = "monica";
+$Ana->register_mail ="monica@gmail.com";
+$Ana->register_password ="monica";
+$Ana->salt = "salt";
+$Ana->insert();
+
+			/*$user = new User();
+			$salt = Hash::salt(32);
+			$user->register_name  = Input::get('register_name');
+			$user->register_mail = Input::get('register_mail');
+			$user->register_password = Hash::make(Input::get('register_password'), $salt);
+			$user->salt = $salt;
+			$user->joined = date('Y-m-d H:i:s');
+			$user->groups = 1;
+			$user->insert();*/
 			
-			try {
-				$user->create(array(
+			/*	$user->create(array(
 					'register_name' => Input::get('register_name'),
 					'register_mail' => Input::get('register_mail'),
 					'register_password' => Hash::make(Input::get('register_password'), $salt),
@@ -46,9 +59,12 @@
 					'joined' => date('Y-m-d H:i:s'),
 					'groups' => 1
 				));
-			} catch(Exception $e) {
+				*/
+				//Session::flash('home', 'You have been register successfully');
+				//header('Location: index.php');
+			/*} catch(Exception $e) {
 				die($e->getMessage());
-			}
+			}*/
 			/* echo '<div class="success"><?=$success;?></div>';*/
 		} else {
 			// output errors
