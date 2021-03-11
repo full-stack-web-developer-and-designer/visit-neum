@@ -2,19 +2,14 @@
 	require_once 'core/init.php';
 $result = Home::get(1);
 $postArr = Header::get(1);
-/*if(Session::exists('success')){
-	echo Session::flash('success');
-}*/
+//if(Session::exists('home')){
+//	echo '<p>' . Session::flash('home') . '</p>';
+//}
 //User::update(2, array('register_name' => 'Matejko', 'register_password'=>'147852'));
-/*
-User::remove(4);
-$Ana = new User;
-$Ana->register_name = "Ana";
-$Ana->register_mail ="anaopet@gmail.com";
-$Ana->register_password ="pasword";
-$Ana->salt = "salt";
-$Ana->insert();
-*/
+
+//User::remove(4);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -50,11 +45,11 @@ $Ana->insert();
   <div id="p_left"><script>var d = new Date()
   var vrijeme=d.getHours()
   if (vrijeme>=6 && vrijeme<11)
-	{document.write("<h1><small>Dobro jutro,</small>" +  " Dobrodošli u Neum..." + "</h1>");}
+	{document.write("<h1><small id='title'>Dobro jutro,</small>" +  " Dobrodošli u Neum..." + "</h1>");}
   else if(vrijeme>=11 && vrijeme<17)
-	  {document.write("<h1><small>Dobar dan,</small>" +  " Dobrodošli u Neum..." + "</h1>");}
+	  {document.write("<h1><small id='title'>Dobar dan,</small>" +  " Dobrodošli u Neum..." + "</h1>");}
   else
-	  {document.write("<h1><small>Dobro veče,</small>" +  " Dobrodošli u Neum..." + "</h1>");}</script>
+	  {document.write("<h1><small id='title'>Dobro veče,</small>" +  " Dobrodošli u Neum..." + "</h1>");}</script>
   <?php echo $result->render(); ?>		
 	<h2>IZDVAJAMO:</h2> 
 	</div><!-- end #p_left -->
