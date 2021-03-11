@@ -9,9 +9,10 @@ $dbHost = "localhost:3306";
 $dbUser = "visitneu_MirnesADMIN";
 $dbPassword = "M&102003&g";
 $dbName = "visitneu_contact";
+$dbCharset = "utf8";
 
 try{
-	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName;
+	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName . $dbCharset;
 	$pdo = new PDO($dsn, $dbUser, $dbPassword);
 }catch(PDOException $e){
 	echo "Greška u konekciji: " . $e->getMessage();
