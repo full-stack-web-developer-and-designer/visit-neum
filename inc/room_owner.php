@@ -3,6 +3,7 @@
 <h2>Izvršite Vašu rezervaciju na vrijeme!</h2><a href="#" rel="modal:close"><button class="close_btn">&times;</button></a>
 </div><!-- end .contact_heading-->
 <div class="modal-body">
+<<<<<<< HEAD
 <?php
 
   
@@ -28,6 +29,8 @@
 	echo json_encode($data);
 		} */
 ?>
+=======
+>>>>>>> css
 <form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form' name='contactOwner' action='' method='POST'>
 <h4 id="responseOwner" class="success"><!-- This will hold response from the server --></h4>
   <fieldset>
@@ -44,8 +47,8 @@
 			
 		<div class="form-control"><textarea maxlength="500" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo htmlspecialchars(Input::get('userMessage')); ?></textarea><span id="message_feedback" class="error"><?php echo $errors['userMessage'] ?? '' ?></span></div><!-- end .form-control -->
 			
-	</fieldset><div class="success"></div><!-- end .success -->
-	<!--<input type="hidden" name="token" value="<?php //echo Token::generate(); ?>">-->
+	</fieldset>
+	<input type="hidden" name="token" value="<?php //echo Token::generate(); ?>">
 	<input type="submit" class="btn_submit" id="submitOwner" name="submitOwner" value="POŠALJI"/>
 </form>
 <script>
