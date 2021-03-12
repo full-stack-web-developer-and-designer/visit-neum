@@ -4,6 +4,7 @@
 </div><!-- end .contact_heading-->
 <div class="modal-body">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php
 
   
@@ -31,6 +32,8 @@
 ?>
 =======
 >>>>>>> css
+=======
+>>>>>>> form
 <form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form' name='contactOwner' action='' method='POST'>
 <h4 id="responseOwner" class="success"><!-- This will hold response from the server --></h4>
   <fieldset>
