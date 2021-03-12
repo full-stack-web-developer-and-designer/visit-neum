@@ -3,37 +3,6 @@
 <h2>Izvršite Vašu rezervaciju na vrijeme!</h2><a href="#" rel="modal:close"><button class="close_btn">&times;</button></a>
 </div><!-- end .contact_heading-->
 <div class="modal-body">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<?php
-
-  
-
-
-
-
-	/*	$errors = $validation->validateForm();
-		//save data to db
-		if($errors = ''){
-
-		}
-
-		/*if($error==false){
-			$data['response'] = "success";
-			$data['content'] = "Hvala Vam " . ucwords($name) . "! Vaša poruka je uspješno poslata! Odgovor ćete dobiti ubrzo!";
-		}
-		else
-	{
-		$data['response'] = "error";
-		$data['content'] = "Došlo je do greške! Pokušajte ponovo..." . $userMail->ErrorInfo;
-    }
-	echo json_encode($data);
-		} */
-?>
-=======
->>>>>>> css
-=======
->>>>>>> form
 <form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form' name='contactOwner' action='' method='POST'>
 <h4 id="responseOwner" class="success"><!-- This will hold response from the server --></h4>
   <fieldset>
