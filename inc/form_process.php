@@ -23,6 +23,8 @@ require 'PHPMailer/SMTP.php';
 require 'PHPMailer/Exception.php';	
 //form is submitted with POST method
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	if (isset($_POST['submit'])) {
+	
 	$name = $_POST['name'];
 	$phone = $_POST['phone'];
 	$email = $_POST["email"];
@@ -105,4 +107,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$data['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mail->ErrorInfo;
     }
 	echo json_encode($data); 
-}}
+}
+} else if (isset($_POST['submitOwner'])) {
+		require('classes/ValidateOwner.class.php');
+		$errors = [];
+		// validate entries
+		
+		$validation = new ValidateOwner($_POST);
+		$errors = $validation->validateForm();
+		// if errors is empty --> save data to db
+	  }	//update action	
+	//delete action
+//} else {
+	//no button pressed
+}
