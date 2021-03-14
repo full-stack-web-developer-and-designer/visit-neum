@@ -1,30 +1,16 @@
 <?php
-$error = false;
+	require_once 'core/init.php';
+//$error = false;
 // define variables and set to empty values
 $name = $phone = $email = $message = "";
 $name_error = $phone_error = $email_error = $message_error = "";
 
-	//Load the config file
-$dbHost = "localhost:3306";
-$dbUser = "visitneu_MirnesADMIN";
-$dbPassword = "M&102003&g";
-$dbName = "visitneu_contact";
-$dbCharset = "utf8";
-
-try{
-	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName . $dbCharset;
-	$pdo = new PDO($dsn, $dbUser, $dbPassword);
-}catch(PDOException $e){
-	echo "Greška u konekciji: " . $e->getMessage();
-}  
 use PHPMailer\PHPMailer\PHPMailer;
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 require 'PHPMailer/Exception.php';	
 //form is submitted with POST method
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	if (isset($_POST['submit'])) {
-	
 	$name = $_POST['name'];
 	$phone = $_POST['phone'];
 	$email = $_POST["email"];
@@ -92,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		
       if($mail->send()) {
 		$mail = "INSERT INTO visitneu_contact.contact_me (name, phone, email, message) VALUES (:name, :phone, :email, :message)";
-		$stmt = $pdo->prepare($mail);
+		$stmt = self::$_pdo->prepare($mail);
 		$stmt->execute(['name' => $name, 'phone' => $phone, 'email' => $email, 'message' => $message]);
 		if($error==false){
 			$data['response'] = "success";
@@ -107,17 +93,4 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$data['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mail->ErrorInfo;
     }
 	echo json_encode($data); 
-}
-} else if (isset($_POST['submitOwner'])) {
-		require('classes/ValidateOwner.class.php');
-		$errors = [];
-		// validate entries
-		
-		$validation = new ValidateOwner($_POST);
-		$errors = $validation->validateForm();
-		// if errors is empty --> save data to db
-	  }	//update action	
-	//delete action
-//} else {
-	//no button pressed
-}
+}}
