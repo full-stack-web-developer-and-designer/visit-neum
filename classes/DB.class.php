@@ -1,9 +1,17 @@
 <?php
 // singletton pattern
-class DB{
+class DB {
 		private static $_instance = null;
-		
-		private function __construct(){}
+		public $_pdo;
+		private function __construct(){
+			try {
+				$this->_pdo = new PDO("mysql:host=" . Config::get('mysql/host') . ";dbname=" . Config::get('mysql/db'),Config::get('mysql/user'),Config::get('mysql/password'));
+					echo "COnnected";
+			} catch(PDOException $e){
+				die($e->getMessage());
+
+			}
+		}
 		public static function getInstance(){
 			if(is_null(self::$_instance)){
 				self::$_instance = new PDO("mysql:host=" . Config::get('mysql/host') . ";dbname=" . Config::get('mysql/db'),Config::get('mysql/user'),Config::get('mysql/password'));
@@ -11,4 +19,4 @@ class DB{
 			}		
 			return self::$_instance;
 		}
-    }
+}

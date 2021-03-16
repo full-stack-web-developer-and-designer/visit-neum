@@ -1,5 +1,6 @@
 <?php
 require_once 'core/init.php';
+$postArr = Header::get(1);
 $result = Hotels::get(1);
 ?>
 <!DOCTYPE html>
@@ -20,22 +21,26 @@ $result = Hotels::get(1);
 <body class="accomodation">
 
 <div id="wrapper">
-	<?php
-	include 'inc/header.php';
-	//end #header
-	include 'inc/nav.inc';
-	//end #nav
-	?>
+<header id="header" class="cf">
+<?php 
+  echo $postArr->render(); 	
+  include 'inc/header.php'; 
+?>
+</header><!-- end #header -->
+<?php
+  include 'inc/nav.inc'; //end #nav
+?>
+	
 <div id="main">
 <?php echo $result->render(); ?> 
-	<section class="offers">
+<section class="offers">
 	<!-- slider box -->
 	<ul id="autoplay" class="cs-hidden">
-      <li class="item-a"><article class="offer">
-		<a href="Hotel-Villa-Matic.html"><img src="images/Matic/SMALL/HotelVillaMatic.jpg" alt="Hotel Villa Matić"><span><h2>Hotel Villa Matić</h2></span></a>
-		</article><!--end .offer--></li>
-	</ul>
-	
+	<?php
+	$hotel = new HotelSlide();
+	$hotel->renderSlider();
+	?>
+    </ul>
 	</section><!--end .offers-->
 	
 </div><!-- end #main -->
@@ -47,7 +52,7 @@ $result = Hotels::get(1);
 </aside><!-- end #sidebar -->
   
 <?php
-	include 'inc/footer.inc';
+	include 'inc/footer.php';
 	//end #footer
 ?>
 </div><!-- end #wrapper -->

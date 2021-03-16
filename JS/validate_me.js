@@ -32,9 +32,9 @@ jQuery.validator.addMethod('validMessage', function (value, element) {
 		};
 	});
 
-jQuery("#contact_me").submit(function(event){
+jQuery("#contact_me").submit(function(e){
 	
-		event.preventDefault();
+		e.preventDefault();
 	}).validate({
 	rules: {
 		name: {
@@ -85,23 +85,23 @@ jQuery("#contact_me").submit(function(event){
 				//Your code for AJAX starts    
 				var values = jQuery('#contact_me').serialize();
 				jQuery.ajax({
-					url: '/inc/form_process.php',
+					url: '/classes/form_process.class.php',
 					type: "post",
 					data: values,
 					dataType: 'json',
 					cache: false,
-					success: function (data) {
+					success: function (text) {
 						//alert("success");
-						jQuery("#response").text(data.content);
+						jQuery("#response").text(text.message);
 					},
-					error: function (data) {
+					error: function (text) {
 						//alert("error");
 						jQuery("#response").text("An error occurred");
 					}
 					//Your code for AJAX Ends
 				});
 				// Clear all data after submit
-				var form = document.getElementById('contact_me').reset();
+				var form_contact = document.getElementById('contact_me').reset();
 				return false;
 			}
 	});

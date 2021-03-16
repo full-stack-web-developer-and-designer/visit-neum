@@ -3,21 +3,24 @@
 <h2>Izvršite Vašu rezervaciju na vrijeme!</h2><a href="#" rel="modal:close"><button class="close_btn">&times;</button></a>
 </div><!-- end .contact_heading-->
 <div class="modal-body">
+<?php
+include_once 'classes/form_process.class.php';
+?>
 <form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form' name='contactOwner' action='' method='POST'>
 <h4 id="responseOwner" class="success"><!-- This will hold response from the server --></h4>
   <fieldset>
     <legend>Vaši podaci</legend>
-		<div class="form-control halb"><input minlength="6" type="text" class="input username" name="fname" placeholder="Vaše ime i prezime..." value="<?php echo escape(Input::get('fname')); ?>" ><span class="error"><?php echo $errors['fname'] ?? '' ?></span></div><!-- end .form-control -->
+		<div class="form-control halb"><input minlength="6" type="text" class="input username" name="fname" placeholder="Vaše ime i prezime..." value="<?php echo escape(Input::get('fname')); ?>" ><span class="error"><?=$fname_error; ?></span></div><!-- end .form-control -->
 			
-		<div class="form-control halb"><input minlength="9" type="text" class="input phone" name="tel" placeholder="Vaš broj telefona..." value="<?php echo escape(Input::get('tel')); ?>"><span class="error"><?php echo $errors['tel'] ?? '' ?></span></div><!-- end .form-control -->
+		<div class="form-control halb"><input minlength="9" type="text" class="input phone" name="tel" placeholder="Vaš broj telefona..." value="<?php echo escape(Input::get('tel')); ?>"><span class="error"><?=$tel_error; ?></span></div><!-- end .form-control -->
 			
-		<div class="form-control halb"><input type="text" id="txtFrom" class="input" name="txtFrom" placeholder="Datum dolaska..." value="<?php echo escape(Input::get('txtFrom')); ?>"><span class="error"><?php echo $errors['txtFrom'] ?? '' ?></span></div><!-- end .form-control -->
+		<div class="form-control halb"><input type="text" id="txtFrom" class="input" name="txtFrom" placeholder="Datum dolaska..." readonly="readonly" value="<?php echo escape(Input::get('txtFrom')); ?>"><span class="error"><?=$txtFrom_error; ?></span></div><!-- end .form-control -->
 
-		<div class="form-control halb"><input type="text" id="txtTo" class="input" name="txtTo" placeholder="Datum odlaska..." value="<?php echo escape(Input::get('txtTo')); ?>"><span class="error"><?php echo $errors['txtTo'] ?? '' ?></span></div><!-- end .form-control -->
+		<div class="form-control halb"><input type="text" id="txtTo" class="input" name="txtTo" placeholder="Datum odlaska..." readonly="readonly" value="<?php echo escape(Input::get('txtTo')); ?>"><span class="error"><?=$txtTo_error; ?></span></div><!-- end .form-control -->
 
-		<div class="form-control"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('userMail')); ?>"><span class="error"><?php echo $errors['userMail'] ?? '' ?></span></div><!-- end .form-control --> 
+		<div class="form-control"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('userMail')); ?>"><span class="error"><?=$userMail_error; ?></span></div><!-- end .form-control --> 
 			
-		<div class="form-control"><textarea maxlength="500" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo htmlspecialchars(Input::get('userMessage')); ?></textarea><span id="message_feedback" class="error"><?php echo $errors['userMessage'] ?? '' ?></span></div><!-- end .form-control -->
+		<div class="form-control"><textarea maxlength="500" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo htmlspecialchars(Input::get('userMessage')); ?></textarea><span id="message_feedback" class="error"><?=$userMessage_error; ?></span></div><!-- end .form-control -->
 			
 	</fieldset>
 	<input type="hidden" name="token" value="<?php //echo Token::generate(); ?>">
@@ -38,13 +41,14 @@ jQuery(document).ready(function(){
 		changeYear: true,
 		minDate: minDate,
 		firstDay:1,
-		dateFormat: 'DD, dd/mm/yy',
+		dateFormat: 'DD, dd-mm-yy',
 		showAnim:'slideDown',
 		onClose: function(selectedDate){
+			jQuery( "#txtTo" ).datepicker( "option", "dateFormat", 'DD, dd-mm-yy');
 			jQuery('#txtTo').datepicker("option", "minDate", selectedDate);
+			jQuery("#txtFrom").valid();
 		}
 	});
-
 	jQuery('#txtTo').datepicker({
 		monthNamesShort: [ "Jan", "Feb", "Mar", "Apr", "Maj", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" ],
 		dayNames: [ "Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Četvrtak", "Petak", "Subota" ],
@@ -55,15 +59,17 @@ jQuery(document).ready(function(){
 		changeYear: true,
 		minDate: minDate,
 		firstDay:1,
-		dateFormat: 'DD, dd/mm/yy',
+		dateFormat: 'DD, dd-mm-yy',
 		onClose:function(selectedDate){
+			jQuery( "#txtFrom" ).datepicker( "option", "dateFormat", 'DD, dd-mm-yy');
 			jQuery('#txtFrom').datepicker("option","maxDate",selectedDate);
+			jQuery("#txtTo").valid();
 		}
 	});
 });
 </script>
-<!--<script src="/JS/form_color.js"></script>
-<script src="/JS/validate_owner.js"></script>-->
+<script src="/JS/form_color.js"></script>
+<script src="/JS/validate_owner.js"></script>
 
 </div><!-- end .modal-->
 </div><!-- end #contact_owner -->

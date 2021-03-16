@@ -1,26 +1,26 @@
 <?php
 // Active record pattern
 class Entity{
-	private static $db;
+	public static $_pdo;
 	public static function get($id){
 		$tableName = static::$tableName;
 		$keyColumn = static::$keyColumn;
 		$className = get_called_class();
 		$q = "SELECT * FROM {$tableName} WHERE {$keyColumn} = {$id}";
-		$q = self::$db->query($q);
+		$q = self::$_pdo->query($q);
 		$result = $q->fetchObject($className);
 		return $result;
 	}
 	public static function getAll(){
 		$tableName = static::$tableName;
-		$q = self::$db->query("SELECT * FROM {$tableName}");
+		$q = self::$_pdo->query("SELECT * FROM {$tableName}");
 		$postArr = $q->fetchAll();
 		return $postArr;
 	}	
 	public static function remove($id){
 		$tableName = static::$tableName;
 		$keyColumn = static::$keyColumn;
-		$q = self::$db->query("DELETE FROM {$tableName} WHERE {$keyColumn} = {$id}");
+		$q = self::$_pdo->query("DELETE FROM {$tableName} WHERE {$keyColumn} = {$id}");
 	}
 	public function insert(){
 		$tableName = static::$tableName;
@@ -35,12 +35,12 @@ class Entity{
 		$q .= $vel;
 		$q = trim($q, ', ');
 		$q .= ")";
-		$q = self::$db->query($q);
+		$q = self::$_pdo->query($q);
 	}
 	public static function update($id, $params = null){
 		$tableName = static::$tableName;
 		$keyColumn = static::$keyColumn;
-		$qtest = "UPDATE users SET register_name = 'Matejko', register_password = '147852' WHERE id = 2";
+		//$qtest = "UPDATE users SET register_name = 'Matejko', register_password = '147852' WHERE id = 2";
 		$q = "UPDATE {$tableName} SET ";
 		$keys = array_keys($params);
 		$values = array_values($params);
@@ -48,7 +48,7 @@ class Entity{
 			$q .= $key . " = ?, ";
 		}
 		$q = trim($q, ', ') . " WHERE {$keyColumn} = ?";
-		$stmt = self::$db->prepare($q);
+		$stmt = self::$_pdo->prepare($q);
 		$n = 1;
 		foreach($values as $v) {
 			$stmt->bindValue($n, $v);
@@ -58,7 +58,7 @@ class Entity{
 		$stmt->execute();
 	}
 	public static function init(){
-		self::$db = DB::getInstance();
+		self::$_pdo = DB::getInstance();
 	}
 }
 Entity::init();
