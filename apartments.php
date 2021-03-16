@@ -1,5 +1,6 @@
 <?php
 require_once 'core/init.php';
+$postArr = Header::get(1);
 $result = Apartments::get(1);
 ?>
 <!DOCTYPE html>
@@ -17,12 +18,16 @@ $result = Apartments::get(1);
 ?>
 <body class = "accomodation">
 <div id="wrapper">
-	<?php
-	include 'inc/header.php';
-	//end #header
-	include 'inc/nav.inc';
-	//end #nav
-	?>
+<header id="header" class="cf">
+<?php 
+  echo $postArr->render(); 	
+  include 'inc/header.php'; 
+?>
+</header><!-- end #header -->
+<?php
+  include 'inc/nav.inc'; //end #nav
+?>
+	
 <div id="main">
 <?php echo $result->render(); ?> 
 <section class="offers">

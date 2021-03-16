@@ -40,7 +40,7 @@ class Entity{
 	public static function update($id, $params = null){
 		$tableName = static::$tableName;
 		$keyColumn = static::$keyColumn;
-		$qtest = "UPDATE users SET register_name = 'Matejko', register_password = '147852' WHERE id = 2";
+		//$qtest = "UPDATE users SET register_name = 'Matejko', register_password = '147852' WHERE id = 2";
 		$q = "UPDATE {$tableName} SET ";
 		$keys = array_keys($params);
 		$values = array_values($params);

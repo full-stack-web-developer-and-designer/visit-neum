@@ -1,5 +1,5 @@
 <?php
-
+/*
 	require_once 'core/init.php';
 	
 	if(Input::exists()){
@@ -65,7 +65,7 @@ $Ana->insert();
 			/*} catch(Exception $e) {
 				die($e->getMessage());
 			}*/
-			/* echo '<div class="success"><?=$success;?></div>';*/
+			/* echo '<div class="success"><?=$success;?></div>';
 		} else {
 			// output errors
 			foreach($validation->errors() as $error){
@@ -102,4 +102,4 @@ $Ana->insert();
 </script>
 <p id="leftLogin">Već imate nalog? Prijavite se <a href="#login" rel="modal:open">ovdje</a></p>
 </div><!-- end .modal-body-->
-</div><!-- end #register.modal-->
+</div><!-- end #register.modal-->*/
