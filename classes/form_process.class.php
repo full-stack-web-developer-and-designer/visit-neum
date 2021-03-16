@@ -136,7 +136,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if(empty($txtFrom)){
 		$txtFrom_error = 'Datum odlaska ne može biti prazan!';
 	} else {
-		$txtFrom = $_POST["txtFrom"];
+		$txtFrom = date('Y-m-d', strtotime($_POST['txtFrom']));
 		/*// check if date format is valid
 		if(!preg_match("^[a-zšđčćžA-ZŠĐČĆŽ, ]\\d{1,2}/\\d{2}/\\d{4}^", $txtFrom)){
 			$txtFrom_error = 'Datum mora biti u formatu "dan, DD/MM/YY!"';
@@ -145,7 +145,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if(empty($txtTo)){
 		$txtTo_error = 'Datum odlaska ne može biti prazan!';
 	} else {
-		$txtTo =$_POST["txtTo"];
+		date('Y-m-d', strtotime($_POST['txtTo']));
 		// check if date format is valid
 		/*if(!preg_match("^[a-zšđčćžA-ZŠĐČĆŽ, ]\\d{1,2}/\\d{2}/\\d{4}^", $txtTo)){
 			$txtTo_error = 'Datum mora biti u formatu "dan, DD/MM/YY!"';
