@@ -34,7 +34,7 @@ $postArr = Header::get(1);
 <header id="header" class="cf">
 <?php 
   echo $postArr->render(); 	
-  include 'inc/header.php'; 
+  //,include 'inc/header.php'; 
 ?>
 </header><!-- end #header -->
 <?php

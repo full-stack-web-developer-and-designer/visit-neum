@@ -95,7 +95,7 @@ a:active{
 	color:#333;
 	background:#FFF;
 	font-size:18px;
-	margin: 18px 18px 0;
+	margin: 12px;/*18px 18px 0;*/
 	padding:0 10px;
 	-webkit-border-radius:10px; /* Chrome 4.0 and Safari 3.1 */
 	-moz-border-radius:10px; /* Mozilla 3.0 */

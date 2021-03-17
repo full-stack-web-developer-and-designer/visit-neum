@@ -1,5 +1,4 @@
 <?php
-// Active record pattern
 class Entity{
 	public static $_pdo;
 	public static function get($id){

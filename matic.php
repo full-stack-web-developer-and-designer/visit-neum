@@ -15,9 +15,9 @@ $postArr = Header::get(1)
     //Check length of description for SEO (140-180 characters)
     //echo "Length of description is " . strlen($meta['description']) . "characters long.";
 	$meta['keywords']="neum, hoteli, Hoteli Neum, apartmani, sobe, ljetovanje,  matić, matic, vila matić, pansioni, privatni smještaj, smjestaj, ljetovanje neum, neum apartmani i sobe";
-	$og_image="images/Matic/SMALL/VillaMatic_01.jpg";
+	$og_image="./gallery/SMALL/VillaMatic_01.jpg";
 	$image_alt="Hotel Villa Matić - Neum";
-	include 'inc/head.php';
+	include './inc/head.php';
 	//end #head
 ?>
 <body>
@@ -25,7 +25,7 @@ $postArr = Header::get(1)
 <header id="header" class="cf">
 <?php 
   echo $postArr->render(); 	
-  include 'inc/header.php'; 
+  //include 'inc/header.php'; 
 ?>
 </header><!-- end #header -->
 <?php
@@ -34,7 +34,7 @@ $postArr = Header::get(1)
 <div id="main">
 <?php echo $result->render(); ?> 
 <span id="a"></span>
-<script type="text/javascript" src="JS/review_rooms.js"></script>
+<script type="text/javascript" src="./JS/review_rooms.js"></script>
 
 <?php
 	$matic = new GalleryMatic();
@@ -68,7 +68,7 @@ $postArr = Header::get(1)
         <tr>
         	<td colspan="2"><p id="price">CIJENA NA UPIT</p>
           <a href="#contact_owner" rel="modal:open"><button id="question" class="request  modal-btn">POŠALJITE UPIT</button></a>
-          <?php include "inc/room_owner.php"; ?>
+          <?php include "./inc/room_owner.php"; ?>
 			</td>
        </tr>
       </tfoot>
@@ -82,7 +82,7 @@ $postArr = Header::get(1)
 </aside>
  <script defer src="lightbox2/src/js/lightbox.js"></script>
 <?php
-	include 'inc/footer.php';
+	include './inc/footer.php';
 	//end #footer
 ?>
 </div><!-- end #wrapper -->
