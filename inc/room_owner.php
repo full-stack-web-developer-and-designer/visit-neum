@@ -4,21 +4,21 @@
 </div><!-- end .contact_heading-->
 <div class="modal-body">
 <?php
-include_once 'classes/form_process.class.php';
+include_once './classes/Form_process.class.php';
 ?>
 <form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form' name='contactOwner' action='' method='POST'>
 <h4 id="responseOwner" class="success"><!-- This will hold response from the server --></h4>
   <fieldset>
     <legend>Vaši podaci</legend>
-		<div class="form-control halb"><input minlength="6" type="text" class="input username" name="fname" placeholder="Vaše ime i prezime..." value="<?php echo escape(Input::get('fname')); ?>" ><span class="error"><?=$fname_error; ?></span></div><!-- end .form-control -->
+		<div class="form-control halb InputIconBg"><input minlength="6" type="text" class="input username" name="fname" placeholder="Vaše ime i prezime..." value="<?php echo escape(Input::get('fname')); ?>" ><i class="fas fa-user" aria-hidden="true"></i><span class="error"><?=$fname_error; ?></span></div><!-- end .form-control -->
 			
-		<div class="form-control halb"><input minlength="9" type="text" class="input phone" name="tel" placeholder="Vaš broj telefona..." value="<?php echo escape(Input::get('tel')); ?>"><span class="error"><?=$tel_error; ?></span></div><!-- end .form-control -->
+		<div class="form-control halb InputIconBg"><input minlength="9" type="text" class="input phone" name="tel" placeholder="Vaš broj telefona..." value="<?php echo escape(Input::get('tel')); ?>"><i class="fas fa-phone-alt" aria-hidden="true"></i><span class="error"><?=$tel_error; ?></span></div><!-- end .form-control -->
 			
-		<div class="form-control halb"><input type="text" id="txtFrom" class="input" name="txtFrom" placeholder="Datum dolaska..." readonly="readonly" value="<?php echo escape(Input::get('txtFrom')); ?>"><span class="error"><?=$txtFrom_error; ?></span></div><!-- end .form-control -->
+		<div class="form-control halb InputIconBg"><input type="text" id="txtFrom" class="input" name="txtFrom" placeholder="Datum dolaska..." readonly="readonly" value="<?php echo escape(Input::get('txtFrom')); ?>"><i class="far fa-calendar-alt" aria-hidden="true"></i><span class="error"><?=$txtFrom_error; ?></span></div><!-- end .form-control -->
 
-		<div class="form-control halb"><input type="text" id="txtTo" class="input" name="txtTo" placeholder="Datum odlaska..." readonly="readonly" value="<?php echo escape(Input::get('txtTo')); ?>"><span class="error"><?=$txtTo_error; ?></span></div><!-- end .form-control -->
+		<div class="form-control halb InputIconBg"><input type="text" id="txtTo" class="input" name="txtTo" placeholder="Datum odlaska..." readonly="readonly" value="<?php echo escape(Input::get('txtTo')); ?>"><i class="far fa-calendar-alt" aria-hidden="true"></i><span class="error"><?=$txtTo_error; ?></span></div><!-- end .form-control -->
 
-		<div class="form-control"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('userMail')); ?>"><span class="error"><?=$userMail_error; ?></span></div><!-- end .form-control --> 
+		<div class="form-control single InputIconBg"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('userMail')); ?>"><i id="owner_icon" class="fas fa-envelope" aria-hidden="true"></i><span class="error"><?=$userMail_error; ?></span></div><!-- end .form-control --> 
 			
 		<div class="form-control"><textarea maxlength="500" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo htmlspecialchars(Input::get('userMessage')); ?></textarea><span id="message_feedback" class="error"><?=$userMessage_error; ?></span></div><!-- end .form-control -->
 			

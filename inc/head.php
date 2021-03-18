@@ -1,8 +1,8 @@
 <head id="head">
 <meta charset="utf-8">
 <title><?php echo $title; ?></title>
-<link rel="stylesheet" type="text/css" href="/CSS/style.css" />
-<link rel="stylesheet" type="text/css" href="/CSS/responsive.css" />
+<link rel="stylesheet" type="text/css" href="./CSS/style.css" />
+<link rel="stylesheet" type="text/css" href="./CSS/responsive.css" />
 <!-- meta tags -->
 <meta name="robots" content="index,follow">
 <meta name="description" content="<?php echo $meta['description']; ?>" />
@@ -89,7 +89,7 @@ window.onorientationchange = function() {
 <!-- lightbox css -->
 <link rel="stylesheet" type="text/css" href="/lightbox2/src/css/lightbox.css">
 <!-- jQuery datepicker -->
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <noscript><p class="errorJS">Za ispravan prikaz naše stranice molimo Vas uključite JavaScript u Vašem pretraživaču!</p></noscript>

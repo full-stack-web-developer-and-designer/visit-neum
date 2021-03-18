@@ -95,7 +95,7 @@ a:active{
 	color:#333;
 	background:#FFF;
 	font-size:18px;
-	margin: 12px;/*18px 18px 0;*/
+	margin: 19px;/*18px 18px 0;*/
 	padding:0 10px;
 	-webkit-border-radius:10px; /* Chrome 4.0 and Safari 3.1 */
 	-moz-border-radius:10px; /* Mozilla 3.0 */
@@ -333,12 +333,6 @@ keyframes blink {
 }
 .modal-body{background:#FFF;}
 .blocker {z-index:2!important;top:-5px;}
-/*
-#ui-datepicker-div {
-	position: relative;
-	display:block!important;
-	z-index:1003 !important;}
-	*/
 #intro{
 	float: left;
 	width: 50%;
@@ -356,23 +350,21 @@ keyframes blink {
 	color: rgb(188, 164, 116);
 	font-weight: bold;
 }
-
-.form input,
-.form .message{
+form .form-control input,
+form .form-control .message{
 	width: 96%;
 	margin: 0 2%;
 	display: block;
 	opacity:0.9;
 	font-weight:400;
 	font-family: inherit;
-	font-size: 18px;
-	-webkit-border-radius:0; /* Chrome 4.0 and Safari 3.1 */
-	-moz-border-radius:0; /* Mozilla 3.0 */
-	border-radius:0;
+	font-size: 20px;
+	-webkit-border-radius:4px; /* Chrome 4.0 and Safari 3.1 */
+	-moz-border-radius:4px; /* Mozilla 3.0 */
+	border-radius:4px;
 	line-height: 22px;
 	background-color: #fbfbfb;
-    border: 2px solid #646464!important;
-	padding: 10px 50px;
+    border: 2px solid #AAA!important;
 	margin-bottom: 0px;
 	-webkit-box-sizing: border-box; /* Chrome 4.0 and Safari 3.2 */
 	-moz-box-sizing: border-box; /* Mozilla 2.0 */
@@ -380,7 +372,16 @@ keyframes blink {
 	position: relative;
 	resize: none;
 }
-
+form .form-control input {
+	padding: 10px 50px;
+}
+.form-control .message {
+		padding: 15px;
+	}
+.form-control.single{
+	display: inline-block;
+	width: 100%;
+}
 
 .form .comment-text-area {
 	float: right;
@@ -389,43 +390,6 @@ keyframes blink {
 }
 
 /* Icons ---------------------------------- */
-.form .username,
-.form .username:focus{
-	background-image: url(http://www.meridianwebdesign.com/images/name.svg);
-	background-size: 30px 30px;
-    background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
-
-.form .phone,
-.form .phone:focus{
-	background-image: url(http://www.meridianwebdesign.com/meridian15/images/phone.svg);
-	background-size: 30px 30px;
-    background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
-.form #txtFrom,
-.form #txtFrom:focus,
-.form #txtTo,
-.form #txtTo:focus{
-	background-image: url(	https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT1Wb-N3AF7mXX6zd06chh_kQcMnQdgWjHQnomExqeCBDRFuQlJjcVTzhkU&usqp=CAU&ec=45673586);
-	background-size: 30px 30px;
-    background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
-.form .mail,
-.form .mail:focus{
-	background-image: url(http://www.meridianwebdesign.com/images/email.svg);
-	background-size: 30px 30px;
-  	background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
- .form .message{
-	background-image: url(http://meridianwebdesign.com/images/comment.svg);
-	background-size: 30px 30px;
-	background-position: 11px 8px;
-	background-repeat: no-repeat;
-}
 .form .form-control{
 	position: relative;
 	height:auto;
@@ -435,30 +399,21 @@ keyframes blink {
 	margin-left: 2%;
 	position: absolute;
 }
-.form.form-control input {
-	border-color: #f0f0f0;
-	-webkit-border-radius:4px!important; /* Chrome 4.0 and Safari 3.1 */
-	-moz-border-radius:4px!important; /* Mozilla 3.0 */
-	border-radius:4px!important;
-	display: block;
-	font-family: inherit;
-	font-size: 14px;
-	padding: 10px;
-	width: 100%;
+.form .form-control input {
+    font-family: inherit;
+    font-size: 20px;
+    padding: 10px 0 10px 70px;
+    width: 96%;
+    transition: .3s;
+    outline: none;
 }
-.form.form-control input:valid{
-	border-color: #2ecc71!important;
-}
-.form.form-control input:invalid{
-	border-color: #e74c3c!important;
-}
-.form.form-control input:focus:invalid{
-	border-color: indigo;
-}
-.form .textinput {
+.form .textinput, form .textarea.textinput.message {
   	width: 96%;
-	margin: 0.5% 2% 0%;
-  	min-height: 35px;
+	min-height: 35px;
+	transition: .3s;
+	outline: none;
+	font-size: 20px;
+
 }
 .form .halb{
 	display: block;
@@ -472,22 +427,74 @@ keyframes blink {
 .form .halb:nth-of-type(2n){
 	margin:0;
 }
-.form.form-control.success input{
-	border-color: #2ecc71;
+.form .form-control input:focus,
+.form .form-control textarea:focus{
+	border: 2px solid #0B60D4 !important;
+	box-shadow: 0 0 8px 0 #0B60D4;
+	outline:none !important;
+	color: #0B60D4;
 }
-.form.form-control.error input {
-	border-color: #e74c3c;
-}
-
-.form.form-control i{
+.form-control i{
 	position: absolute;
-	top: 12px;
-	right: 20px;
+	left: 11px;
+    top: 2px;
 	font-size: 20px;
-	visibility: hidden;
+	color:#AAA;
+	padding: 9px 8px;
+	transition: .3s;
+}
+i#owner_icon {
+    padding-left: 16px;
+    margin-left: 9px;
 }
 
-input[type="submit"]{
+
+.form-control input:focus + i,
+.form-control textarea:focus + i{color: #0B60D4;}
+.form-control.InputIconBg i{
+	background-color: #aaa;
+    color: #FFF;
+    padding: 11px 20px;
+}
+.form-control.InputIconBg input:focus + i,
+.form-control.InputIconBg textarea:focus + i{
+	background-color: #0B60D4;
+	color: #FFF;
+}
+input::-webkit-input-placeholder {
+    color: #999;
+}
+input:focus::-webkit-input-placeholder,
+textarea:focus::-webkit-input-placeholder {
+    color:#0B60D4;
+}
+/* Firefox < 19 */
+input:-moz-placeholder {
+    color: #AAA;
+}
+input:focus:-moz-placeholder,
+textarea:focus:-moz-placeholder {
+    color: #0B60D4;
+}
+
+/* Firefox > 19 */
+input::-moz-placeholder {
+    color: #AAA;
+}
+input:focus::-moz-placeholder,
+textarea:focus::-moz-placeholder {
+    color: #0B60D4;
+}
+
+/* Internet Explorer 10 */
+input:-ms-input-placeholder {
+    color: #AAA;
+}
+input:focus:-ms-input-placeholder,
+textarea:focus:-ms-input-placeholder {
+    color:#0B60D4;
+}
+.form input[type="submit"]{
 	background: #0B60D4;
 	border: 2px solid #0B60D4;
 	color:#FFF;
@@ -501,6 +508,11 @@ input[type="submit"]{
 	cursor: pointer;
 	border: none !important;
 	outline:none;
+	opacity: 0.9;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: inherit;
 }
 .form input[type="submit"]:hover {
 	background: #043981;
