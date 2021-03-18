@@ -85,7 +85,7 @@ jQuery("#contact_me").submit(function(e){
 				//Your code for AJAX starts    
 				var values = jQuery('#contact_me').serialize();
 				jQuery.ajax({
-					url: '/classes/form_process.class.php',
+					url: '/classes/Form_process.class.php',
 					type: "post",
 					data: values,
 					dataType: 'json',

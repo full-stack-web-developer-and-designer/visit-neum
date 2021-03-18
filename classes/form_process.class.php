@@ -12,11 +12,11 @@ $dbHost = "localhost:3306";
 $dbUser = "visitneu_MirnesADMIN";
 $dbPassword = "M&102003&g";
 $dbName = "visitneu_contact";
-//$dbCharset="utf8";
 
 try{
 	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName;
 	$pdo = new PDO($dsn, $dbUser, $dbPassword);
+	array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 }catch(PDOException $e){
 	echo "Greška u konekciji: " . $e->getMessage();
 }  
@@ -118,7 +118,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$error = true;
 		$fname_error = "Ime i prezime ne može biti prazno!";
 	}else{
-		$fname = $_POST["fname"];
+		$fname = $_POST['fname'];
 		// check if name only contains letters and whitespace	
 		if(!preg_match("/^[a-zšđčćžA-ZŠĐČĆŽ\s]*$/", $fname)){
 			$fname_error = "Ime i prezime mogu da sadrže samo slova i razmak!";
@@ -127,7 +127,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if(empty($_POST["tel"])) {
 		$tel_error = "Broj telefona ne može biti prazan!";
 	}else{
-		$tel = $_POST["tel"];
+		$tel = $_POST['tel'];
 		// check if
 		if(!preg_match('/^[\+]?[0-9]{9,15}$/', $tel)) {
 			$tel_error = "Broj telefona treba da sadrži minimalno od 9 do 15 brojeva!";
@@ -136,20 +136,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if(empty($txtFrom)){
 		$txtFrom_error = 'Datum odlaska ne može biti prazan!';
 	} else {
-		$txtFrom = date('Y-m-d', strtotime($_POST['txtFrom']));
-		/*// check if date format is valid
-		if(!preg_match("^[a-zšđčćžA-ZŠĐČĆŽ, ]\\d{1,2}/\\d{2}/\\d{4}^", $txtFrom)){
-			$txtFrom_error = 'Datum mora biti u formatu "dan, DD/MM/YY!"';
-		}*/
+		$txtFrom = $_POST['txtFrom'];
 	}
 	if(empty($txtTo)){
 		$txtTo_error = 'Datum odlaska ne može biti prazan!';
 	} else {
-		date('Y-m-d', strtotime($_POST['txtTo']));
-		// check if date format is valid
-		/*if(!preg_match("^[a-zšđčćžA-ZŠĐČĆŽ, ]\\d{1,2}/\\d{2}/\\d{4}^", $txtTo)){
-			$txtTo_error = 'Datum mora biti u formatu "dan, DD/MM/YY!"';
-		}*/
+		$txtTo =$_POST['txtTo'];
 	}
 	if(empty($_POST["userMail"])){
 		$userMail_error = "E-mail ne može biti prazan!";
@@ -169,7 +161,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$userMessage_error = "Sadržaj poruke ne mogu biti specijalni znaci!";
 		}
 	}
-	if($fname_error == '' && $tel_error == '' && $txtFrom_error = '' && $txtTo_error = '' && $userMail_error == '' && $userMessage_error == ''){
+	if($fname_error == '' && $tel_error == '' && $userMail_error == '' && $userMessage_error == ''){
 	$mailOwner = new PHPMailer(true);
 	// Active condition utf-8
 	$mailOwner->CharSet = "UTF-8";
@@ -185,19 +177,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//Email Settings
 	$mailOwner->isHTML(true);
 	$mailOwner->setFrom('booking@visit-neum.com');
-	$mailOwner->addAddress('mirnes.glamocic@gmail.com');
+	$mailOwner->addAddress('kontakt@hotelvillamatic.com');
 	$mailOwner->Subject = "Nova poruka od visit-neum.com";
-	$body = "<p>Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><br><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel ."<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
+	$body = "<p>Poštovani, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
 	$mailOwner->Body = $body;
 	
 
   if($mailOwner->send()) {
-	$mailOwner = "INSERT INTO `visitneu_contact.contact_owner` (fname, tel, txtFrom, txtTo, userMail, userMessage) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage)";
+	$mailOwner = "INSERT INTO visitneu_contact.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage)";
 	$stmt = $pdo->prepare($mailOwner);
 	$stmt->execute(['fname' => $fname, 'tel' => $tel, 'txtFrom' => $txtFrom, 'txtTo' => $txtTo, 'userMail' => $userMail, 'userMessage' => $userMessage]);
 	if($error==false){
 		$data['response'] = "success";
-		$data['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata! Odgovor ćete dobiti ubrzo!";
+		$data['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
 	}
 } 
 else
