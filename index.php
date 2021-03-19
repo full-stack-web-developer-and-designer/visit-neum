@@ -14,7 +14,7 @@ $postArr = Header::get(1);
 <!DOCTYPE html>
 <html lang="bs-BA">
 <?php	
-	$title="Najbolji web-site za Vaše rezervacije u Neumu! | Posjetite odmah!";
+	$title="Najbolji web-site za sve Vaše rezervacije u Neumu! | Posjetite odmah!";
     //Check length of title for SEO (50-70 characters)-66
     //echo "Length of title is " . strlen($title) . "characters long." . " ";
 	$og_title="Najbolji web-site za sve Vaše rezervacije u Neumu!";

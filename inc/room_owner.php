@@ -18,9 +18,9 @@ include_once './classes/Form_process.class.php';
 
 		<div class="form-control halb InputIconBg"><input type="text" id="txtTo" class="input" name="txtTo" placeholder="Datum odlaska..." readonly="readonly" value="<?php echo escape(Input::get('txtTo')); ?>"><i class="far fa-calendar-alt" aria-hidden="true"></i><span class="error"><?=$txtTo_error; ?></span></div><!-- end .form-control -->
 
-		<div class="form-control single InputIconBg"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('userMail')); ?>"><i id="owner_icon" class="fas fa-envelope" aria-hidden="true"></i><span class="error"><?=$userMail_error; ?></span></div><!-- end .form-control --> 
+		<div class="form-control single InputIconBg"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo escape(Input::get('userMail')); ?>"><i id="" class="fas fa-envelope owner_icon" aria-hidden="true"></i><span class="error"><?=$userMail_error; ?></span></div><!-- end .form-control --> 
 			
-		<div class="form-control InputIconBg"><textarea maxlength="500" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo htmlspecialchars(Input::get('userMessage')); ?></textarea><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="error"><?=$userMessage_error; ?></span></div><!-- end .form-control -->
+		<div class="form-control InputIconBg"><textarea maxlength="1000" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo htmlspecialchars(Input::get('userMessage')); ?></textarea><i class="fas fa-pencil-alt owner_icon" aria-hidden="true"></i><span class="error"><?=$userMessage_error; ?></span></div><!-- end .form-control -->
 			
 	</fieldset>
 	<input type="hidden" name="token" value="<?php //echo Token::generate(); ?>">

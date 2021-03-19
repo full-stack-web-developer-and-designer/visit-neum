@@ -62,7 +62,7 @@ jQuery(document).ready(function (){
             userMessage:{
               required: true,
               validUserMessage: true,
-              maxlength: 500
+              maxlength: 1000
           }
         },
         messages: {
@@ -90,7 +90,7 @@ jQuery(document).ready(function (){
              userMessage: {
               required: 'Sadržaj poruke ne može biti prazan!',
               validUserMessage: 'Sadržaj poruke ne mogu biti specijalni znaci i ENTER!',
-              maxlength: 'Poruka može da sadrži maksimalno 500 karaktera!'
+              maxlength: 'Poruka može da sadrži maksimalno 1000 karaktera!'
           }
          },
                 submitHandler: function(form) {

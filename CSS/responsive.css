@@ -75,10 +75,86 @@
         font-size: 16px;
         padding: 0;
     }
-    .form .form-control input,
-    form .form-control .message {
+    .InputIconBg i {
+        display: none;
+    }
+    form .form-control input,
+    form .form-control .message{
+        padding: 10px;
         font-size: 14px;
-        padding: 10px 10px;
+    }
+}
+@media screen and (min-width: 310px) and (max-width: 369px) {
+    form .form-control input,
+    form .form-control .message{
+        padding: 11px 10px 10px 50px;
+        font-size: 14px;
+    }
+    .form-control i {
+        left: 6px;
+    }
+    #contact_me .form-control i {
+        left: 6px;
+    }
+    .form-control.InputIconBg i {
+        padding: 11px 12px 12px;
+    }
+    .form-control.InputIconBg i.contact_icon {
+        padding: 11px;
+    }
+    .form-control.InputIconBg i.contact_icon.fas.fa-user {
+        padding: 11px 12px 12px;
+    }
+    .form-control i.contact_icon.fas.fa-pencil-alt {
+        padding: 88.5px 11px;
+    }
+    .form-control.InputIconBg i.owner_icon {
+        margin-left: 0px;
+        padding: 11px 12px 12px;
+    }
+    .form-control.InputIconBg i.contact_icon.fas.fa-envelope {
+        padding: 11px 11px 12px;
+    }
+    .form-control.InputIconBg i.fas.fa-phone-alt {
+        padding: 12px 12px 11px;
+    }
+    .form-control i.owner_icon.fas.fa-pencil-alt {
+        padding: 88.5px 11px;
+    }
+}
+@media screen and (min-width: 370px) and (max-width: 408px) {
+    form .form-control input,
+    form .form-control .message{
+        padding: 11px 10px 10px 50px;
+        font-size: 17px;
+    }
+    .form-control i {
+        left: 7px;
+    }
+    #contact_me .form-control i {
+        left: 7px;
+    }
+    .form-control.InputIconBg i {
+        padding: 12px 13px 11px;
+    }
+    .form-control.InputIconBg i.contact_icon {
+        padding: 12px;
+    }
+    .form-control.InputIconBg i.contact_icon.fas.fa-user {
+        padding: 12px 13px 11px;
+    }
+    .form-control i.contact_icon.fas.fa-pencil-alt {
+        padding: 88.5px 12px;
+    }
+    .form-control.InputIconBg i.owner_icon {
+        margin-left: 0px;
+        padding: 12px;
+    }
+    .form-control.InputIconBg i.fas.fa-phone-alt {
+        padding: 12px 12px 11px;
+    }
+    .form-control i.owner_icon.fas.fa-pencil-alt {
+        padding: 88.5px 12px;
     }
 }
 @media screen and (max-width: 409px) {
@@ -128,14 +204,6 @@
     .disable {
         display: block;
     }
-    .InputIconBg i {
-        display: none;
-    }
-    .form .form-control input,
-    form .form-control .message {
-        font-size: 16px;
-        padding: 10px 10px 10px 20px;
-    }
     #main p.important {
         margin: 2% auto 0;
     }
@@ -174,6 +242,7 @@
         margin-bottom: 0;
     }
 }
+
 @media screen and (min-width: 310px) and (max-width: 767px) {
     .offer a:link span,
     .offer a:visited span {
@@ -184,12 +253,6 @@
     }
     .offer a:active span {
         border-bottom: 5px solid #032b62;
-    }
-    .form-control i {
-        left: 10px;
-    }
-    .form-control.InputIconBg i {
-        padding: 11px 18px;
     }
 }
 @media screen and (min-width: 410px) and (max-width: 767px) {
@@ -230,9 +293,6 @@
     #sidebar a:nth-of-type(2n) .imgRight {
         margin: 0 0 2%;
     }
-    .form .form-control input {
-        margin-left: 9px;
-    }
     .disable {
         display: inline-block;
     }
@@ -256,6 +316,32 @@
     .products {
         margin-bottom: 0;
     }
+    form .form-control input,
+    form .form-control .message{
+        padding: 15px 10px 15px 65px;
+    }
+    .form-control.InputIconBg i {
+        padding: 16px 19px;
+    }
+    .form-control.InputIconBg i.fas.fa-phone-alt {
+        padding: 16px 18px;
+    }
+    .form-control.InputIconBg i.contact_icon.fas.fa-user {
+        padding: 16px 20px;
+    }
+    .form-control.InputIconBg i.contact_icon {
+        padding: 16px 18px;
+    }
+    .form-control i.contact_icon.fas.fa-pencil-alt {
+        padding: 93px 18px;
+    }
+    .form-control.InputIconBg i.owner_icon {
+        margin: 0;
+        padding: 16px 17px;
+    }
+    .form-control i.owner_icon.fas.fa-pencil-alt {
+        padding: 93px 17px;
+    }
 }
 @media screen and (max-width: 445px) {
     .weatherwidget-io {
@@ -264,19 +350,29 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
     }
-    i.fas.fa-phone-alt {
-        padding: 11px 17px;
-    }
-    .InputIconBg i#owner_icon {
-        padding-left: 16px;
-        margin-left: 0;
-    }
 }
 @media screen and (max-width: 520px) {
+    /* display error messages under inputs */
     .form .form-control label {
         display: inline;
         margin-left: 2%;
         position: static;
+    }
+}
+@media screen and (min-width: 410px) and (max-width: 520px) {
+    .form-control i {
+        left: 8px;
+    }
+    #contact_me .form-control i {
+        left: 8px;
+    }
+}
+@media screen and (min-width: 521px) and (max-width: 635px) {
+    .form-control i {
+        left: 10px;
+    }
+    #contact_me .form-control i {
+        left: 10px;
     }
 }
 @media screen and (min-width: 521px) and (max-width: 767px) {
@@ -285,12 +381,7 @@
     }
     .offer a span {
         font-size: 17px;
-    }
-    .form .form-control input,
-    .form-control .message {
-        font-size: 18px;
-        padding: 10px 10px 10px 70px;
-    }
+    }   
 }
 @media screen and (min-width: 636px) and (max-width: 767px) {
     .imgCentral {
@@ -312,9 +403,13 @@
         margin-right: 0;
         margin-bottom: 0;
     }
-    .form-control .message {
-        padding: 12px;
+    .form-control i {
+        left: 14px;
     }
+    #contact_me .form-control i {
+        left: 14px;
+    }
+    
 }
 @media screen and (max-width: 767px) {
     #wrapper {
@@ -382,13 +477,6 @@
         width: 100%;
         margin: 0;
         float: none;
-        padding-left: 2px;
-    }
-    i#owner_icon {
-        margin: 0;
-    }
-    .form-control .message {
-        padding: 10px 10px;
     }
     #intro,
     #ad {
@@ -410,8 +498,7 @@
         pointer-events: all;
     }
     #nav li#nav_right a button {
-        margin-top: 10px;
-        padding: 0 10px;
+        padding: 10px 0;
     }
     #respmenu {
         display: block;
@@ -573,6 +660,9 @@
         bottom: 128px;
         right: 0;
     }
+    button.nav_right.modal-btn:hover {
+        height: max-content;
+    }
     #nav_right a:link,
     #nav_right a:visited,
     #nav_right a:hover,
@@ -686,26 +776,40 @@
     #contact .table_information {
         width: 40%;
     }
-    input,
-    form .form-control .message {
-        padding: 15px;
+    form .form-control input,
+    form .form-control .message{
+        padding: 15px 10px 15px 65px;
     }
     .form .halb:nth-of-type(2n) {
-        padding-left: 1px;
-    }
-    .form .halb {
-        padding-left: 1px;
+        padding-left: 0;
     }
     .form-control i {
-        padding-left: 6px;
-        left: 12px;
+        left: 8px;
     }
-    i#owner_icon {
-        padding-left: 16px;
-        margin: 0 3px;
+    #contact_me .form-control i {
+        left: 8px;
     }
     .form-control.InputIconBg i {
-        margin-left: -3px;
+        padding: 16px 20px;
+    }
+    .form-control.InputIconBg i.fas.fa-phone-alt {
+        padding: 16px 19px;
+    }
+    .form-control.InputIconBg i.contact_icon.fas.fa-user {
+        padding: 16px 21px;
+    }
+    .form-control.InputIconBg i.contact_icon {
+        padding: 16px 19px;
+    }
+    .form-control i.contact_icon.fas.fa-pencil-alt {
+        padding: 93px 19px;
+    }
+    .form-control.InputIconBg i.owner_icon {
+        margin-left: 6px;
+        padding: 16px 18px;
+    }
+    .form-control i.owner_icon.fas.fa-pencil-alt {
+        padding: 93px 18px;
     }
     .accomodation #main,
     .accomodation #sidebar {
@@ -766,6 +870,7 @@
         margin: 20px 20px;
         padding: 1px 10px;
     }
+ 
     #main {
         width: 630px;
         padding-right: 10px;
@@ -796,6 +901,31 @@
     .accomodation #sidebar {
         width: 950px;
         margin: 0;
+    }
+    .form-control i {
+        left: 10px;
+    }
+    .form-control.InputIconBg i {
+        padding: 16px 21px;
+    }
+    .form-control.InputIconBg i.fas.fa-phone-alt {
+        padding: 16px 20px;
+    }
+    .form-control.InputIconBg i.contact_icon.fas.fa-user {
+        padding: 16px 22px;
+    }
+    .form-control.InputIconBg i.contact_icon {
+        padding: 16px 20px;
+    }
+    .form-control i.contact_icon.fas.fa-pencil-alt {
+        padding: 93px 20px;
+    }
+    .form-control.InputIconBg i.owner_icon {
+        margin-left: 9px;
+        padding: 16px 19px;
+    }
+    .form-control i.owner_icon.fas.fa-pencil-alt {
+        padding: 93px 19px;
     }
     .imgCentral {
         margin: 10px 10px 0 0;
@@ -888,9 +1018,6 @@
         margin: 0 auto 2px;
         padding-left: 305px;
     }
-    .form .halb:nth-of-type(2n) {
-        padding-left: 1px;
-    }
     .accomodation #sidebar {
         margin-bottom: 10px;
     }
@@ -920,9 +1047,6 @@
         width: 850px;
         padding-right: 10px;
     }
-    #main h1 {
-        padding: 1px 0;
-    }
     #main p {
         margin: 10px;
     }
@@ -944,6 +1068,28 @@
     }
     #main h2 {
         margin: 0 0 5px;
+    }
+    .form-control.InputIconBg i {
+        padding: 16px 22px;
+    }
+    .form-control.InputIconBg i.fas.fa-phone-alt {
+        padding: 16px 21px;
+    }
+    .form-control.InputIconBg i.contact_icon.fas.fa-user {
+        padding: 16px 23px;
+    }
+    .form-control.InputIconBg i.contact_icon {
+        padding: 16px 21px;
+    }
+    .form-control i.contact_icon.fas.fa-pencil-alt {
+        padding: 93px 21px;
+    }
+    .form-control.InputIconBg i.owner_icon {
+        margin-left: 9px;
+        padding: 16px 20px;
+    }
+    .form-control i.owner_icon.fas.fa-pencil-alt {
+        padding: 93px 20px;
     }
     .imgCentral {
         margin: 10px 10px 0 0;

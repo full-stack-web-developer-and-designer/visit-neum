@@ -350,6 +350,18 @@ keyframes blink {
 	color: rgb(188, 164, 116);
 	font-weight: bold;
 }
+
+
+/* Icons ---------------------------------- */
+.form .form-control{
+	position: relative;
+	height:auto;
+}
+.form .form-control label{
+	display: inline-block;
+	margin-left: 2%;
+	position: absolute;
+}
 form .form-control input,
 form .form-control .message{
 	width: 96%;
@@ -371,11 +383,9 @@ form .form-control .message{
 	box-sizing: border-box;
 	position: relative;
 	resize: none;
-}
-form .form-control input {
-	padding: 10px 10px 10px 50px;
-}
-.form-control .message {
+	outline: none;
+	color: #AAA;
+	transition: .3s;
 	padding: 15px 15px 15px 70px;
 }
 .form-control.single{
@@ -387,25 +397,6 @@ form .form-control input {
 	float: right;
     width: calc(100% - 10px);
 	height: auto; 
-}
-
-/* Icons ---------------------------------- */
-.form .form-control{
-	position: relative;
-	height:auto;
-}
-.form .form-control label{
-	display: inline-block;
-	margin-left: 2%;
-	position: absolute;
-}
-.form .form-control input {
-    font-family: inherit;
-    font-size: 20px;
-    padding: 10px 0 10px 70px;
-    width: 96%;
-    transition: .3s;
-    outline: none;
 }
 .form .textinput, form .textarea.textinput.message {
   	width: 96%;
@@ -434,6 +425,7 @@ form .form-control input {
 	outline:none !important;
 	color: #0B60D4;
 }
+
 .form-control i{
 	position: absolute;
 	left: 11px;
@@ -443,60 +435,36 @@ form .form-control input {
 	padding: 9px 8px;
 	transition: .3s;
 }
-i#owner_icon {
-    padding-left: 16px;
-    margin-left: 9px;
+.form-control.InputIconBg i {
+    background-color: #aaa;
+    color: #FFF;
+    padding: 16px 23px;
 }
-.form-control i.fas.fa-pencil-alt {
-    padding: 93px 18px;
-    margin-left: 10px;
+.form-control.InputIconBg i.fas.fa-phone-alt {
+    padding: 16px 22px;
 }
-
-
+.form-control.InputIconBg i.contact_icon.fas.fa-user {
+    padding: 16px 24px;
+}
+.form-control.InputIconBg i.contact_icon {
+    padding: 16px 22px;
+}
+.form-control i.contact_icon.fas.fa-pencil-alt {
+    padding: 93px 22px;
+}
+.form-control.InputIconBg i.owner_icon {
+	margin-left: 9px;
+	padding: 16px 21px;
+}
+.form-control i.owner_icon.fas.fa-pencil-alt {
+    padding: 93px 21px;
+}
 .form-control input:focus + i,
 .form-control textarea:focus + i{color: #0B60D4;}
-.form-control.InputIconBg i{
-	background-color: #aaa;
-    color: #FFF;
-    padding: 11px 20px;
-}
 .form-control.InputIconBg input:focus + i,
 .form-control.InputIconBg textarea:focus + i{
 	background-color: #0B60D4;
 	color: #FFF;
-}
-input::-webkit-input-placeholder {
-    color: #999;
-}
-input:focus::-webkit-input-placeholder,
-textarea:focus::-webkit-input-placeholder {
-    color:#0B60D4;
-}
-/* Firefox < 19 */
-input:-moz-placeholder {
-    color: #AAA;
-}
-input:focus:-moz-placeholder,
-textarea:focus:-moz-placeholder {
-    color: #0B60D4;
-}
-
-/* Firefox > 19 */
-input::-moz-placeholder {
-    color: #AAA;
-}
-input:focus::-moz-placeholder,
-textarea:focus::-moz-placeholder {
-    color: #0B60D4;
-}
-
-/* Internet Explorer 10 */
-input:-ms-input-placeholder {
-    color: #AAA;
-}
-input:focus:-ms-input-placeholder,
-textarea:focus:-ms-input-placeholder {
-    color:#0B60D4;
 }
 .form input[type="submit"]{
 	background: #0B60D4;
@@ -803,7 +771,7 @@ a:nth-of-type(4n) .imgCentral{
 	box-sizing: border-box;
 }
 #map_matic{
-	height: 295px;
+	height: 300px;
 }
 #map_mampas{
 	height: 341px;
