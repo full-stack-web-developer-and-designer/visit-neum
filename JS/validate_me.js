@@ -56,7 +56,7 @@ jQuery("#contact_me").submit(function(e){
 		message:{
 		  required: true,
 		  validMessage: true,
-		  maxlength: 500
+		  maxlength: 1000
 	  }
 	},
 	messages: {
@@ -78,7 +78,7 @@ jQuery("#contact_me").submit(function(e){
 	  message: {
 		  required: 'Sadržaj poruke ne može biti prazan!',
 		  validMessage: 'Sadržaj poruke ne mogu biti specijalni znaci!',
-		  maxlength: 'Poruka može da sadrži maksimalno 500 karaktera!'
+		  maxlength: 'Poruka može da sadrži maksimalno 1000 karaktera!'
 	  }
 	 },
 	        submitHandler: function (_form) {
