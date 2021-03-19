@@ -57,7 +57,7 @@ $postArr = Header::get(1)
         </tr>
         <tr>
           <td class="table_information">Telefon:</td>
-			<td><a href="tel:+387 63 994 092" title="Pozovite sada">+387 63 994 092</a></td>
+			<td><a href="tel:+387 63 994 092">+387 63 994 092</a></td>
         </tr>
         <tr>
           <td class="table_information">Adresa:</td>

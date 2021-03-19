@@ -373,11 +373,11 @@ form .form-control .message{
 	resize: none;
 }
 form .form-control input {
-	padding: 10px 50px;
+	padding: 10px 10px 10px 50px;
 }
 .form-control .message {
-		padding: 15px;
-	}
+	padding: 15px 15px 15px 70px;
+}
 .form-control.single{
 	display: inline-block;
 	width: 100%;
@@ -446,6 +446,10 @@ form .form-control input {
 i#owner_icon {
     padding-left: 16px;
     margin-left: 9px;
+}
+.form-control i.fas.fa-pencil-alt {
+    padding: 93px 18px;
+    margin-left: 10px;
 }
 
 

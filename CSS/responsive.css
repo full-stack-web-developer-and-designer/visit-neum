@@ -1,1 +1,1026 @@
-@charset "UTF-8";@media screen and (max-width:309px){#slogan p{font-size:14px}#slogan #number{font-size:12px}#contact td{display:inline-block;width:100%;text-align:center}#contact th[colspan="2"],#contact td[colspan="2"]{padding:5px 0}.product,.offer,.imgCentral,.imgRight,.video,.map{border:none!important}#contact{border:1px solid #717171}.accomodation #main .product .text h2{font-size:22px}#question,#price{display:inline-block;width:80%;text-align:center;padding:5px 0;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}#price{margin:0}#question{margin:10px 0 0}.offer a span{font-size:14px;height:25px;line-height:25px;border-bottom:1px solid #032b62}.offer a:link span,.offer a:visited span{border-bottom:3px solid #032b62}.offer a:hover span{background:#043981;border-bottom:3px solid #032b62}.offer a:active span{background:#032b62;border-bottom:3px solid #032b62}.text{padding-top:2px;padding-left:0;display:block;margin:0 auto}.offer a:hover:after{width:100%;height:auto;font-size:16px;padding:0}.form .form-control input,form .form-control .message{font-size:14px;padding:10px 10px}}@media screen and (max-width:409px){#nav{margin:4% auto;font-size:16px}.modal{max-width:100%}#main{margin-bottom:4%}#main h1,small#title{font-size:19px}#main h1{padding:.4% 2%}#main p{margin:4% auto;padding:0 2%}#main .pregled{margin:4% auto}#main p.important{padding:0}#sidebar{margin:0}.imgCentral,.imgRight{margin:0 auto 4%;display:block;width:100%}.offers{margin-top:4%;margin-bottom:-3%}a:nth-of-type(12) .imgCentral{margin-bottom:0}.disable{display:block}.InputIconBg i{display:none}.form .form-control input,form .form-control .message{font-size:16px;padding:10px 10px 10px 20px}#main p.important{margin:2% auto 0}.accomodation #main h2{margin:0 auto 4%}.offer{margin:0 auto 4%}.products{margin-bottom:1%}.map,#contact,.accomodation #sidebar,.weatherwidget-io{margin-bottom:4%}.video{margin:4% auto 0}#exchangeRates{margin:0 auto 4%}}@media screen and (min-width:410px) and (max-width:635px){.imgCentral{margin:0 2% 2% 0;width:49%}a:nth-of-type(2n) .imgCentral{margin-right:0}a:nth-of-type(11) .imgCentral,a:nth-of-type(12) .imgCentral{margin-bottom:0}}@media screen and (min-width:310px) and (max-width:767px){.offer a:link span,.offer a:visited span{border-bottom:5px solid #032b62}.offer a:hover span{border-bottom:5px solid #032b62}.offer a:active span{border-bottom:5px solid #032b62}.form-control i{left:10px}.form-control.InputIconBg i{padding:11px 18px}}@media screen and (min-width:410px) and (max-width:767px){#nav{margin:2% auto;font-size:18px}#main{margin:0 auto}#main h1,small#title{font-size:20px}#main h1{padding:.5% 2%}#main p{margin:2% auto 0;padding:0 2%}#main .pregled{margin:2% auto}.text{width:50%;margin:0 auto}.imgRight{float:left;width:49%;vertical-align:middle;margin:0 2% 2% 0}a:nth-of-type(2n) .imgRight{margin-right:0}#sidebar a:nth-of-type(2n) .imgRight{margin:0 0 2%}.form .form-control input{margin-left:9px}.disable{display:inline-block}#contact{margin:0 auto 2%}.map,.weatherwidget-io{margin-bottom:2%}.video{margin:2% auto 0}#exchangeRates{margin:0 auto 2%}.offers{margin-top:2%;margin-bottom:0}.products{margin-bottom:0}}@media screen and (max-width:445px){.weatherwidget-io{width:100%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}i.fas.fa-phone-alt{padding:11px 17px}.InputIconBg i#owner_icon{padding-left:16px;margin-left:0}}@media screen and (max-width:520px){.form .form-control label{display:inline;margin-left:2%;position:static}}@media screen and (min-width:521px) and (max-width:767px){.text h2{font-size:28px}.offer a span{font-size:17px}.form .form-control input,.form-control .message{font-size:18px;padding:10px 10px 10px 70px}}@media screen and (min-width:636px) and (max-width:767px){.imgCentral{margin:0 2% 2% 0;width:32%;vertical-align:middle}a:nth-of-type(3n) .imgCentral{margin-right:0}a:nth-of-type(4n) .imgCentral{margin-right:2%}a:nth-of-type(10) .imgCentral,a:nth-of-type(11) .imgCentral{margin-bottom:0}a:nth-of-type(12) .imgCentral{margin-right:0;margin-bottom:0}.form-control .message{padding:12px}}@media screen and (max-width:767px){#wrapper{width:95%;padding:2.5%}p{margin:10px}#logo{float:none;text-align:center;margin:5px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.39)}#slogan{float:none;margin:0 5px}#slogan p{margin:10px 15px;padding-top:2px}#slogan #number{margin-left:0}#nav{height:auto;float:none}#nav ul li{float:none;padding:0;display:block}#nav ul li .fa-arrow-down{display:none}#nav ul li ul li{display:none}#nav #nav_right{float:none;display:block;width:100%;height:auto}#nav li#nav_right a button{width:100%}.modal{padding:10px!important}.modal .close_btn{position:absolute;top:-16px!important;right:-16px!important;-webkit-border-radius:50%!important;-moz-border-radius:50%!important;border-radius:50%!important}.form .halb{display:block;width:100%;margin:0;float:none;padding-left:2px}i#owner_icon{margin:0}.form-control .message{padding:10px 10px}#intro,#ad{float:none;width:100%}.sign{margin:5px 0 10px}#nav ul li:not([id="nav_right"]) a{padding:5px 10px;height:auto;border-bottom:1px solid rgba(252,251,251,0.24)}#nav>ul{display:none}#nav ul>li>a{pointer-events:all}#nav li#nav_right a button{margin-top:10px;padding:0 10px}#respmenu{display:block}#main,#sidebar{padding:0;display:block;float:none;width:auto}.lSSlideOuter .lSPager.lSpg{margin-top:1.5%!important}#sidebar{background:#FFF;margin:0}#main h1{margin:0 2%}#main h2{margin:0 auto 1%}#main .pregled{text-align:center}#main p.important{margin:1% auto 0;text-align:center}.block{display:block}.imgCentral{border:2px solid #717171;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;float:none;display:inline-block;height:auto}.imgRight{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;border:2px solid #717171}.none{display:none}#contact{width:100%;border:1px solid #717171;border-right:2px solid #717171}#contact a{text-decoration:underline}.map,.video{border:2px solid #717171;height:292px!important}.accomodation #main,.accomodation #sidebar,.accomodation #p_left{width:auto;margin:0 auto}.accomodation #p_left{float:none}.accomodation #main h2{padding-left:38px;margin:0 auto}.offer,.product{width:100%}.offer a:hover:after{display:none}.offer{border:1px solid #0658c5}article.product{width:100%!important;border:2px solid #717171}.offer a:hover span{background:#043981}.offer a:active span{background:#032b62}.offer:hover{-webkit-transform:none;-moz-transform:none;-ms-transform:none;-o-transform:none;transform:none}#exchangeRates{display:block;border:1px solid #717171;border-right:2px solid #717171;float:none}.footer_none{display:none}.footer_comma{display:inline}.footer_block{display:block}}@media screen and (min-width:768px) and (max-width:1023px){#wrapper{width:700px;padding:10px;position:relative}p{padding-left:10px}#header{position:relative}#logo{float:none;text-align:center;border-bottom:1px solid rgba(255,255,255,0.39);border-top:1px solid #0648a0;margin:0}#slogan{float:none;margin:14px 12px 16px;padding:0 5px}#slogan p{padding-top:2px}#slogan #number{margin-left:0}#nav{float:none}#nav #nav_right,#nav li#nav_right a button{position:absolute;bottom:128px;right:0}#nav_right a:link,#nav_right a:visited,#nav_right a:hover,#nav_right a:active{-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px}#main{width:680px;padding:0;margin:0 auto 2%;float:none}#main h1,small#title{font-size:22px}#main h1{margin:0 170px}.accomodation #main h1{margin:0 135px}#main h2{margin:0 auto 1%}#main p.important{padding-left:0;text-align:center;margin-bottom:0}#main .pregled{margin:0 35px 10px 0}.text h3{font-size:28px}.weatherwidget-io{margin-bottom:2%;position:relative}.imgCentral{float:none;display:inline-block;vertical-align:middle;margin:0 2% 2% 0;width:32%;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}a:nth-of-type(4n) .imgCentral{margin-right:2%}a:nth-of-type(3n) .imgCentral{margin-right:0}a:nth-of-type(10) .imgCentral,a:nth-of-type(11) .imgCentral,a:nth-of-type(12) .imgCentral{margin-bottom:0}.cover{margin:6px 0}#sidebar{width:680px;padding:0;float:none;background:#FFF;margin:0 auto}.imgRight{float:left;width:49%;vertical-align:middle;margin:0 2% 2% 0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}a:nth-of-type(2n) .imgRight{margin-right:0}.disable{display:inline}.none{display:none}.map,.video,#contact{margin:0 auto}.map{display:block}.video{margin-top:2%;height:300px}.map,.video{height:294px!important}#contact{margin-bottom:2%}#contact .table_information{width:40%}input,form .form-control .message{padding:15px}.form .halb:nth-of-type(2n){padding-left:1px}.form .halb{padding-left:1px}.form-control i{padding-left:6px;left:12px}i#owner_icon{padding-left:16px;margin:0 3px}.form-control.InputIconBg i{margin-left:-3px}.accomodation #main,.accomodation #sidebar{width:700px}.accomodation #main{margin:0}.accomodation #main h2{padding-left:21px;margin:0 0 8px}.accomodation #p_left{float:none;width:700px;padding-right:0}#exchangeRates{float:none;margin:0 auto;display:block;margin-bottom:15px}.products{margin-bottom:5px}.product{width:342px}.accomodation #sidebar{margin-bottom:10px}.offer{width:342px}.offer a:hover:after{width:342px;padding:110px 0}.text{padding-left:20px}}@media screen and (max-width:1023px){.main-outer{display:flex;-webkit-flex-direction:column-reverse;-moz-flex-direction:column-reverse;flex-direction:column-reverse}}@media screen and (min-width:1024px) and (max-width:1149px){#wrapper{width:950px;padding:10px}#slogan{margin:20px 20px;padding:1px 10px}#main{width:630px;padding-right:10px}#main h1,small#title{font-size:22px}#main h1{margin:0 100px}#main h2{margin:4px auto}#main p{margin:10px 0 0}.no_margin{display:none}#main .pregled{margin:10px 20px 0 0}#main #pregled{margin-top:0}.accomodation #main,.accomodation #sidebar{width:950px;margin:0}.imgCentral{margin:10px 10px 0 0;border:2px solid #717171;width:199px}a:nth-of-type(4n) .imgCentral{margin-right:10px}a:nth-of-type(3n) .imgCentral{margin-right:0}.video{border:2px solid #717171;margin:15px 0 7px;height:344px}.map{border:2px solid #717171}#map_mampas{height:344px}#map_matic{height:331px}#map_brod{height:275px}#brod_video{height:275px}#sidebar{width:290px;padding:10px}.disable{display:block}.none,.p_hidden{display:none}#contact{border:1px solid #717171;border-right:2px solid #717171}#contact td{padding:5px}#contact th[colspan="2"],#contact td[colspan="2"]{padding:5px}#contact h3{font-size:17px}#website{font-size:15px}#question{margin:5px auto 0}#question,#price{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:15px 0;font-size:15px}.imgRight{margin:10px 0 0;width:294px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border:2px solid #717171}.accomodation #p_left{width:636px;padding-right:10px}p.important{margin:10px 0;text-align:center;padding:0}.accomodation #main h2{margin:0 auto 2px;padding-left:305px}.form .halb:nth-of-type(2n){padding-left:1px}.accomodation #sidebar{margin-bottom:10px}.offer{width:310px}.offer a:hover:after{width:310px;padding:101px 0}.product{width:310px}.weatherwidget-io{margin:0}i#owner_icon{margin-left:8px}}@media screen and (min-width:1150px) and (max-width:1260px){#wrapper{width:1100px;padding:10px}#main{width:850px;padding-right:10px}#main h1{padding:1px 0}#main p{margin:10px}#main .p_none{margin:0 10px}.no_margin,.p_hidden{display:none}#main p.important{margin-bottom:0}.block{display:block}#main h1{padding:1px 0}#main h2{margin:0 0 5px}.imgCentral{margin:10px 10px 0 0;width:199px}.video{margin:10px 0 0;height:324.5px}#map_mampas{height:324.5px}#map_matic{height:310px}#map_brod{height:342px}#brod_video{height:342px}#sidebar{width:220px}#contact th{padding:7px 0}.imgRight{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.disable{display:block}.accomodation #main,.accomodation #sidebar{width:1100px}.accomodation #main{margin:0}.accomodation #p_left{width:781px;padding:0}.accomodation #main h2{font-size:28px;padding-left:340px;margin:0 auto}#exchangeRates{margin-bottom:15px}.offer{width:267.5px}.offer a:hover:after{width:267.5px;padding:89px 0}.products{margin-bottom:10px}.product{width:267.5px}.lslide{padding-left:1px}.lslide>img{width:100%}.accomodation #sidebar{margin-bottom:10px}.weatherwidget-io{margin-bottom:10px}}
+@charset "UTF-8";
+@media screen and (max-width: 309px) {
+    #slogan p {
+        font-size: 14px;
+    }
+    #slogan #number {
+        font-size: 12px;
+    }
+    #contact td {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+    #contact th[colspan="2"],
+    #contact td[colspan="2"] {
+        padding: 5px 0;
+    }
+    .product,
+    .offer,
+    .imgCentral,
+    .imgRight,
+    .video,
+    .map {
+        border: none !important;
+    }
+    #contact {
+        border: 1px solid #717171;
+    }
+    .accomodation #main .product .text h2 {
+        font-size: 22px;
+    }
+    #question,
+    #price {
+        display: inline-block;
+        width: 80%;
+        text-align: center;
+        padding: 5px 0;
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+    #price {
+        margin: 0;
+    }
+    #question {
+        margin: 10px 0 0;
+    }
+    .offer a span {
+        font-size: 14px;
+        height: 25px;
+        line-height: 25px;
+        border-bottom: 1px solid #032b62;
+    }
+    .offer a:link span,
+    .offer a:visited span {
+        border-bottom: 3px solid #032b62;
+    }
+    .offer a:hover span {
+        background: #043981;
+        border-bottom: 3px solid #032b62;
+    }
+    .offer a:active span {
+        background: #032b62;
+        border-bottom: 3px solid #032b62;
+    }
+    .text {
+        padding-top: 2px;
+        padding-left: 0;
+        display: block;
+        margin: 0 auto;
+    }
+    .offer a:hover:after {
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+        padding: 0;
+    }
+    .form .form-control input,
+    form .form-control .message {
+        font-size: 14px;
+        padding: 10px 10px;
+    }
+}
+@media screen and (max-width: 409px) {
+    #nav {
+        margin: 4% auto;
+        font-size: 16px;
+    }
+    .modal {
+        max-width: 100%;
+    }
+    #main {
+        margin-bottom: 4%;
+    }
+    #main h1,
+    small#title {
+        font-size: 19px;
+    }
+    #main h1 {
+        padding: 0.4% 2%;
+    }
+    #main p {
+        margin: 4% auto;
+        padding: 0 2%;
+    }
+    #main .pregled {
+        margin: 4% auto;
+    }
+    #main p.important {
+        padding: 0;
+    }
+    #sidebar {
+        margin: 0;
+    }
+    .imgCentral,
+    .imgRight {
+        margin: 0 auto 4%;
+        display: block;
+        width: 100%;
+    }
+    .offers {
+        margin-top: 4%;
+        margin-bottom: -3%;
+    }
+    a:nth-of-type(12) .imgCentral {
+        margin-bottom: 0;
+    }
+    .disable {
+        display: block;
+    }
+    .InputIconBg i {
+        display: none;
+    }
+    .form .form-control input,
+    form .form-control .message {
+        font-size: 16px;
+        padding: 10px 10px 10px 20px;
+    }
+    #main p.important {
+        margin: 2% auto 0;
+    }
+    .accomodation #main h2 {
+        margin: 0 auto 4%;
+    }
+    .offer {
+        margin: 0 auto 4%;
+    }
+    .products {
+        margin-bottom: 1%;
+    }
+    .map,
+    #contact,
+    .accomodation #sidebar,
+    .weatherwidget-io {
+        margin-bottom: 4%;
+    }
+    .video {
+        margin: 4% auto 0;
+    }
+    #exchangeRates {
+        margin: 0 auto 4%;
+    }
+}
+@media screen and (min-width: 410px) and (max-width: 635px) {
+    .imgCentral {
+        margin: 0 2% 2% 0;
+        width: 49%;
+    }
+    a:nth-of-type(2n) .imgCentral {
+        margin-right: 0;
+    }
+    a:nth-of-type(11) .imgCentral,
+    a:nth-of-type(12) .imgCentral {
+        margin-bottom: 0;
+    }
+}
+@media screen and (min-width: 310px) and (max-width: 767px) {
+    .offer a:link span,
+    .offer a:visited span {
+        border-bottom: 5px solid #032b62;
+    }
+    .offer a:hover span {
+        border-bottom: 5px solid #032b62;
+    }
+    .offer a:active span {
+        border-bottom: 5px solid #032b62;
+    }
+    .form-control i {
+        left: 10px;
+    }
+    .form-control.InputIconBg i {
+        padding: 11px 18px;
+    }
+}
+@media screen and (min-width: 410px) and (max-width: 767px) {
+    #nav {
+        margin: 2% auto;
+        font-size: 18px;
+    }
+    #main {
+        margin: 0 auto;
+    }
+    #main h1,
+    small#title {
+        font-size: 20px;
+    }
+    #main h1 {
+        padding: 0.5% 2%;
+    }
+    #main p {
+        margin: 2% auto 0;
+        padding: 0 2%;
+    }
+    #main .pregled {
+        margin: 2% auto;
+    }
+    .text {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .imgRight {
+        float: left;
+        width: 49%;
+        vertical-align: middle;
+        margin: 0 2% 2% 0;
+    }
+    a:nth-of-type(2n) .imgRight {
+        margin-right: 0;
+    }
+    #sidebar a:nth-of-type(2n) .imgRight {
+        margin: 0 0 2%;
+    }
+    .form .form-control input {
+        margin-left: 9px;
+    }
+    .disable {
+        display: inline-block;
+    }
+    #contact {
+        margin: 0 auto 2%;
+    }
+    .map,
+    .weatherwidget-io {
+        margin-bottom: 2%;
+    }
+    .video {
+        margin: 2% auto 0;
+    }
+    #exchangeRates {
+        margin: 0 auto 2%;
+    }
+    .offers {
+        margin-top: 2%;
+        margin-bottom: 0;
+    }
+    .products {
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width: 445px) {
+    .weatherwidget-io {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    i.fas.fa-phone-alt {
+        padding: 11px 17px;
+    }
+    .InputIconBg i#owner_icon {
+        padding-left: 16px;
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 520px) {
+    .form .form-control label {
+        display: inline;
+        margin-left: 2%;
+        position: static;
+    }
+}
+@media screen and (min-width: 521px) and (max-width: 767px) {
+    .text h2 {
+        font-size: 28px;
+    }
+    .offer a span {
+        font-size: 17px;
+    }
+    .form .form-control input,
+    .form-control .message {
+        font-size: 18px;
+        padding: 10px 10px 10px 70px;
+    }
+}
+@media screen and (min-width: 636px) and (max-width: 767px) {
+    .imgCentral {
+        margin: 0 2% 2% 0;
+        width: 32%;
+        vertical-align: middle;
+    }
+    a:nth-of-type(3n) .imgCentral {
+        margin-right: 0;
+    }
+    a:nth-of-type(4n) .imgCentral {
+        margin-right: 2%;
+    }
+    a:nth-of-type(10) .imgCentral,
+    a:nth-of-type(11) .imgCentral {
+        margin-bottom: 0;
+    }
+    a:nth-of-type(12) .imgCentral {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+    .form-control .message {
+        padding: 12px;
+    }
+}
+@media screen and (max-width: 767px) {
+    #wrapper {
+        width: 95%;
+        padding: 2.5%;
+    }
+    p {
+        margin: 10px;
+    }
+    #logo {
+        float: none;
+        text-align: center;
+        margin: 5px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.39);
+    }
+    #slogan {
+        float: none;
+        margin: 0 5px;
+    }
+    #slogan p {
+        margin: 10px 15px;
+        padding-top: 2px;
+    }
+    #slogan #number {
+        margin-left: 0;
+    }
+    #nav {
+        height: auto;
+        float: none;
+    }
+    #nav ul li {
+        float: none;
+        padding: 0;
+        display: block;
+    }
+    #nav ul li .fa-arrow-down {
+        display: none;
+    }
+    #nav ul li ul li {
+        display: none;
+    }
+    #nav #nav_right {
+        float: none;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    #nav li#nav_right a button {
+        width: 100%;
+    }
+    .modal {
+        padding: 10px !important;
+    }
+    .modal .close_btn {
+        position: absolute;
+        top: -16px !important;
+        right: -16px !important;
+        -webkit-border-radius: 50% !important;
+        -moz-border-radius: 50% !important;
+        border-radius: 50% !important;
+    }
+    .form .halb {
+        display: block;
+        width: 100%;
+        margin: 0;
+        float: none;
+        padding-left: 2px;
+    }
+    i#owner_icon {
+        margin: 0;
+    }
+    .form-control .message {
+        padding: 10px 10px;
+    }
+    #intro,
+    #ad {
+        float: none;
+        width: 100%;
+    }
+    .sign {
+        margin: 5px 0 10px;
+    }
+    #nav ul li:not([id="nav_right"]) a {
+        padding: 5px 10px;
+        height: auto;
+        border-bottom: 1px solid rgba(252, 251, 251, 0.24);
+    }
+    #nav > ul {
+        display: none;
+    }
+    #nav ul > li > a {
+        pointer-events: all;
+    }
+    #nav li#nav_right a button {
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+    #respmenu {
+        display: block;
+    }
+    #main,
+    #sidebar {
+        padding: 0;
+        display: block;
+        float: none;
+        width: auto;
+    }
+    .lSSlideOuter .lSPager.lSpg {
+        margin-top: 1.5% !important;
+    }
+    #sidebar {
+        background: #fff;
+        margin: 0;
+    }
+    #main h1 {
+        margin: 0 2%;
+    }
+    #main h2 {
+        margin: 0 auto 1%;
+    }
+    #main .pregled {
+        text-align: center;
+    }
+    #main p.important {
+        margin: 1% auto 0;
+        text-align: center;
+    }
+    .block {
+        display: block;
+    }
+    .imgCentral {
+        border: 2px solid #717171;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: none;
+        display: inline-block;
+        height: auto;
+    }
+    .imgRight {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        border: 2px solid #717171;
+    }
+    .none {
+        display: none;
+    }
+    #contact {
+        width: 100%;
+        border: 1px solid #717171;
+        border-right: 2px solid #717171;
+    }
+    #contact a {
+        text-decoration: underline;
+    }
+    .map,
+    .video {
+        border: 2px solid #717171;
+        height: 292px !important;
+    }
+    .accomodation #main,
+    .accomodation #sidebar,
+    .accomodation #p_left {
+        width: auto;
+        margin: 0 auto;
+    }
+    .accomodation #p_left {
+        float: none;
+    }
+    .accomodation #main h2 {
+        padding-left: 38px;
+        margin: 0 auto;
+    }
+    .offer,
+    .product {
+        width: 100%;
+    }
+    .offer a:hover:after {
+        display: none;
+    }
+    .offer {
+        border: 1px solid #0658c5;
+    }
+    article.product {
+        width: 100% !important;
+        border: 2px solid #717171;
+    }
+    .offer a:hover span {
+        background: #043981;
+    }
+    .offer a:active span {
+        background: #032b62;
+    }
+    .offer:hover {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+    }
+    #exchangeRates {
+        display: block;
+        border: 1px solid #717171;
+        border-right: 2px solid #717171;
+        float: none;
+    }
+    .footer_none {
+        display: none;
+    }
+    .footer_comma {
+        display: inline;
+    }
+    .footer_block {
+        display: block;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #wrapper {
+        width: 700px;
+        padding: 10px;
+        position: relative;
+    }
+    p {
+        padding-left: 10px;
+    }
+    #header {
+        position: relative;
+    }
+    #logo {
+        float: none;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.39);
+        border-top: 1px solid #0648a0;
+        margin: 0;
+    }
+    #slogan {
+        float: none;
+        margin: 14px 12px 16px;
+        padding: 0 5px;
+    }
+    #slogan p {
+        padding-top: 2px;
+    }
+    #slogan #number {
+        margin-left: 0;
+    }
+    #nav {
+        float: none;
+    }
+    #nav #nav_right,
+    #nav li#nav_right a button {
+        position: absolute;
+        bottom: 128px;
+        right: 0;
+    }
+    #nav_right a:link,
+    #nav_right a:visited,
+    #nav_right a:hover,
+    #nav_right a:active {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    #main {
+        width: 680px;
+        padding: 0;
+        margin: 0 auto 2%;
+        float: none;
+    }
+    #main h1,
+    small#title {
+        font-size: 22px;
+    }
+    #main h1 {
+        margin: 0 170px;
+    }
+    .accomodation #main h1 {
+        margin: 0 135px;
+    }
+    #main h2 {
+        margin: 0 auto 1%;
+    }
+    #main p.important {
+        padding-left: 0;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    #main .pregled {
+        margin: 0 35px 10px 0;
+    }
+    .text h3 {
+        font-size: 28px;
+    }
+    .weatherwidget-io {
+        margin-bottom: 2%;
+        position: relative;
+    }
+    .imgCentral {
+        float: none;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 2% 2% 0;
+        width: 32%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    a:nth-of-type(4n) .imgCentral {
+        margin-right: 2%;
+    }
+    a:nth-of-type(3n) .imgCentral {
+        margin-right: 0;
+    }
+    a:nth-of-type(10) .imgCentral,
+    a:nth-of-type(11) .imgCentral,
+    a:nth-of-type(12) .imgCentral {
+        margin-bottom: 0;
+    }
+    .cover {
+        margin: 6px 0;
+    }
+    #sidebar {
+        width: 680px;
+        padding: 0;
+        float: none;
+        background: #fff;
+        margin: 0 auto;
+    }
+    .imgRight {
+        float: left;
+        width: 49%;
+        vertical-align: middle;
+        margin: 0 2% 2% 0;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    a:nth-of-type(2n) .imgRight {
+        margin-right: 0;
+    }
+    .disable {
+        display: inline;
+    }
+    .none {
+        display: none;
+    }
+    .map,
+    .video,
+    #contact {
+        margin: 0 auto;
+    }
+    .map {
+        display: block;
+    }
+    .video {
+        margin-top: 2%;
+        height: 300px;
+    }
+    .map,
+    .video {
+        height: 294px !important;
+    }
+    #contact {
+        margin-bottom: 2%;
+    }
+    #contact .table_information {
+        width: 40%;
+    }
+    input,
+    form .form-control .message {
+        padding: 15px;
+    }
+    .form .halb:nth-of-type(2n) {
+        padding-left: 1px;
+    }
+    .form .halb {
+        padding-left: 1px;
+    }
+    .form-control i {
+        padding-left: 6px;
+        left: 12px;
+    }
+    i#owner_icon {
+        padding-left: 16px;
+        margin: 0 3px;
+    }
+    .form-control.InputIconBg i {
+        margin-left: -3px;
+    }
+    .accomodation #main,
+    .accomodation #sidebar {
+        width: 700px;
+    }
+    .accomodation #main {
+        margin: 0;
+    }
+    .accomodation #main h2 {
+        padding-left: 21px;
+        margin: 0 0 8px;
+    }
+    .accomodation #p_left {
+        float: none;
+        width: 700px;
+        padding-right: 0;
+    }
+    #exchangeRates {
+        float: none;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .products {
+        margin-bottom: 5px;
+    }
+    .product {
+        width: 342px;
+    }
+    .accomodation #sidebar {
+        margin-bottom: 10px;
+    }
+    .offer {
+        width: 342px;
+    }
+    .offer a:hover:after {
+        width: 342px;
+        padding: 110px 0;
+    }
+    .text {
+        padding-left: 20px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .main-outer {
+        display: flex;
+        -webkit-flex-direction: column-reverse;
+        -moz-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1149px) {
+    #wrapper {
+        width: 950px;
+        padding: 10px;
+    }
+    #slogan {
+        margin: 20px 20px;
+        padding: 1px 10px;
+    }
+    #main {
+        width: 630px;
+        padding-right: 10px;
+    }
+    #main h1,
+    small#title {
+        font-size: 22px;
+    }
+    #main h1 {
+        margin: 0 100px;
+    }
+    #main h2 {
+        margin: 4px auto;
+    }
+    #main p {
+        margin: 10px 0 0;
+    }
+    .no_margin {
+        display: none;
+    }
+    #main .pregled {
+        margin: 10px 20px 0 0;
+    }
+    #main #pregled {
+        margin-top: 0;
+    }
+    .accomodation #main,
+    .accomodation #sidebar {
+        width: 950px;
+        margin: 0;
+    }
+    .imgCentral {
+        margin: 10px 10px 0 0;
+        border: 2px solid #717171;
+        width: 199px;
+    }
+    a:nth-of-type(4n) .imgCentral {
+        margin-right: 10px;
+    }
+    a:nth-of-type(3n) .imgCentral {
+        margin-right: 0;
+    }
+    .video {
+        border: 2px solid #717171;
+        margin: 15px 0 7px;
+        height: 344px;
+    }
+    .map {
+        border: 2px solid #717171;
+    }
+    #map_mampas {
+        height: 344px;
+    }
+    #map_matic {
+        height: 331px;
+    }
+    #map_brod {
+        height: 275px;
+    }
+    #brod_video {
+        height: 275px;
+    }
+    #sidebar {
+        width: 290px;
+        padding: 10px;
+    }
+    .disable {
+        display: block;
+    }
+    .none,
+    .p_hidden {
+        display: none;
+    }
+    #contact {
+        border: 1px solid #717171;
+        border-right: 2px solid #717171;
+    }
+    #contact td {
+        padding: 5px;
+    }
+    #contact th[colspan="2"],
+    #contact td[colspan="2"] {
+        padding: 5px;
+    }
+    #contact h3 {
+        font-size: 17px;
+    }
+    #website {
+        font-size: 15px;
+    }
+    #question {
+        margin: 5px auto 0;
+    }
+    #question,
+    #price {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 15px 0;
+        font-size: 15px;
+    }
+    .imgRight {
+        margin: 10px 0 0;
+        width: 294px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 2px solid #717171;
+    }
+    .accomodation #p_left {
+        width: 636px;
+        padding-right: 10px;
+    }
+    p.important {
+        margin: 10px 0;
+        text-align: center;
+        padding: 0;
+    }
+    .accomodation #main h2 {
+        margin: 0 auto 2px;
+        padding-left: 305px;
+    }
+    .form .halb:nth-of-type(2n) {
+        padding-left: 1px;
+    }
+    .accomodation #sidebar {
+        margin-bottom: 10px;
+    }
+    .offer {
+        width: 310px;
+    }
+    .offer a:hover:after {
+        width: 310px;
+        padding: 101px 0;
+    }
+    .product {
+        width: 310px;
+    }
+    .weatherwidget-io {
+        margin: 0;
+    }
+    i#owner_icon {
+        margin-left: 8px;
+    }
+}
+@media screen and (min-width: 1150px) and (max-width: 1260px) {
+    #wrapper {
+        width: 1100px;
+        padding: 10px;
+    }
+    #main {
+        width: 850px;
+        padding-right: 10px;
+    }
+    #main h1 {
+        padding: 1px 0;
+    }
+    #main p {
+        margin: 10px;
+    }
+    #main .p_none {
+        margin: 0 10px;
+    }
+    .no_margin,
+    .p_hidden {
+        display: none;
+    }
+    #main p.important {
+        margin-bottom: 0;
+    }
+    .block {
+        display: block;
+    }
+    #main h1 {
+        padding: 1px 0;
+    }
+    #main h2 {
+        margin: 0 0 5px;
+    }
+    .imgCentral {
+        margin: 10px 10px 0 0;
+        width: 199px;
+    }
+    .video {
+        margin: 10px 0 0;
+        height: 324.5px;
+    }
+    #map_mampas {
+        height: 324.5px;
+    }
+    #map_matic {
+        height: 310px;
+    }
+    #map_brod {
+        height: 342px;
+    }
+    #brod_video {
+        height: 342px;
+    }
+    #sidebar {
+        width: 220px;
+    }
+    #contact th {
+        padding: 7px 0;
+    }
+    .imgRight {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .disable {
+        display: block;
+    }
+    .accomodation #main,
+    .accomodation #sidebar {
+        width: 1100px;
+    }
+    .accomodation #main {
+        margin: 0;
+    }
+    .accomodation #p_left {
+        width: 781px;
+        padding: 0;
+    }
+    .accomodation #main h2 {
+        font-size: 28px;
+        padding-left: 340px;
+        margin: 0 auto;
+    }
+    #exchangeRates {
+        margin-bottom: 15px;
+    }
+    .offer {
+        width: 267.5px;
+    }
+    .offer a:hover:after {
+        width: 267.5px;
+        padding: 89px 0;
+    }
+    .products {
+        margin-bottom: 10px;
+    }
+    .product {
+        width: 267.5px;
+    }
+    .lslide {
+        padding-left: 1px;
+    }
+    .lslide > img {
+        width: 100%;
+    }
+    .accomodation #sidebar {
+        margin-bottom: 10px;
+    }
+    .weatherwidget-io {
+        margin-bottom: 10px;
+    }
+}
