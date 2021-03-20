@@ -453,7 +453,7 @@ form .form-control .message{
     padding: 93px 22px;
 }
 .form-control.InputIconBg i.owner_icon {
-	margin-left: 9px;
+	margin-left: 10px;
 	padding: 16px 21px;
 }
 .form-control i.owner_icon.fas.fa-pencil-alt {
@@ -625,15 +625,17 @@ p.important{
 	margin-bottom: 6px;
 	clear: both;
 }
-.product {
-	width: 288px;
+.product, .offer {
 	position: relative;
 	display: inline-block;
 	-webkit-box-sizing: border-box; /* Chrome 4.0 and Safari 3.2 */
 	-moz-box-sizing: border-box; /* Mozilla 2.0 */
 	box-sizing: border-box;
-	border: 3px solid #717171;
 	overflow: hidden;
+}
+.product{
+	border: 3px solid #717171;
+	width: 288px;
 }
 .accomodation #main .product .text h2 {
 	color: #FFF;
@@ -673,17 +675,17 @@ p.important{
 	overflow: hidden;
 	clear: both;
 	margin-top: 15px;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 .offer{
 	border: 3px solid #0658C5;
-	width: 288px;
-	display:inline-block;
-	position: relative;
-	-webkit-box-sizing: border-box; /* Chrome 4.0 and Safari 3.2 */
-	-moz-box-sizing: border-box; /* Mozilla 2.0 */
+	margin: 0 2% 0 0;
+	width: 23.5%;
+	vertical-align: middle;
 	box-sizing: border-box;
-	overflow: hidden;
+}
+.offer:nth-of-type(4n){
+	margin-right: 0;
 }
 
 .offer a span{
@@ -728,7 +730,7 @@ p.important{
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 288px;
+	width: 100%;
 	height: 30px;
 	background: rgba(0, 0, 0, .5);
 	content: "Rezervišite sada";
@@ -740,7 +742,8 @@ p.important{
 .offer a{
 	text-decoration: none;
 }
-.lSSlideOuter .lSPager.lSpg > li{
+.lSSlideOuter .lSPager.lSpg > li,
+li.item-a::marker {
     display: none!important;
 }
 .central{

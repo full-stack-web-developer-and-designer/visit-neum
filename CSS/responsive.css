@@ -26,8 +26,9 @@
     #contact {
         border: 1px solid #717171;
     }
+    .accomodation #main h2,
     .accomodation #main .product .text h2 {
-        font-size: 22px;
+        font-size: 23px;
     }
     #question,
     #price {
@@ -45,35 +46,38 @@
     #question {
         margin: 10px 0 0;
     }
+    .accomodation #main .offer h2 {
+        font-size: 14px;
+    }
+    article.offer {
+        border: 1px solid #0658c5; 
+    }
+    article.product {
+        border: 1px solid #717171;
+    }
     .offer a span {
         font-size: 14px;
-        height: 25px;
-        line-height: 25px;
+        height: auto;
+        line-height: 18px;
         border-bottom: 1px solid #032b62;
     }
     .offer a:link span,
     .offer a:visited span {
-        border-bottom: 3px solid #032b62;
+        border-bottom: 1px solid #032b62;
     }
     .offer a:hover span {
         background: #043981;
-        border-bottom: 3px solid #032b62;
+        border-bottom: 1px solid #032b62;
     }
     .offer a:active span {
         background: #032b62;
-        border-bottom: 3px solid #032b62;
+        border-bottom: 1px solid #032b62;
     }
     .text {
         padding-top: 2px;
         padding-left: 0;
         display: block;
         margin: 0 auto;
-    }
-    .offer a:hover:after {
-        width: 100%;
-        height: auto;
-        font-size: 16px;
-        padding: 0;
     }
     .InputIconBg i {
         display: none;
@@ -121,6 +125,19 @@
     .form-control i.owner_icon.fas.fa-pencil-alt {
         padding: 88.5px 11px;
     }
+    .accomodation #main h2,
+    .accomodation #main .product .text h2 {
+        font-size: 20px;
+    }
+}
+@media screen and (min-width: 370px) and (max-width: 408px) {
+    .accomodation #main .offer h2 {
+        font-size: 22px;
+    }
+    .accomodation #main h2,
+    .accomodation #main .product .text h2 {
+        font-size: 26px;
+    }
 }
 @media screen and (min-width: 370px) and (max-width: 408px) {
     form .form-control input,
@@ -156,6 +173,10 @@
     .form-control i.owner_icon.fas.fa-pencil-alt {
         padding: 88.5px 12px;
     }
+    .accomodation #main h2,
+    .accomodation #main .product .text h2 {
+        font-size: 26px;
+    }
 }
 @media screen and (max-width: 409px) {
     #nav {
@@ -167,10 +188,6 @@
     }
     #main {
         margin-bottom: 4%;
-    }
-    #main h1,
-    small#title {
-        font-size: 19px;
     }
     #main h1 {
         padding: 0.4% 2%;
@@ -196,7 +213,10 @@
     }
     .offers {
         margin-top: 4%;
-        margin-bottom: -3%;
+        margin-bottom: 0;
+    }
+    .offer {
+        margin: 0 auto 4%;
     }
     a:nth-of-type(12) .imgCentral {
         margin-bottom: 0;
@@ -208,9 +228,7 @@
         margin: 2% auto 0;
     }
     .accomodation #main h2 {
-        margin: 0 auto 4%;
-    }
-    .offer {
+        padding-left: 0;
         margin: 0 auto 4%;
     }
     .products {
@@ -254,18 +272,20 @@
     .offer a:active span {
         border-bottom: 5px solid #032b62;
     }
+    article.offer {
+        border: 2px solid #0658c5; 
+    }
+    article.product {
+        border: 2px solid #717171;
+    }
 }
 @media screen and (min-width: 410px) and (max-width: 767px) {
     #nav {
-        margin: 2% auto;
+        margin: 3% auto;
         font-size: 18px;
     }
     #main {
         margin: 0 auto;
-    }
-    #main h1,
-    small#title {
-        font-size: 20px;
     }
     #main h1 {
         padding: 0.5% 2%;
@@ -301,7 +321,7 @@
     }
     .map,
     .weatherwidget-io {
-        margin-bottom: 2%;
+        margin-bottom: 3%;
     }
     .video {
         margin: 2% auto 0;
@@ -309,9 +329,16 @@
     #exchangeRates {
         margin: 0 auto 2%;
     }
+    .accomodation #main h2 {
+        padding-left: 38px;
+        margin: 0 auto;
+    }
     .offers {
-        margin-top: 2%;
+        margin-top: 3%;
         margin-bottom: 0;
+    }
+    .offer {
+        margin: 0% auto 4%;
     }
     .products {
         margin-bottom: 0;
@@ -351,6 +378,12 @@
         box-sizing: border-box;
     }
 }
+@media screen and (max-width: 500px) {
+    article.offer {
+        width: 100%;
+        display: block;
+    }
+}
 @media screen and (max-width: 520px) {
     /* display error messages under inputs */
     .form .form-control label {
@@ -358,6 +391,7 @@
         margin-left: 2%;
         position: static;
     }
+
 }
 @media screen and (min-width: 410px) and (max-width: 520px) {
     .form-control i {
@@ -366,6 +400,20 @@
     #contact_me .form-control i {
         left: 8px;
     }
+}
+@media screen and (min-width: 501px) and (max-width: 767px) {
+    
+    .offer{
+        margin: 0 3% 3% 0;
+        width: 48.5%;
+        vertical-align: middle;
+    }
+    .offer:nth-of-type(2n){
+        margin-right: 0;
+    }
+    .offer a span {
+        font-size: 17px;
+    }   
 }
 @media screen and (min-width: 521px) and (max-width: 635px) {
     .form-control i {
@@ -379,9 +427,6 @@
     .text h2 {
         font-size: 28px;
     }
-    .offer a span {
-        font-size: 17px;
-    }   
 }
 @media screen and (min-width: 636px) and (max-width: 767px) {
     .imgCentral {
@@ -409,7 +454,6 @@
     #contact_me .form-control i {
         left: 14px;
     }
-    
 }
 @media screen and (max-width: 767px) {
     #wrapper {
@@ -574,23 +618,11 @@
     .accomodation #p_left {
         float: none;
     }
-    .accomodation #main h2 {
-        padding-left: 38px;
-        margin: 0 auto;
-    }
-    .offer,
-    .product {
+    article.product {
         width: 100%;
     }
     .offer a:hover:after {
         display: none;
-    }
-    .offer {
-        border: 1px solid #0658c5;
-    }
-    article.product {
-        width: 100% !important;
-        border: 2px solid #717171;
     }
     .offer a:hover span {
         background: #043981;
@@ -653,6 +685,7 @@
     }
     #nav {
         float: none;
+        margin-bottom: 2%;
     }
     #nav #nav_right,
     #nav li#nav_right a button {
@@ -818,9 +851,23 @@
     .accomodation #main {
         margin: 0;
     }
+    .offers {margin-bottom:0;}
+    .offer{
+        margin: 0 2% 2% 0;
+        width: 49%;
+        vertical-align: middle;
+    }
+    .offer a:hover:after {
+        width: 100%;
+        padding: 110px 0;
+    }
+    .offer:nth-of-type(2n){
+        margin-right: 0;
+    }
     .accomodation #main h2 {
         padding-left: 21px;
         margin: 0 0 8px;
+        font-size: 30px;
     }
     .accomodation #p_left {
         float: none;
@@ -837,18 +884,12 @@
         margin-bottom: 5px;
     }
     .product {
-        width: 342px;
+        width: 342.5px;
     }
     .accomodation #sidebar {
         margin-bottom: 10px;
     }
-    .offer {
-        width: 342px;
-    }
-    .offer a:hover:after {
-        width: 342px;
-        padding: 110px 0;
-    }
+    
     .text {
         padding-left: 20px;
     }
@@ -875,10 +916,6 @@
         width: 630px;
         padding-right: 10px;
     }
-    #main h1,
-    small#title {
-        font-size: 22px;
-    }
     #main h1 {
         margin: 0 100px;
     }
@@ -901,6 +938,9 @@
     .accomodation #sidebar {
         width: 950px;
         margin: 0;
+    }
+    .accomodation #main .offer h2 {
+        font-size: 18px;
     }
     .form-control i {
         left: 10px;
@@ -1014,19 +1054,21 @@
         text-align: center;
         padding: 0;
     }
+    .offer{
+        margin: 0 2% 2% 0;
+        width: 32%;
+        vertical-align: middle;
+    }
+    .offer:nth-of-type(3n){
+        margin-right: 0;
+    }
+    .offers {margin-bottom:0;}
     .accomodation #main h2 {
         margin: 0 auto 2px;
         padding-left: 305px;
     }
     .accomodation #sidebar {
         margin-bottom: 10px;
-    }
-    .offer {
-        width: 310px;
-    }
-    .offer a:hover:after {
-        width: 310px;
-        padding: 101px 0;
     }
     .product {
         width: 310px;
@@ -1036,6 +1078,10 @@
     }
     i#owner_icon {
         margin-left: 8px;
+    }
+    .offer a:hover:after {
+        width: 100%;
+        padding: 100px 0;
     }
 }
 @media screen and (min-width: 1150px) and (max-width: 1260px) {
@@ -1144,12 +1190,9 @@
     #exchangeRates {
         margin-bottom: 15px;
     }
-    .offer {
-        width: 267.5px;
-    }
     .offer a:hover:after {
-        width: 267.5px;
-        padding: 89px 0;
+        width: 100%;
+        padding: 90px 0;
     }
     .products {
         margin-bottom: 10px;
@@ -1164,9 +1207,6 @@
         width: 100%;
     }
     .accomodation #sidebar {
-        margin-bottom: 10px;
-    }
-    .weatherwidget-io {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 }

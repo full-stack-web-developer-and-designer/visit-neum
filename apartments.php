@@ -32,14 +32,11 @@ $result = Apartments::get(1);
 <?php echo $result->render(); ?> 
 <section class="offers">
 	<!-- slider box -->
-	<ul id="autoplay" class="cs-hidden">
 	<?php
 	$apart = new ApartSlide();
 	$apart->renderSlider();
 	?>
-    </ul>
-	</section><!--end .offers-->
-	<script src='JS/slider.js'></script>
+</section><!--end .offers-->
 </div><!-- end #main -->
 <aside id="sidebar"> 
 	<?php
