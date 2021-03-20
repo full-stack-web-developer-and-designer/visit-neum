@@ -5,7 +5,6 @@ $result = Hotels::get(1);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
-<script defer src="JS/slider.js"></script>
 <?php	
 	$title="Najbolji Hoteli u Neumu | Najniže cijene smještaja |Posjetite odmah!";
     //Check length of title for SEO (50-70 characters)
@@ -24,7 +23,7 @@ $result = Hotels::get(1);
 <header id="header" class="cf">
 <?php 
   echo $postArr->render(); 	
-  include 'inc/header.php'; 
+  //include 'inc/header.php'; 
 ?>
 </header><!-- end #header -->
 <?php
@@ -35,16 +34,12 @@ $result = Hotels::get(1);
 <?php echo $result->render(); ?> 
 <section class="offers">
 	<!-- slider box -->
-	<ul id="autoplay" class="cs-hidden">
 	<?php
 	$hotel = new HotelSlide();
 	$hotel->renderSlider();
 	?>
-    </ul>
-	</section><!--end .offers-->
-	
+</section><!--end .offers-->
 </div><!-- end #main -->
-
 <aside id="sidebar"> 
 	<?php
        include 'inc/weather.inc';

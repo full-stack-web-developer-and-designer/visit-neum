@@ -6,7 +6,7 @@ class HotelSlide extends Slider{
         $stmt = $this->__connect()->query($sql);
 
         while($row = $stmt->fetch()) {
-            echo "<li class='item-a'><article class='offer'><a href='$row[href]'><img src='./images/$row[img]' alt='$row[alt]'/><span><h2>$row[title]</h2></span></a></article></li>";
+            echo "<article class='offer'><a href='$row[href]'><img src='./images/$row[img]' alt='$row[alt]'/><span><h2>$row[title]</h2></span></a></article>";
             }
         }
     }
