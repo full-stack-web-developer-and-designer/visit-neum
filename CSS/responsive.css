@@ -1,4 +1,20 @@
 @charset "UTF-8";
+@media screen and (max-width: 209px) {
+    .accomodation #main h2{
+        font-size: 22px;
+    }
+    .accomodation #main .product .text h2 {
+        font-size: 21px;
+    }
+}
+@media screen and (min-width: 210px) and (max-width: 309px) {
+    .accomodation #main h2{
+        font-size: 25px;
+    }
+    .accomodation #main .product .text h2 {
+        font-size: 24px;
+    }
+}
 @media screen and (max-width: 309px) {
     #slogan p {
         font-size: 14px;
@@ -26,10 +42,7 @@
     #contact {
         border: 1px solid #717171;
     }
-    .accomodation #main h2,
-    .accomodation #main .product .text h2 {
-        font-size: 23px;
-    }
+
     #question,
     #price {
         display: inline-block;
@@ -47,7 +60,7 @@
         margin: 10px 0 0;
     }
     .accomodation #main .offer h2 {
-        font-size: 14px;
+        font-size: 19px;
     }
     article.offer {
         border: 1px solid #0658c5; 
@@ -125,18 +138,14 @@
     .form-control i.owner_icon.fas.fa-pencil-alt {
         padding: 88.5px 11px;
     }
-    .accomodation #main h2,
-    .accomodation #main .product .text h2 {
-        font-size: 20px;
+    .accomodation #main h2{
+        font-size: 29px;
     }
-}
-@media screen and (min-width: 370px) and (max-width: 408px) {
-    .accomodation #main .offer h2 {
-        font-size: 22px;
+    .accomodation #main .offer h2{
+        font-size: 21px;
     }
-    .accomodation #main h2,
     .accomodation #main .product .text h2 {
-        font-size: 26px;
+        font-size: 28px;
     }
 }
 @media screen and (min-width: 370px) and (max-width: 408px) {
@@ -173,9 +182,14 @@
     .form-control i.owner_icon.fas.fa-pencil-alt {
         padding: 88.5px 12px;
     }
-    .accomodation #main h2,
+    .accomodation #main h2{
+        font-size: 30px;
+    }
+    .accomodation #main .offer h2{
+        font-size: 20px;
+    }
     .accomodation #main .product .text h2 {
-        font-size: 26px;
+        font-size: 29px;
     }
 }
 @media screen and (max-width: 409px) {
@@ -192,6 +206,9 @@
     #main h1 {
         padding: 0.4% 2%;
     }
+    h1, small#title {
+        font-size: 22px;
+    }
     #main p {
         margin: 4% auto;
         padding: 0 2%;
@@ -201,6 +218,10 @@
     }
     #main p.important {
         padding: 0;
+    }
+    form .form-control input,
+    form .form-control .message {
+        font-weight:510;
     }
     #sidebar {
         margin: 0;
@@ -226,10 +247,6 @@
     }
     #main p.important {
         margin: 2% auto 0;
-    }
-    .accomodation #main h2 {
-        padding-left: 0;
-        margin: 0 auto 4%;
     }
     .products {
         margin-bottom: 1%;
@@ -290,6 +307,9 @@
     #main h1 {
         padding: 0.5% 2%;
     }
+    #main h1, small#title {
+        font-size: 22px;
+    }
     #main p {
         margin: 2% auto 0;
         padding: 0 2%;
@@ -329,10 +349,6 @@
     #exchangeRates {
         margin: 0 auto 2%;
     }
-    .accomodation #main h2 {
-        padding-left: 38px;
-        margin: 0 auto;
-    }
     .offers {
         margin-top: 3%;
         margin-bottom: 0;
@@ -369,6 +385,9 @@
     .form-control i.owner_icon.fas.fa-pencil-alt {
         padding: 93px 17px;
     }
+    .accomodation #main .offer h2{
+        font-size: 19px;
+    }
 }
 @media screen and (max-width: 445px) {
     .weatherwidget-io {
@@ -391,6 +410,10 @@
         margin-left: 2%;
         position: static;
     }
+    .accomodation #main h2{
+        padding:0;
+        margin:0;
+    }
 
 }
 @media screen and (min-width: 410px) and (max-width: 520px) {
@@ -399,6 +422,17 @@
     }
     #contact_me .form-control i {
         left: 8px;
+    }
+    .accomodation #main h2{
+        font-size: 30px;
+        padding:0;
+        margin:0;
+    }
+    .accomodation #main .offer h2,{
+        font-size: 21px;
+    }
+    .accomodation #main .product .text h2 {
+        font-size: 30px;
     }
 }
 @media screen and (min-width: 501px) and (max-width: 767px) {
@@ -422,11 +456,28 @@
     #contact_me .form-control i {
         left: 10px;
     }
+    .accomodation #main h2 {
+        padding-left: 0;
+        margin: 0 auto 4%;
+    }
+    .accomodation #main h2{
+        font-size: 28px;
+        padding:0;
+        margin:0;
+    }
+    .accomodation #main .offer h2{
+        font-size: 19px;
+    }
+    .accomodation #main .product .text h2 {
+        font-size: 27px;
+    }
+ 
 }
 @media screen and (min-width: 521px) and (max-width: 767px) {
     .text h2 {
         font-size: 28px;
     }
+ 
 }
 @media screen and (min-width: 636px) and (max-width: 767px) {
     .imgCentral {
@@ -453,6 +504,24 @@
     }
     #contact_me .form-control i {
         left: 14px;
+    }
+    .accomodation #main h2{
+        padding-left: 34px;
+        margin-top: 0px;
+    }
+    .accomodation #main h2 {
+        padding-left: 0;
+    }
+    .accomodation #main h2{
+        font-size: 29px;
+        padding:0;
+        margin:0;
+    }
+    .accomodation #main .offer h2{
+        font-size: 19px;
+    }
+    .accomodation #main .product .text h2 {
+        font-size: 28px;
     }
 }
 @media screen and (max-width: 767px) {
@@ -712,7 +781,7 @@
     }
     #main h1,
     small#title {
-        font-size: 22px;
+        font-size: 24px;
     }
     #main h1 {
         margin: 0 170px;
@@ -867,7 +936,6 @@
     .accomodation #main h2 {
         padding-left: 21px;
         margin: 0 0 8px;
-        font-size: 30px;
     }
     .accomodation #p_left {
         float: none;
