@@ -374,7 +374,7 @@ form .form-control .message{
 	-webkit-border-radius:4px; /* Chrome 4.0 and Safari 3.1 */
 	-moz-border-radius:4px; /* Mozilla 3.0 */
 	border-radius:4px;
-	line-height: 22px;
+	line-height: 20px;
 	background-color: #fbfbfb;
     border: 2px solid #AAA!important;
 	margin-bottom: 0px;
@@ -383,10 +383,11 @@ form .form-control .message{
 	box-sizing: border-box;
 	position: relative;
 	resize: none;
-	outline: none;
+	outline: none!important;
 	color: #AAA;
 	transition: .3s;
 	padding: 15px 15px 15px 70px;
+	border:0;
 }
 .form-control.single{
 	display: inline-block;
@@ -438,16 +439,16 @@ form .form-control .message{
 .form-control.InputIconBg i {
     background-color: #aaa;
     color: #FFF;
-    padding: 16px 23px;
+    padding: 16px 23px!important;
 }
 .form-control.InputIconBg i.fas.fa-phone-alt {
-    padding: 16px 22px;
+    padding: 16px 22px!important;
 }
 .form-control.InputIconBg i.contact_icon.fas.fa-user {
-    padding: 16px 24px;
+    padding: 16px 24px!important;
 }
 .form-control.InputIconBg i.contact_icon {
-    padding: 16px 22px;
+    padding: 16px 22px!important;
 }
 .form-control i.contact_icon.fas.fa-pencil-alt {
     padding: 93px 22px;

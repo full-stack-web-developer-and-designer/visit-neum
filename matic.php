@@ -46,7 +46,7 @@ $postArr = Header::get(1)
     <table id="contact">
       <thead>
         <tr>
-          <th colspan="2"><h3>KONTAKT</h3><span id="website"><a href="http://www.hotelvillamatic.com" target="_blank">www.hotelvillamatic.com</a></span></th>
+          <th colspan="2"><h3>KONTAKT</h3><span id="website"><a href="https://www.hotelvillamatic.com" target="_blank">www.hotelvillamatic.com</a></span></th>
         </tr>
 		  </thead>
 
