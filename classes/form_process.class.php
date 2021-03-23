@@ -84,9 +84,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		//Email Settings
 		$mail_contact->isHTML(true);
 		$mail_contact->setFrom('booking@visit-neum.com');
+		$mail_contact->addReplyTo($email, $name);
 		$mail_contact->addAddress('kontakt@visit-neum.com');
 		$mail_contact->Subject = "Nova poruka od visit-neum.com";
-		$body = "<p>Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><br><p><strong>Od: </strong>" . ucwords($name) . "<br><strong>Telefon: </strong>" . $phone ."<br><strong>E-mail: </strong>" .strtolower($email)."<br><strong>Poruka: </strong>" . $message . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($email) . "</p>";
+		$body = "<p>Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><br><p><strong>Od: </strong>" . ucwords($name) . "<br><strong>Telefon: </strong>" . $phone ."<br><strong>E-mail: </strong>" .strtolower($email)."<br><strong>Poruka: </strong>" . $message . "</p>";
 		$mail_contact->Body = $body;
 	
       if($mail_contact->send()) {
@@ -162,6 +163,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		}
 	}
 	if($fname_error == '' && $tel_error == '' && $userMail_error == '' && $userMessage_error == ''){
+	// Instantiate a NEW email
 	$mailOwner = new PHPMailer(true);
 	// Active condition utf-8
 	$mailOwner->CharSet = "UTF-8";
@@ -169,7 +171,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$mailOwner->isSMTP();
 	$mailOwner->Host = 'mail.visit-neum.com';
 	$mailOwner->SMTPAuth = true;
-	//$mail->SMTPDebug = 2;
+	$mailOwner->SMTPDebug = 2;
 	$mailOwner->Username = 'booking@visit-neum.com';
 	$mailOwner->Password = 'M&734327&g';
 	$mailOwner->Port = 465; // 587
@@ -177,21 +179,33 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//Email Settings
 	$mailOwner->isHTML(true);
 	$mailOwner->setFrom('booking@visit-neum.com');
-	$mailOwner->addAddress('kontakt@hotelvillamatic.com');
+	// SELECT email values from database
+	//$sql="SELECT email_address FROM owners_email JOIN form_data ON form_data.email_address_id = owners_email.id WHERE form_data_id = " . $form_data_id;
+//$sql = "SELECT email_address FROM owners_email JOIN contact_owner ON owners_email.email_address_id = contact_owner.email_address_id WHERE contact_owner_id =  $contact_owner_id";
+	$sql="SELECT email_address FROM visitneu_contact.owners_email ";
+	// This query will send mail to all emails from database 
+	foreach ($pdo->query($sql) as $row) {
+		$mailOwner->clearAddresses();
+		$mailOwner->AddAddress($row[email_address]);
+	} 
+	//$mailOwner->addAddress('mirnes.glamocic@gmail.com');
+	
 	$mailOwner->Subject = "Nova poruka od visit-neum.com";
 	$body = "<p>Poštovani, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
 	$mailOwner->Body = $body;
 	
 
   if($mailOwner->send()) {
-	$mailOwner = "INSERT INTO visitneu_contact.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage)";
+	$mailOwner = "INSERT INTO visitneu_contact.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage, email_address_id) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage, :email_address_id)";
 	$stmt = $pdo->prepare($mailOwner);
-	$stmt->execute(['fname' => $fname, 'tel' => $tel, 'txtFrom' => $txtFrom, 'txtTo' => $txtTo, 'userMail' => $userMail, 'userMessage' => $userMessage]);
+	$stmt->execute(['fname' => $fname, 'tel' => $tel, 'txtFrom' => $txtFrom, 'txtTo' => $txtTo, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_address_id]);
 	if($error==false){
 		$data['response'] = "success";
 		$data['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
 	}
-} 
+	 
+	} 
+
 else
 {
 	$data['response'] = "error";
