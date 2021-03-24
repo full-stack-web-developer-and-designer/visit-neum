@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 <?php
 $error = false;
 // define variables and set to empty values
@@ -17,7 +15,7 @@ $dbName = "visitneu_contact";
 $dbCharset = "utf8";
 
 try{
-	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName . ";charset=" . $dbCharset;
+	$dsn = "mysql:host=" . $dbHost .";dbName=" . $dbName . ";charset=" . $dbCharset;
 	$pdo = new PDO($dsn, $dbUser, $dbPassword);
 	array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 }catch(PDOException $e){
@@ -216,4 +214,3 @@ echo json_encode($data);
 }
 }
 }
->>>>>>> form
