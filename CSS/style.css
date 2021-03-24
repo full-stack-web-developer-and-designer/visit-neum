@@ -433,25 +433,24 @@ form .form-control .message{
     top: 2px;
 	font-size: 20px;
 	color:#AAA;
-	padding: 9px 8px;
 	transition: .3s;
 }
 .form-control.InputIconBg i {
     background-color: #aaa;
     color: #FFF;
-    padding: 16px 23px!important;
+    padding: 17px 23px;
 }
 .form-control.InputIconBg i.fas.fa-phone-alt {
-    padding: 16px 22px!important;
+    padding: 17px 22px!important;
 }
 .form-control.InputIconBg i.contact_icon.fas.fa-user {
-    padding: 16px 24px!important;
+    padding: 17px 24px!important;
 }
 .form-control.InputIconBg i.contact_icon {
-    padding: 16px 22px!important;
+    padding: 17px 22px;
 }
 .form-control i.contact_icon.fas.fa-pencil-alt {
-    padding: 93px 22px;
+    padding: 94px 22px 93px;
 }
 .form-control.InputIconBg i.owner_icon {
 	margin-left: 10px;
