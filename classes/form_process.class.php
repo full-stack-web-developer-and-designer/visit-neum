@@ -187,6 +187,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	foreach ($pdo->query($sql) as $row) {
 		$mailOwner->clearAddresses();
 		$mailOwner->AddAddress($row[email_address]);
+		print_r($row["email_address"]);
 	} 
 	//$mailOwner->addAddress('mirnes.glamocic@gmail.com');
 	
