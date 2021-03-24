@@ -12,9 +12,10 @@ $dbHost = "localhost:3306";
 $dbUser = "visitneu_MirnesADMIN";
 $dbPassword = "M&102003&g";
 $dbName = "visitneu_contact";
+$dbCharset = "utf8";
 
 try{
-	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName;
+	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName . ";charset=" . $dbCharset;
 	$pdo = new PDO($dsn, $dbUser, $dbPassword);
 	array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 }catch(PDOException $e){
@@ -185,17 +186,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$sql="SELECT email_address FROM visitneu_contact.owners_email ";
 	// This query will send mail to all emails from database 
 	foreach ($pdo->query($sql) as $row) {
-		$mailOwner->clearAddresses();
+		$mailOwner->ClearAllRecipients();
 		$mailOwner->AddAddress($row[email_address]);
-		print_r($row["email_address"]);
-	} 
+		
+
 	//$mailOwner->addAddress('mirnes.glamocic@gmail.com');
 	
 	$mailOwner->Subject = "Nova poruka od visit-neum.com";
 	$body = "<p>Poštovani, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
 	$mailOwner->Body = $body;
 	
-
   if($mailOwner->send()) {
 	$mailOwner = "INSERT INTO visitneu_contact.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage, email_address_id) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage, :email_address_id)";
 	$stmt = $pdo->prepare($mailOwner);
@@ -204,15 +204,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$data['response'] = "success";
 		$data['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
 	}
-	 
-	} 
-
-else
-{
+	} else {
 	$data['response'] = "error";
 	$data['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
 }
 echo json_encode($data);
+
+		}
 }
 }
 }
