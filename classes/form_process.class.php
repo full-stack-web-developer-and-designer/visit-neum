@@ -6,20 +6,28 @@ $name_error = $phone_error = $email_error = $message_error = "";
 // define variables and set to empty values
 $fname = $tel = $txtFrom = $txtTo = $userMail = $userMessage = "";
 $fname_error = $tel_error = $txtFrom_error = $txtTo_error = $userMail_error = $userMessage_error = "";
-
+require_once 'core/init.php';
+class PHPMailer {
+	private static $db;
+	public static function init(){
+		self::$db = DB::getInstance();
+}
+$DB = DB::getInstance();
+/*
 	//Load the config file
 $dbHost = "localhost:3306";
 $dbUser = "visitneu_MirnesADMIN";
 $dbPassword = "M&102003&g";
 $dbName = "visitneu_contact";
+$dbCharset = "utf8";
 
 try{
-	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName;
+	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName . ";charset=" . $dbCharset;
 	$pdo = new PDO($dsn, $dbUser, $dbPassword);
 	array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
 }catch(PDOException $e){
 	echo "Greška u konekciji: " . $e->getMessage();
-}  
+}  */
 use PHPMailer\PHPMailer\PHPMailer;
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
@@ -84,14 +92,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		//Email Settings
 		$mail_contact->isHTML(true);
 		$mail_contact->setFrom('booking@visit-neum.com');
+		$mail_contact->addReplyTo($email, $name);
 		$mail_contact->addAddress('kontakt@visit-neum.com');
 		$mail_contact->Subject = "Nova poruka od visit-neum.com";
-		$body = "<p>Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><br><p><strong>Od: </strong>" . ucwords($name) . "<br><strong>Telefon: </strong>" . $phone ."<br><strong>E-mail: </strong>" .strtolower($email)."<br><strong>Poruka: </strong>" . $message . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($email) . "</p>";
+		$body = "<p>Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><br><p><strong>Od: </strong>" . ucwords($name) . "<br><strong>Telefon: </strong>" . $phone ."<br><strong>E-mail: </strong>" .strtolower($email)."<br><strong>Poruka: </strong>" . $message . "</p>";
 		$mail_contact->Body = $body;
 	
       if($mail_contact->send()) {
 		$mail_contact = "INSERT INTO visitneu_contact.contact_me (name, phone, email, message) VALUES (:name, :phone, :email, :message)";
-		$stmt = $pdo->prepare($mail_contact);
+		$stmt = $db->prepare($mail_contact);
 		$stmt->execute(['name' => $name, 'phone' => $phone, 'email' => $email, 'message' => $message]);
 		if($error==false){
 			$text['response'] = "success";
@@ -106,7 +115,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	echo json_encode($text); 
 }
 }
-}if($_SERVER['REQUEST_METHOD'] == 'POST'){
+}
+/*if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	if (isset($_POST['submitOwner'])) {
 	$fname = $_POST['fname'];
 	$tel = $_POST['tel'];
@@ -162,6 +172,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		}
 	}
 	if($fname_error == '' && $tel_error == '' && $userMail_error == '' && $userMessage_error == ''){
+	// Instantiate a NEW email
 	$mailOwner = new PHPMailer(true);
 	// Active condition utf-8
 	$mailOwner->CharSet = "UTF-8";
@@ -169,7 +180,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$mailOwner->isSMTP();
 	$mailOwner->Host = 'mail.visit-neum.com';
 	$mailOwner->SMTPAuth = true;
-	//$mail->SMTPDebug = 2;
+	$mailOwner->SMTPDebug = 2;
 	$mailOwner->Username = 'booking@visit-neum.com';
 	$mailOwner->Password = 'M&734327&g';
 	$mailOwner->Port = 465; // 587
@@ -177,27 +188,35 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//Email Settings
 	$mailOwner->isHTML(true);
 	$mailOwner->setFrom('booking@visit-neum.com');
-	$mailOwner->addAddress('kontakt@hotelvillamatic.com');
+	// SELECT email values from database
+	//$sql="SELECT email_address FROM visitneu_contact.owners_email";
+	$sql="SELECT email_address FROM visitneu_contact.owners_email JOIN visitneu_contact.contact_owner ON contact_owner.email_address_id = owners_email.email_address_id WHERE contact_owner_id = ' $contact_owner_id'";
+	// This query will send mail to all emails from database 
+	foreach ($pdo->query($sql) as $row) {
+		$mailOwner->AddAddress($row["email_address"]);
+	//$mailOwner->addAddress('mirnes.glamocic@gmail.com');
 	$mailOwner->Subject = "Nova poruka od visit-neum.com";
 	$body = "<p>Poštovani, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
 	$mailOwner->Body = $body;
 	
-
   if($mailOwner->send()) {
-	$mailOwner = "INSERT INTO visitneu_contact.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage)";
-	$stmt = $pdo->prepare($mailOwner);
-	$stmt->execute(['fname' => $fname, 'tel' => $tel, 'txtFrom' => $txtFrom, 'txtTo' => $txtTo, 'userMail' => $userMail, 'userMessage' => $userMessage]);
+	$mailOwner = "INSERT INTO visitneu_contact.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage, email_address_id) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage, :email_address_id)";
+	$stmt = self::$_instance->prepare($mailOwner);
+	$stmt->execute(['fname' => $fname, 'tel' => $tel, 'txtFrom' => $txtFrom, 'txtTo' => $txtTo, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_address_id]);
+	var_dump($stmt);
 	if($error==false){
 		$data['response'] = "success";
 		$data['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
 	}
-} 
-else
-{
+	} else {
 	$data['response'] = "error";
 	$data['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
 }
 echo json_encode($data);
+
+		}
+		$mailOwner->ClearAllRecipients();
 }
 }
 }
+*/
