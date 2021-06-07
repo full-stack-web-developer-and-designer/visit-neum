@@ -1,7 +1,7 @@
 <?php
 	require_once 'core/init.php';
-$result = Home::get(1);
-$postArr = Header::get(1);
+	$result = Pages::get(1);
+	$postArr = Header::get(1);
 //if(Session::exists('home')){
 //	echo '<p>' . Session::flash('home') . '</p>';
 //}

@@ -116,6 +116,9 @@ a:active{
 	margin-right: 104px;
 	margin-left: -35px;
 }
+a#login{color:#0B60D4;}
+a#login:hover{color:#043981;}
+a#login:active{color:#032B62;}
 #registration.modal,
 #login.modal{width:500px!important;}
 #nav{
@@ -296,6 +299,9 @@ keyframes blink {
 	background: #0B60D4;
 	border-bottom: 2px solid #EEE;
 }
+#register.modal_heading{
+	margin-bottom: 20px;
+}
 .modal_heading h2{
 	color: #FFF;
 	font-size: 25px;
@@ -350,7 +356,18 @@ keyframes blink {
 	color: rgb(188, 164, 116);
 	font-weight: bold;
 }
-
+#register #facebook {
+	padding-top: 20px;
+    /* margin: 20px 20px 30px 0; */
+    padding-bottom: 26px;
+}
+a.btn-facebook {
+    background-color: #405D9D;
+	color: #fff;
+    padding: 10px 100px;
+    margin: 2%;
+    font-size: 16px;
+}
 
 /* Icons ---------------------------------- */
 .form .form-control{
@@ -421,14 +438,14 @@ form .form-control .message{
 .form .form-control input:focus,
 .form .form-control textarea:focus{
 	border: 2px solid #0B60D4 !important;
-	box-shadow: 0 0 8px 0 #0B60D4;
+	/*box-shadow: 0 0 8px 0 #0B60D4;*/
 	outline:none !important;
 	color: #0B60D4;
 }
 
 .form-control i{
 	position: absolute;
-	left: 11px;
+	left: 10px;
     top: 2px;
 	font-size: 20px;
 	color:#AAA;
@@ -466,7 +483,7 @@ form .form-control .message{
 	background-color: #0B60D4;
 	color: #FFF;
 }
-.form input[type="submit"]{
+.form .btn_submit, #submit_register, #submit_login{
 	background: #0B60D4;
 	border: 2px solid #0B60D4;
 	color:#FFF;
@@ -486,19 +503,16 @@ form .form-control .message{
     font-weight: 400;
     font-family: inherit;
 }
-.form input[type="submit"]:hover {
+.form .btn_submit:hover {
 	background: #043981;
 	border: 2px solid #043981;
 }
-.form input[type="submit"]:active {
+.form .btn_submit:active {
 	background: #032B62;
 	border: 2px solid #032B62;
 }
-#submit_register, #submit_login {
-    font-size: 16px;
-    letter-spacing: 1px;
-}
-#submit_login{
+
+#submit_login {
 	display: inherit;
 	width:92%;
 	text-align: center;
@@ -520,12 +534,12 @@ form .form-control .message{
 .form fieldset{
 	padding-bottom: 0;
 }
-.error, .errorJS{
+#register_error, .error, .errorJS{
 	color: #e74c3c;
 	font-weight: bold;
 }
 .error{margin-left:2%;}
-.errorJS{text-align:center;}
+.errorJS, #register_error{display: block;text-align:center;}
 .success{
 	color:#a2d838;
 	text-align:center;
@@ -571,7 +585,7 @@ form .form-control .message{
 #main p.no_margin{
 	margin-bottom: 0;
 }
-p.important{
+span#important{
 	font-style: italic; 
 	margin: 0 0 5px;
 	padding-left: 30px;
@@ -774,7 +788,7 @@ a:nth-of-type(4n) .imgCentral{
 	box-sizing: border-box;
 }
 #map_matic{
-	height: 300px;
+	height: 332px;
 }
 #map_mampas{
 	height: 341px;
@@ -935,6 +949,20 @@ tr {
 	margin-right:40px;
 	margin-left:15px;
 	border:3px solid #717171;
+}
+button#comment {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 16px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding: 17px;
+    text-align: center;
+    display: block;
+    outline: none;
 }
 #footer {
 	text-align:center;

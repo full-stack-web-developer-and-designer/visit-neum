@@ -1,18 +1,20 @@
 <?php
 require_once 'core/init.php';
+$pages_id=4;
+$result = Pages::get(4);
 $postArr = Header::get(1);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
 <?php
 	$title="Brod Ivana, Neum | Najpovoljnije krstarenje neumskim zaljevom!";
-    //Check length of title for SEO (50-70 characters)
-    //echo "Length of title is " . strlen($title) . "characters long." . " ";
+  //Check length of title for SEO (50-70 characters)
+  //echo "Length of title is " . strlen($title) . "characters long." . " ";
 	$og_title="Brod Ivana, Neum / Krstarenje neumskim zaljevom...";
 	$website_url="www.visit-neum.com/Brod-Ivana-Panoramska-voznja.html";
 	$meta['description']="Brod Ivana nudi Vam najbolji izbor da vidite Neum s obe strane obale, te da se  opustite i otkrijete skrivene ljepote, prekrasnu prirodu, uvale, plaže i još mnogo toga...";
-    //Check length of description for SEO (140-180 characters)
-    //echo "Length of description is " . strlen($meta['description']) . "characters long.";
+  //Check length of description for SEO (140-180 characters)
+  //echo "Length of description is " . strlen($meta['description']) . "characters long.";
 	$meta['keywords']="neum, brodovi Neum,brod Neum, jahta Neum, ljetovanje, ljetovanje neum, ljetovanje na moru";
 	$og_image="images/Ivana/SMALL/BrodIvana_01.jpg";
 	$image_alt="Brod Ivana - Neum";
@@ -30,13 +32,9 @@ $postArr = Header::get(1);
 <?php
   include 'inc/nav.inc'; //end #nav
 ?>
-  <div id="main">
-  <h1>Brod Ivana - Panoramska vožnja</h1>
-  <p>Uz <strong>brod Ivana</strong> mo&zcaron;ete da se opustite i otkrijete skrivene ljepote, netaknutu prirodu, uvale – pla&zcaron;e i srdačne domaćine. Panoramska vožnja neumskim kanalom je pravi odabir za ljubitelje prirode, mora, sunca i dobre zabave. Zaplovite zajedno s nama i uživajte u harmoničnom skladu boja i prirode.</p>
-  <p>Neum nudi obilje lijepih mjesta za zabavu i opuštanje. Međutim, najbolja od njih daleko su skrivena od znatiželjnih očiju turista. Panoramska vožnja pruža vam upravo tu mogućnost.<span class="no_margin">Zavirite u skrivene ljepote neumskog zaljeva i uživajte u predivnim krajolicima i znamenitostima s „morske strane“.</span>Vožnja u trajanju od 90 minuta garantira dobru zabavu i obilje fotografija za vaš album. </p>
-  <h2>Fish picnic</h2>
-  <p>“Fish picnic” druga je u nizu naših specijalnih ponuda, ukoliko prelijepe trenutke provedene u obilasku neumskog zaljeva želite dodatno obogatiti. Brod Ivana pobrinut će se da kušate tradicionalne morske specijalitete uz povoljnu cijenu.</p>
-  <span id="a"></span>
+<div id="main">
+<?php echo $result->render(); ?> 
+<span id="a"></span>
 <script src="JS/review.js"></script>
 <?php
 	$ivana = new GalleryIvana();
@@ -72,17 +70,16 @@ $postArr = Header::get(1);
 		<tfoot>
         <tr>
         	<td colspan="2"><p id="price">CIJENA NA UPIT</p>
-<!--<a href="#request">--><button id="question" class="request">POŠALJITE UPIT</button><!--</a>-->
+          <a href="#contact_owner" rel="modal:open"><button id="question" class="request  modal-btn">POŠALJITE UPIT</button></a>
+          <?php include "inc/owner.php"; ?>
 </td>
        </tr>
       </tfoot>    
       </table>
-
 <?php
 	$ivanaAsside = new GalleryAssideIvana();
 	$ivanaAsside->renderGalleryAsside();
 ?>
-
   </aside>
   <script defer src="lightbox2/src/js/lightbox.js"></script>
 <?php

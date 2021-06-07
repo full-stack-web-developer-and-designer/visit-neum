@@ -1,6 +1,7 @@
 <?php
-	require_once 'core/init.php';
-$result = Apartment::get(1);
+require_once 'core/init.php';
+$pages_id=3;
+$result = Pages::get(3);
 $postArr = Header::get(1);
 ?>
 <!DOCTYPE html>

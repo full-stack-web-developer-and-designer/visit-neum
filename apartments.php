@@ -1,13 +1,13 @@
 <?php
 require_once 'core/init.php';
 $postArr = Header::get(1);
-$result = Apartments::get(1);
+$result = Categories::get(2);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
 <?php	
-	$title="Najbolji Apartmani u Neumu/Najniže cijene smještaja/Posjetite odmah!";
-    //Check length of title for SEO (50-70 characters)
+	$title="Najbolji Apartmani u Neumu! | Najniže cijene smještaja!";
+    //Check length of title for SEO (50-70 characters) - 57
     //echo "Length of title is " . strlen($title) . "characters long." . " ";
 	$meta['description']="Najbolji, najpovoljniji, najudobniji i najluksuzniji Apartmani u Neumu, Bosna i Hercegovina – pronađite i rezervišite smještaj za svoje putovanje.";
     //Check length of description for SEO (140-180 characters)

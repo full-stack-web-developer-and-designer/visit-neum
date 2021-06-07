@@ -1,7 +1,8 @@
 <?php
-require_once 'core/init.php';
-$result = Hotel::get(1);
-$postArr = Header::get(1)
+  require_once 'core/init.php';
+  $pages_id=2;
+  $result = Pages::get(2);
+  $postArr = Header::get(1)
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -78,11 +79,12 @@ $postArr = Header::get(1)
 	$maticAsside = new GalleryAssideMatic();
 	$maticAsside->renderGalleryAsside();
 ?>
-
+<a href="#comments" rel="modal:open"><button id="comment" class="request  modal-btn">KOMENTARI</button></a>
+<?php include "./inc/comments.php"; ?>
 </aside>
  <script defer src="lightbox2/src/js/lightbox.js"></script>
 <?php
-	include './inc/footer.php';
+	include 'inc/footer.php';
 	//end #footer
 ?>
 </div><!-- end #wrapper -->

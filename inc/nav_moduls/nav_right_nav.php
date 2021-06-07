@@ -12,7 +12,7 @@
 			</div><!-- end #intro-->
 			<div id="ad">
 				<?php
-					include 'inc/form.php';
+					//include 'inc/form.php';
 				?>
 			</div><!-- end #ad-->
 		</div><!-- end .modal-body -->

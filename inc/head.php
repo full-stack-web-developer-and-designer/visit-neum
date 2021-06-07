@@ -10,6 +10,7 @@
 <meta name="theme-color" content="#0648A0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
+<!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
 <meta name="author" content="Mirnes Glamočić">
 <!-- include google fonts -->
 <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:400,400i,700,700i|Dancing+Script&display=swap&amp;subset=latin-ext" rel="stylesheet"
@@ -44,7 +45,10 @@
 <link rel="stylesheet" type="text/css" href="lightslider/lightslider.css">
 
 <!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+	window.jQuery || document.write("<script src='./JS/jQuery-1.7.2.js'><\/script>");
+</script>
 <!-- lightslider js-->
 <script src="lightslider/lightslider.js"></script> 
 <script defer>
@@ -90,7 +94,13 @@ window.onorientationchange = function() {
 <link rel="stylesheet" type="text/css" href="/lightbox2/src/css/lightbox.css">
 <!-- jQuery datepicker -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+	window.jQuery || document.write("<script src='./JS/jQuery-1.12.4.js'><\/script>");
+</script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script>
+	window.jQuery || document.write("<script src='./JS/jQuery-1.12.1ui.js'><\/script>");
+</script>
 <noscript><p class="errorJS">Za ispravan prikaz naše stranice molimo Vas uključite JavaScript u Vašem pretraživaču!</p></noscript>
 </head>
