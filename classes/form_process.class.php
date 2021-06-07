@@ -200,7 +200,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//var_dump($dbstmt);
 	//get emails from db via pdo
 	$emails_other = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
-	//$jsonData=[];
+	$jsonData=[];
 	if(is_array($emails_other) && count($emails_other) > 0){
 		foreach ($emails_other as $email_other){
 		//var_dump($email_other['email_address']);
@@ -213,15 +213,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					$stmt->execute(['fname' => $fname, 'tel' => $tel, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_other['email_address_id']]);
 					$rez['response']="success";
 					$rez['content'][$email_other['email_address_id']]="Hvala Vam ".ucwords($fname)."! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
-					//$jsonData[] = $rez;
+					$jsonData[] = $rez;
 				}//end if mail send	
-				echo json_encode($rez, JSON_FORCE_OBJECT, true);			
+				//echo json_encode($rez, JSON_FORCE_OBJECT, true);			
 	}//end foreach for email addresses  (man owners of other properties(restaurants, ships etc.))
 	//echo json_encode($jsonData);
 	//header('Content-Type: application/json; charset=utf-8', true);
 	
 }//end if for array of emails
-//echo json_encode($jsonData, JSON_FORCE_OBJECT, true);
+echo json_encode($jsonData, JSON_FORCE_OBJECT, true);
 //echo json_encode($jsonData, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT | JSON_THROW_ON_ERROR);
 
 //echo json_last_error_msg(); // Print out the error if any

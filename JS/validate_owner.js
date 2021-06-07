@@ -109,7 +109,7 @@ jQuery(document).ready(function () {
           //jQuery("#responseOwner").text(decodedArray['content']);
           //jQuery("#responseOwner").text(response['content']);
           //console.log(escape(rez));
-          c//onsole.log(decodedArray);
+          //console.log(decodedArray);
          // console.log (JSON.stringify(rez));
           console.log(response);
          
