@@ -1,3 +1,4 @@
+'use strict';
 var greetings = [ 
 "<p class='pregled'>\"Trenutno ovaj sadržaj pregleda još 1 korisnik!\"</p>", 
 "<p class='pregled'>\"Trenutno ovaj sadržaj pregledaju još 2 korisnika!\"</p>", 

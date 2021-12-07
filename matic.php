@@ -1,7 +1,8 @@
 <?php
-require_once 'core/init.php';
-$result = Hotel::get(1);
-$postArr = Header::get(1)
+  require_once 'core/init.php';
+  $pages_id=2;
+  $result = Pages::get(2);
+  $postArr = Header::get(1)
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -42,7 +43,7 @@ $postArr = Header::get(1)
 ?>
 
 <h2>Gdje se nalazimo?</h2>
-<iframe id="map_matic" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.4830002748577!2d17.624211315172573!3d42.91890390761864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134ba2520e6e6c61%3A0xcc90d46d336c0d38!2sVilla+Mati%C4%87!5e1!3m2!1sbs!2sba!4v1519715607404" frameborder="0" allowfullscreen></iframe></div><!-- end #main --><aside id="sidebar">
+<iframe id="map_matic" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.4830002748577!2d17.624211315172573!3d42.91890390761864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134ba2520e6e6c61%3A0xcc90d46d336c0d38!2sVilla+Mati%C4%87!5e1!3m2!1sbs!2sba!4v1519715607404" frameborder="0" allowfullscreen title="Hotel Villa Matić Map"></iframe></div><!-- end #main --><aside id="sidebar">
     <table id="contact">
       <thead>
         <tr>
@@ -78,11 +79,12 @@ $postArr = Header::get(1)
 	$maticAsside = new GalleryAssideMatic();
 	$maticAsside->renderGalleryAsside();
 ?>
-
+<a href="#comments" rel="modal:open"><button id="comment" class="request  modal-btn">KOMENTARI</button></a>
+<?php include "./inc/comments.php"; ?>
 </aside>
  <script defer src="lightbox2/src/js/lightbox.js"></script>
 <?php
-	include './inc/footer.php';
+	include 'inc/footer.php';
 	//end #footer
 ?>
 </div><!-- end #wrapper -->

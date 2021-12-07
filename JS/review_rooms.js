@@ -6,7 +6,7 @@
 	else{
 		pregled.innerHTML += "<p id='pregled'>\"Trenutno ovaj objekat pregledaju još " + x + " korisnika" + "!\"</p>"; //ispis na stranici
 	}*/
-	
+'use strict';
 var rooms = [ 
 "<p class='pregled'>\"Trenutno ovaj objekat pregleda još 1 korisnik!\"</p>", 
 "<p class='pregled'>\"Trenutno ovaj objekat pregledaju još 2 korisnika!\"</p>", 

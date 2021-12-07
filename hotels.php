@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
 $postArr = Header::get(1);
-$result = Hotels::get(1);
+$result = Categories::get(1);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">

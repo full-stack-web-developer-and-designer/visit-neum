@@ -1,4 +1,10 @@
 <div id="loginW">
-  <?php include 'inc/register.php'; ?>
-  <?php include 'inc/login.php'; ?>
+  <?php 
+ /* if(isset($_SESSION['w'])){
+    include_once "inc/" . $_SESSION['w'] . ".php";
+  } else {
+    include_once 'inc/register.php'; 
+    include_once 'inc/login.php'; 
+  }*/
+  ?>
 </div><!--end #loginW-->

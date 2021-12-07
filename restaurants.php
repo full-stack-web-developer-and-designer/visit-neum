@@ -1,6 +1,7 @@
 <?php
 	require_once 'core/init.php';
-$postArr = Header::get(1)
+$postArr = Header::get(1);
+$result = Categories::get(5);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -31,7 +32,8 @@ $postArr = Header::get(1)
 <?php
   include 'inc/nav.inc'; //end #nav
 ?>
-	<div id="main">
+<div id="main">
+<?php echo $result->render(); ?>
 <p>Uskoro...</p>
 	</div>
 <aside id="sidebar">

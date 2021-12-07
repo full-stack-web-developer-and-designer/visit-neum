@@ -1,4 +1,5 @@
 <?php
+// Active record pattern
 class Entity{
 	private static $db;
 	public static function get($id){
@@ -33,28 +34,10 @@ class Entity{
 		$q .= ") VALUES (";
 		$q .= $vel;
 		$q = trim($q, ', ');
-		$q .= ")";
+		//$q .= ")";
 		$q = self::$db->query($q);
-	}
-	public static function update($id, $params = null){
-		$tableName = static::$tableName;
-		$keyColumn = static::$keyColumn;
-		//$qtest = "UPDATE users SET register_name = 'Matejko', register_password = '147852' WHERE id = 2";
-		$q = "UPDATE {$tableName} SET ";
-		$keys = array_keys($params);
-		$values = array_values($params);
-		foreach($keys as $key){
-			$q .= $key . " = ?, ";
-		}
-		$q = trim($q, ', ') . " WHERE {$keyColumn} = ?";
-		$stmt = self::$db->prepare($q);
-		$n = 1;
-		foreach($values as $v) {
-			$stmt->bindValue($n, $v);
-			$n++;
-		}
-		$stmt->bindValue($n, $id);
-		$stmt->execute();
+		$sql = "INSERT INTO users (username, password, salt)";
+			echo $sql;
 	}
 	public static function init(){
 		self::$db = DB::getInstance();
