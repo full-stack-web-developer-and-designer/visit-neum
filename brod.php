@@ -40,9 +40,9 @@ $postArr = Header::get(1);
 	$ivana = new GalleryIvana();
 	$ivana->renderGallery();
 ?>
-<iframe class="video" id="brod_video" src="https://www.youtube-nocookie.com/embed/1PvwIYh-OtY?wmode=opaque&rel=0&autoplay=0&loop=1&showinfo=0&modestbranding=1&disablekb=1&controls=1&fs=0" frameborder="0" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow=accelerometer; encrypted-media; gyroscope; allowfullscreen disablePictureInPicture"></iframe>
+<iframe class="video" id="brod_video" src="https://www.youtube-nocookie.com/embed/1PvwIYh-OtY?wmode=opaque&rel=0&autoplay=0&loop=1&showinfo=0&modestbranding=1&disablekb=1&controls=1&fs=0" frameborder="0" sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow=accelerometer; encrypted-media; gyroscope; allowfullscreen disablePictureInPicture" title="Brod Ivana video"></iframe>
   <h2>Gdje se nalazimo?</h2>
- <iframe id="map_brod" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11687.292893650763!2d17.602407067649896!3d42.918769079153336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134ba35fa134b66d%3A0xa5813ec04ddb00e9!2sBrod%20Ivana%20Neum!5e0!3m2!1sen!2sba!4v1585805653707!5m2!1sen!2sba" allowfullscreen></iframe>
+ <iframe id="map_brod" class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11687.292893650763!2d17.602407067649896!3d42.918769079153336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134ba35fa134b66d%3A0xa5813ec04ddb00e9!2sBrod%20Ivana%20Neum!5e0!3m2!1sen!2sba!4v1585805653707!5m2!1sen!2sba" title="Brod Ivana Map" allowfullscreen></iframe>
  
 	</div><!-- end #main -->
 	<aside id="sidebar">
@@ -71,7 +71,7 @@ $postArr = Header::get(1);
         <tr>
         	<td colspan="2"><p id="price">CIJENA NA UPIT</p>
           <a href="#contact_owner" rel="modal:open"><button id="question" class="request  modal-btn">POŠALJITE UPIT</button></a>
-          <?php include "inc/owner.php"; ?>
+          <?php include_once "inc/owner.php"; ?>
 </td>
        </tr>
       </tfoot>    

@@ -1,3 +1,4 @@
+'use strict';
 jQuery(document).ready(function () {
 
 	jQuery.validator.addMethod('validName', function (value, element) {
@@ -33,7 +34,6 @@ jQuery(document).ready(function () {
 	});
 
 	jQuery("#contact_me").submit(function (e) {
-
 		e.preventDefault();
 	}).validate({
 		rules: {
@@ -56,7 +56,7 @@ jQuery(document).ready(function () {
 				validMessage: true,
 				maxlength: 1000
 			}
-		},
+		}, // rules
 		messages: {
 			name: {
 				required: 'Ime i prezime ne može biti prazno!',
@@ -78,7 +78,7 @@ jQuery(document).ready(function () {
 				validMessage: 'Sadržaj poruke ne mogu biti specijalni znaci!',
 				maxlength: 'Poruka može da sadrži maksimalno 1000 karaktera!'
 			}
-		},
+		}, // messages
 		submitHandler: function (_form) {
 			//Your code for AJAX starts    
 			var values = jQuery('#contact_me').serialize();
@@ -93,14 +93,13 @@ jQuery(document).ready(function () {
 				success: function (text) {
 					//alert("success");
 					jQuery("#response").text(text.message);
-					//console.log(text);
+					console.log(text);
 					//console.log(escape(text));
 					console.log(text.hasOwnProperty('message'));
 				},
 				error: function (jqXHR, textStatus, errorThrown) {
 					console.log(JSON.stringify(jqXHR));
 					console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
-		  
 				  }
 				/*
 				error: function (text) {
@@ -108,11 +107,11 @@ jQuery(document).ready(function () {
 					jQuery("#response").text("An error occurred");
 					console.log(text);
 				}*/
-				//Your code for AJAX Ends
-			});
+				
+			}); //Your code for AJAX Ends
 			// Clear all data after submit
 			var form_contact = document.getElementById('contact_me').reset();
 			return false;
 		} //submitHandler
-	});
-});
+	}); // validate
+}); // document.ready

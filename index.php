@@ -34,7 +34,7 @@
 <header id="header" class="cf">
 <?php 
   echo $postArr->render(); 	
-  //,include 'inc/header.php'; 
+  //include 'inc/header.php'; 
 ?>
 </header><!-- end #header -->
 <?php
@@ -57,7 +57,7 @@
 	
 	  <div class="main-outer">
 	  <div><!-- end .main-outer -->
-	  <iframe src="https://www.jabuka.tv/nlb/tecaj.html" scrolling="no" __idm_frm__="8589934611" rel="noreferrer" id="exchangeRates"   sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"></iframe></div>
+	  <iframe src="https://www.jabuka.tv/nlb/tecaj.html" scrolling="no" __idm_frm__="8589934611" rel="noreferrer" id="exchangeRates"   sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" title="Tečajni kalkulator"></iframe></div>
 	  <div>
 	  
 	  <section class='products'>

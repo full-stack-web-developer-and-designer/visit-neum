@@ -1,3 +1,4 @@
+'use strict';
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close_btn]')
 const mask = document.getElementById('mask')

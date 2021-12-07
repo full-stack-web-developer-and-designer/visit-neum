@@ -26,7 +26,7 @@
 				include 'nav_moduls/restaurants_nav.html';
 			?>
 		</li >
-		<li><a href='/Brod-Ivana-Panoramska-voznja.html' class='nav_visible'>VOŽNJA BRODOM</a></li>
+		<li><a href='/Brod-Ivana-Neum.html' class='nav_visible'>VOŽNJA BRODOM</a></li>
 		<li><a href='/Najbolji-Rent-a-Car-u-Neumu.html' class='nav_visible'>RENT A CAR</a></li>
 		<!-- Link to open the modal -->   
 		<li id="nav_right">
