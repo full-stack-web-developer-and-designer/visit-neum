@@ -1,28 +1,27 @@
 'use strict';
 jQuery(document).ready(function () {
-
-  jQuery.validator.addMethod("validFname", function (value, element) {
+  jQuery.validator.addMethod("validFname", function (value, _element) {
     if (/^[a-zšđčćžA-ZŠĐČĆŽ ]+$/gi.test(value)){
       return true;
     }else{
       return false;
     }
   });
-  jQuery.validator.addMethod("validTel", function (value, element) {
+  jQuery.validator.addMethod("validTel", function (value, _element) {
     if(/^[\+]?[0-9]{9,15}$/gm.test(value)){
       return true;
     }else{
       return false;
     }
   });
-  jQuery.validator.addMethod("validUserMail", function (value, element){
+  jQuery.validator.addMethod("validUserMail", function (value, _element){
     if(/^([a-zA-Z0-9_\-\.]+)\+?([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(value)){
       return true;
     }else{
       return false;
     }
   });
-  jQuery.validator.addMethod("validUserMessage", function(value, element){
+  jQuery.validator.addMethod("validUserMessage", function(value, _element){
     if(/^[a-zšđčćžA-ZŠĐČĆŽ 0-9 .,!?:;]+$/gi.test(value)){
       return true;
     }else{
@@ -43,7 +42,7 @@ jQuery(document).ready(function () {
         validTel: true,
         minlength: 9
       },
-      /*txtFrom: {
+     /*txtFrom: {
           required: true
       },
       txtTo: {
@@ -71,7 +70,7 @@ jQuery(document).ready(function () {
         validTel: 'Broj telefona može imati najviše 15 brojeva!',
         minlength: 'Broj telefona treba da sadrži minimalno 9 brojeva!'
       },
-      /* txtFrom: {
+      /*txtFrom: {
            required: 'Datum dolaska ne može biti prazan!'
        },
        txtTo: {
@@ -88,28 +87,32 @@ jQuery(document).ready(function () {
         maxlength: "Poruka može da sadrži maksimalno 1000 karaktera!"
       }
     },
-    submitHandler: function(form){
-      //Your code for AJAX starts    
+    submitHandler: function(_form){  
       var formData=jQuery("#contactOwner").serialize();
       console.log(formData);
-      $(document).ready(function (){
+      jQuery(document).ready(function (){
+      // Code for AJAX starts  
       jQuery.ajax({
-        type: "POST",
+        url: "/classes/Form_process.class.php",
+        type: "post",
         dataType: "json",
         data: formData,
-        url: "/classes/Form_process.class.php",
-        async: false,
         success:function(jsonData) {
          jQuery("#responseOwner").text(jsonData[0].content);
          console.log(jsonData[0]);
-         console.log(jsonData[0].hasOwnProperty('response'));
-         console.log(jsonData[0].hasOwnProperty('content'));
+         console.log(jsonData[0].content);
+         console.log(jsonData[0].hasOwnProperty("response"));
+         console.log(jsonData[0].hasOwnProperty("content"));
         },
-        error:function(jsonData){
+        error: function (jqXHR, textStatus, errorThrown) {
+					console.log(JSON.stringify(jqXHR));
+					console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+				  }
+        /*error:function(jsonData){
          jQuery("#responseOwner").text("An error occurred");
-          console.log(jsonData[0]);
-        }
-  });
+          console.log(jsonData);
+        }*/
+  }); //Your code for AJAX Ends
 });
       // Clear all data after submit
       var resetForm = document.getElementById('contactOwner').reset();

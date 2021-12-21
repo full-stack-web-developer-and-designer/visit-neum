@@ -24,6 +24,8 @@ include_once './classes/Form_process.class.php';
 			
 	</fieldset>
 	<!--<input type="hidden" name="token" value="<?php //echo Token::generate(); ?>">-->
+	
+	<input type="hidden" name="pages_id" value="<?=$pages_id?>">
 	<input type="submit" class="btn_submit" id="submitOwner" name="submitOwner" value="POŠALJI"/>
 </form>
 <script>
@@ -68,7 +70,7 @@ jQuery(document).ready(function(){
 	});
 });
 </script>
-<!--<script src="/JS/form_color.js"></script>
-<script src="/JS/validate_owner.js"></script>-->
+<script src="/JS/form_color.js"></script>
+<script src="/JS/validate_owner.js"></script>
 </div><!-- end .modal-->
 </div><!-- end #contact_owner -->
