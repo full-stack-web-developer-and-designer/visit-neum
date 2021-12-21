@@ -39,7 +39,7 @@
 <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-ipad-76x76.png">
 <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-iphone-retina-120x120.png">
 <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-ipad-retina-152x152.png">
-<link rel="canonical" href="https://www.visit-neum.com/" />
+<!--<link rel="canonical" href="https://www.visit-neum.com/" />-->
 <!-- include fontawesome --> 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/ae330ac296.js" crossorigin="anonymous"></script>

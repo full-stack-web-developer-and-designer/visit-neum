@@ -1,11 +1,6 @@
 <?php
-// set error reporting
-/*ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL | E_STRICT);*/
-//var_dump(ini_get('display_errors'));
 // define variables and set to empty values
-$fname = $tel = $userMail = $userMessage = $email_address_id = "";
+$fname = $tel = $txtFrom = $txtTo = $userMail = $userMessage = $email_address_id = "";
 $fname_error = $tel_error = $txtFrom_error = $txtTo_error = $userMail_error = $userMessage_error = "";
 $error=false;
 //Load the config file
@@ -15,6 +10,7 @@ $dbPassword = "m&102003&G";
 $dbName = "visitneu_neum";
 $dbCharset = "utf8";
 $pdo="";
+
 try{
 	$dsn = "mysql:host=" . $dbHost . ";dbName=" . $dbName . ";charset=" . $dbCharset;
 	$pdo = new PDO($dsn, $dbUser, $dbPassword);
@@ -29,21 +25,18 @@ require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 require 'PHPMailer/Exception.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-
-	//ob_start();
+	$pages_id=$_POST['pages_id'];
 	if(isset($_POST['submitOwner'])){
-//		print_r($_POST);
 	$fname = $_POST['fname'];
 	$tel = $_POST['tel'];
-/*	if(isset($_POST['txtFrom'])){
+	if(isset($_POST['txtFrom'])){
 		$txtFrom = date('Y-m-d', strtotime($_POST['txtFrom']));
 	}
 	if(isset($_POST['txtTo'])){
 		$txtTo = date('Y-m-d', strtotime($_POST['txtTo']));
-	}*/
+	}
 	$userMail = $_POST['userMail'];
 	$userMessage = $_POST['userMessage'];
-
 	if(empty($_POST['fname'])){
 		$error=true;
 		$fname_error = "Ime i prezime ne može biti prazno!";
@@ -61,7 +54,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 			$tel_error = "Broj telefona treba da sadrži minimalno od 9 do 15 brojeva!";
 		}
 	}
-	/*
 	if(empty($_POST["txtFrom"])){
 		$txtFrom_error = 'Datum odlaska ne može biti prazan!';
 	} else {
@@ -72,7 +64,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	} else {
 		$txtTo =$_POST['txtTo'];
 	}
-	*/
 	if(empty($_POST['userMail'])){
 		$userMail_error = "E-mail ne može biti prazan!";
 	}else{
@@ -91,8 +82,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		}
 	}
 	if($fname_error == '' && $tel_error == '' && $userMail_error == '' && $userMessage_error == ''){
-
-	//$error=false;
 	// Instantiate a NEW email
 	$mailOwner = new PHPMailer(true);
 	$mailOwner->CharSet = "UTF-8";
@@ -107,15 +96,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$mailOwner->SMTPSecure = 'ssl'; // tls
 	$mailOwner->WordWrap = 50;  
 	$mailOwner->setFrom('booking@visit-neum.com');
-	
-	//$mailOwner->clearAddresses();
+	$mailOwner->clearAddresses();
 	//$mailOwner->smtpClose();
 	$mailOwner->Subject = "Nova poruka od visit-neum.com";
 	$mailOwner->isHTML(true);
-		/*
+		
 	// SELECT email values from database for man owners of rooms
 	$sql_m = "SELECT owners_email.email_address_id, email_address, owner_name, owner_property, owner_sex, owner_type FROM visitneu_neum.owners_email INNER JOIN visitneu_neum.pages ON (pages.email_address_id = owners_email.email_address_id) WHERE `owner_sex`='M' AND `owner_type`='rooms' AND `pages_id` = ?";
-		
 	$dbstmt = $pdo->prepare($sql_m);
 	$dbstmt->bindParam(1,$pages_id);
 	$dbstmt->execute();
@@ -123,227 +110,141 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$emails_room_m = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
 	if(is_array($emails_room_m) && count($emails_room_m) > 0) {
 		foreach ($emails_room_m as $email_room_m){
+			//var_dump($email_room_m['email_address']);
 			$mailOwner->addAddress($email_room_m['email_address']);
 				$body_room_m = "<p>Poštovani {$email_room_m['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
-						$mailOwner->Body = $body_room_m;
+				$mailOwner->Body = $body_room_m;
  
 	if($mailOwner->send()){
 		$mailOwner = "INSERT INTO visitneu_neum.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage, email_address_id) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage, :email_address_id)";
 		$stmt = $pdo->prepare($mailOwner);
 		$stmt->execute(['fname' => $fname, 'tel' => $tel, 'txtFrom' => $txtFrom, 'txtTo' => $txtTo, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_room_m['email_address_id']]);
-		if($mistake==false){
-			$data['response'] = "success";
-			$data['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta {$email_room_m['owner_property']}! Odgovor ćete dobiti ubrzo!";
-		}//end if $error==false
-	}//end if mail send
+		// Load AJAX
+		if($error==false){
+			$information['response'] = "success";
+			$information['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
+			$jsonData[] = $information;
+		}//end if($error==false)
+	}//end if(mailOwner->send())		
+else{   
+	$information['response'] = "error";
+	$information['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
+	$jsonData[]=$information;  
+	}
+	echo(json_encode($jsonData));
 	}//end foreach for email addresses  (man owners of rooms)
+}//end if for array of emails
 
-	}//end if for array of emails
-*/ // SELECT email values from database for woman owners of rooms
-/*	$sql_f="SELECT owners_email.email_address_id, email_address, owner_name, owner_property, owner_sex, owner_type FROM visitneu_neum.owners_email INNER JOIN visitneu_neum.pages ON (pages.email_address_id = owners_email.email_address_id) WHERE `owner_sex`='F' AND `owner_type`='rooms' AND `pages_id` = ?";
+ // SELECT email values from database for woman owners of rooms
+	$sql_f="SELECT owners_email.email_address_id, email_address, owner_name, owner_property, owner_sex, owner_type FROM visitneu_neum.owners_email INNER JOIN visitneu_neum.pages ON (pages.email_address_id = owners_email.email_address_id) WHERE `owner_sex`='F' AND `owner_type`='rooms' AND `pages_id` = ?";
 	$dbstmt = $pdo->prepare($sql_f);
 	$dbstmt->bindParam(1,$pages_id);
 	$dbstmt->execute();
 	//get emails from db via pdo
 	$emails_room_f = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
-	$data=[];
+
 	if(is_array($emails_room_f) && count($emails_room_f) > 0){
-		//$jsonData = [];
 		foreach ($emails_room_f as $email_room_f){
 			// var_dump($email_room_f['email_address']);
 			$mailOwner->addAddress($email_room_f['email_address']);
 			$body_room_f = "<p>Poštovana {$email_room_f['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
 			$mailOwner->Body = $body_room_f;
 			if($mailOwner->send()){
-				$mistake=false;
 				$mailOwner = "INSERT INTO visitneu_neum.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage, email_address_id) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage, :email_address_id)";
 				$stmt = $pdo->prepare($mailOwner);
 				$stmt->execute(['fname' => $fname, 'tel' => $tel, 'txtFrom' => $txtFrom, 'txtTo' => $txtTo, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_room_f['email_address_id']]);
-			}//end if mail send	
-			else{
-				$mistake=true;
-			}
+			// Load AJAX
+		if($error==false){
+			$information['response'] = "success";
+			$information['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
+			$jsonData[] = $information;
+		}//end if $error==false
+	}//end if mail send			
+else{   
+	$information['response'] = "error";
+	$information['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
+	$jsonData[]=$information;  
+}
+echo(json_encode($jsonData));
 	}//end foreach for email addresses  (woman owners of rooms)
 }//end if for array of emails*/
+
 // SELECT email values from database for man owners of others property(restaurants, ships, etc)
-	/*$query_m = "SELECT owners_email.email_address_id, email_address, owner_name, owner_property, owner_sex,
+	$query_m = "SELECT owners_email.email_address_id, email_address, owner_name, owner_property, owner_sex,
 	owner_type FROM visitneu_neum.owners_email INNER JOIN visitneu_neum.pages ON (pages.email_address_id = owners_email.email_address_id) WHERE `owner_sex`='M' AND `owner_type`='other' AND `pages_id` = ?";
 	$dbstmt = $pdo->prepare($query_m);
 	$dbstmt->bindParam(1,$pages_id);
 	$dbstmt->execute();
 	//get emails from db via pdo
-	$emails_other = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
-	$jsonData=[];
-	if(is_array($emails_other) && count($emails_other) > 0) {
-		$jsonData=[];
-		foreach ($emails_other as $email_other){
-			$mailOwner->addAddress($email_other['email_address']);
-				$body_other = "<p>Poštovani {$email_other['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
-				$mailOwner->Body = $body_other;
+	$emails_other_m = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
+	
+	if(is_array($emails_other_m) && count($emails_other_m) > 0) {
+		//$jsonData=[];
+		foreach ($emails_other_m as $email_other_m){
+			$mailOwner->addAddress($email_other_m['email_address']);
+				$body_other_m = "<p>Poštovani {$email_other_m['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
+				$mailOwner->Body = $body_other_m;
 				if($mailOwner->send()){
 					$mailOwner = "INSERT INTO visitneu_neum.contact_owner (fname, tel, userMail, userMessage, email_address_id) VALUES (:fname, :tel, :userMail, :userMessage, :email_address_id)";
 					$stmt = $pdo->prepare($mailOwner);
-					$stmt->execute(['fname' => $fname, 'tel' => $tel, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_other['email_address_id']]);
-					if($mistake==false){
-						$data['response'] = "success";
-						$data['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta {$email_other['owner_property']}! Odgovor ćete dobiti ubrzo!";
-					$jsonData[]=$data;	
-					}//end if $error==false
-				}//end if mail send
-			echo json_encode($jsonData);
+					$stmt->execute(['fname' => $fname, 'tel' => $tel, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_other_m['email_address_id']]);
+					// Load AJAX
+		if($error==false){
+			$information['response'] = "success";
+			$information['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
+			$jsonData[] = $information;
+		}//end if $error==false
+	}//end if mail send			
+else{   
+	$information['response'] = "error";
+	$information['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
+	$jsonData[]=$information;  
+}
+echo(json_encode($jsonData));
 	}//end foreach for email addresses  (man owners of other properties(restaurants, ships etc.))
 
 }//end if for array of emails
-/*else{
-	$data['response'] = "error";
-	$data['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
-	}*/
-	// SELECT email values from database for man owners of others property(restaurants, ships, etc)
-	//$jsonData=array();
 
-	//var_dump($dbstmt);
-	//get emails from db via pdo
-$query_m = "SELECT owners_email.email_address_id, email_address, owner_name, owner_property, owner_sex, owner_type FROM visitneu_neum.owners_email INNER JOIN visitneu_neum.pages ON (pages.email_address_id = owners_email.email_address_id) WHERE `owner_sex`='M' AND `owner_type`='other' AND `pages_id` = ?";
-$dbstmt = $pdo->prepare($query_m);
-$dbstmt->bindParam(1, $pages_id);
+// SELECT email values from database for woman owners of others property(restaurants, ships, etc)
+$query_w = "SELECT owners_email.email_address_id, email_address, owner_name, owner_property, owner_sex, owner_type FROM visitneu_neum.owners_email INNER JOIN visitneu_neum.pages ON (pages.email_address_id = owners_email.email_address_id) WHERE `owner_sex`='F' AND `owner_type`='other' AND `pages_id` = ?";
+$dbstmt = $pdo->prepare($query_w);
+$dbstmt->bindParam(1,$pages_id);
 $dbstmt->execute();
-//print_r($pages_id);
-$emails_other = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
-	//$jsonData=array();
-	if(is_array($emails_other) && count($emails_other)>0){
-	$jsonData=array();
-	foreach($emails_other as $email_other){
+
+$emails_other_w = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
+	if(is_array($emails_other_w) && count($emails_other_w)>0){
+	foreach($emails_other_w as $email_other_w){
 		//var_dump($email_other['email_address']);
-		$mailOwner->addAddress($email_other['email_address']);
-		$body_other = "<p>Poštovani {$email_other['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
-		$mailOwner->Body = $body_other;
-		//$jsonData=array();
+		$mailOwner->addAddress($email_other_w['email_address']);
+		$body_other_w = "<p>Poštovana {$email_other_w['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
+		$mailOwner->Body = $body_other_w;
 		if($mailOwner->send()){
 			// save data to db
 			$mailOwner = "INSERT INTO visitneu_neum.contact_owner(fname, tel, userMail, userMessage, email_address_id) VALUES(:fname, :tel, :userMail, :userMessage, :email_address_id)";
 			$stmt = $pdo->prepare($mailOwner);
-			$stmt->execute(['fname' => $fname, 'tel' => $tel, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_other['email_address_id']]);
-
+			$stmt->execute(['fname' => $fname, 'tel' => $tel, 'userMail' => $userMail, 'userMessage' => $userMessage, 'email_address_id' => $email_other_w['email_address_id']]);
 				// Load AJAX
 				if($error==false){
 					$information['response'] = "success";
 					$information['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
 					$jsonData[] = $information;
-				}
-
-				/*
-				$information['response'] = "success";
-				$information['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
-				$jsonData[] = $information;
-				*/
-				/*if($error==false){
-					$jsonData[]=array(
-						'response'=>"success",
-						'content'=>"Hvala Vam ".ucwords($fname)."! Vaša poruka je uspješno poslata vlasniku objekta {$email_other['owner_property']}! Odgovor ćete dobiti ubrzo!"
-					);*/
-				/*$information['response'] = "success";
-				$information['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta {$email_other['owner_property']}! Odgovor ćete dobiti ubrzo!";
-				$jsonData[] = $information;*/
-				//*/
-					//echo(json_encode($jsonData));*/
-					//array_push($jsonData,$data);
-					/*$data['response']="success";
-					$data['content']="Hvala Vam ".ucwords($fname)."! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
-					/*$data['content'][$email_other['email_address_id']]="Hvala Vam ".ucwords($fname)."! Vaša poruka je uspješno poslata vlasniku objekta {$email_other['owner_property']}! Odgovor ćete dobiti ubrzo!";*/
-					//$jsonData[] = $data;
-				//}	
-	
+				}	
 }//end if mail send			
 else{   
 	$information['response'] = "error";
 	$information['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
 	$jsonData[]=$information;  
 }
-echo(json_encode($jsonData));	
-//echo json_last_error_msg(); // Print out the error if any
-//die(); // halt the script
-//return $jsonData;
-//echo json_decode(array($jsonData));
-/*else{
-	$data['response']="error";
-	$data['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
-	//$jsonData[] = $data;
-//echo json_encode($jsonData);
-}*/
-//echo json_encode(array($jsonData));
-//echo json_encode($jsonData->$data);
-/*else{
-	$data['response']="error";
-	$data['message'] = "Došlo je do greške! Pokušajte ponovo..." . $mail_contact->ErrorInfo;
-	$jsonData[] = $data;
-}*/
-/*else{
-		$jsonData[]=array(
-		'response'=>"error",
-		'content'=>"greska!");
-		}*/
-				//echo json_encode($jsonData, JSON_FORCE_OBJECT, true);
-			//Clear all addresses and attachments for the next iteration
-			//$mailOwner->clearAddresses();	
-	}//end foreach for email addresses  (man owners of other properties(restaurants, ships etc.))
-	//print_r($jsonData);
-	//echo json_encode(array($jsonData, JSON_FORCE_OBJECT));
-	//$mailOwner->smtpClose();
-	//echo json_encode(array($jsonData));
-	//echo json_encode($jsonData[0], true);
-	//header("Content-Type: application/json; charset=utf-8", true);
-	//header("Content-type: application/json;charset=utf-8");
-}//end if for array of emails
-//{$email_other['owner_property']}
-/*
-if($error==false){
-	$information['response'] = "success";
-	$information['content'] = "Hvala Vam " . ucwords($fname) . "! Vaša poruka je uspješno poslata vlasniku objekta! Odgovor ćete dobiti ubrzo!";
-	$jsonData[] = $information;
-}
-else{   
-    //($mistake==true)
-$information['response'] = "error";
-$information['content'] = "Došlo je do greške! Pokušajte ponovo..." . $mailOwner->ErrorInfo;
-$jsonData[]=$information;  
-}
-echo (json_encode($jsonData));
-*/
-//ob_flush();
-//var_dump($jsonData);
-//ob_clean();
-//echo json_last_error_msg();
-//echo json_last_error_msg(); // Print out the error if any
-//die(); // halt the script
-//echo(json_encode($data));
-/*if($error==false){
-}*/	
-//header("Content-type: application/json");
-//ob_flush();
-//echo(json_encode($jsonData));
-//ob_clean();
-//exit;
-//print_r($jsonData);
-//die(print_r($jsonData, 1));
-//echo json_encode($jsonData, true);
-//var_dump($jsonData);
-//ob_flush();
-//var_dump(json_encode($jsonData)); exit;
-//echo json_encode($jsonData, JSON_PRETTY_PRINT | JSON_FORCE_OBJECT | JSON_THROW_ON_ERROR);
 
-//echo json_last_error_msg(); // Print out the error if any
-//die(); // halt the script
-//debugger();
-//echo str_replace("[]", "{}", json_encode($jsonData));
-//echo json_encode($jsonData, JSON_FORCE_OBJECT, true);
-//echo json_encode($jsonData);
+echo(json_encode($jsonData));
+	}//end foreach for email addresses  (man owners of other properties(restaurants, ships etc.))
+}//end if for array of emails
 	}//end if validation
-	//$pdo=null;
 }//end submitOwner
 }//end REQUEST METHOD = POST
-//$pdo = null;
-/*
+$PDO=NULL;
 // define variables and set to empty values
+/*
 $name = $phone = $email = $message = "";
 $name_error = $phone_error = $email_error = $message_error = "";
 //$error = false;
@@ -421,7 +322,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		
 		if($error==false){
 			$text['response'] = "success";
-			$text['message'] = "Hvala Vam " . ucwords($name) . "! Vaša poruka je uspješno poslata! Odgovor ćete dobiti ubrzo!";
+			$text['message'] = "Hvala Vam " . ucwords($name) . "! Vaša poruka je uspješno poslata administratoru sajta! Odgovor ćete dobiti ubrzo!";
 		}
     } 
 	else
@@ -429,11 +330,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$text['response'] = "error";
 		$text['message'] = "Došlo je do greške! Pokušajte ponovo..." . $mail_contact->ErrorInfo;
     }
-	
 	echo json_encode($text); 
-	//var_dump(json_encode($text));
-	exit();
 } //end if validation
 } // end submit
 } // end REQUEST METHOD = POST
-//$pdo=null;*/
+//$pdo=null;
+*/
