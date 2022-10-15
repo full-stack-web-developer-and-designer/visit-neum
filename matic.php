@@ -79,10 +79,10 @@
 	$maticAsside = new GalleryAssideMatic();
 	$maticAsside->renderGalleryAsside();
 ?>
-<a href="#comments" rel="modal:open"><button id="comment" class="request  modal-btn">KOMENTARI</button></a>
+
 <?php include "./inc/comments.php"; ?>
 </aside>
- <script defer src="lightbox2/src/js/lightbox.js"></script>
+ <script src="lightbox2/src/js/lightbox.js"></script>
 <?php
 	include 'inc/footer.php';
 	//end #footer

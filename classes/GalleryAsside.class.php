@@ -10,7 +10,7 @@ class GalleryAsside extends ConnectGalleryAsside {
 		$picture = $row['picture'];
 		$alt_S = $row['alt'];
 
-		echo '<a href="galleryAsside/BIG/'.$picture.'" data-lightbox="image-group"><img src="galleryAsside/SMALL/'.$picture.'" alt="'.$alt_S.'" class="'.$klasa.'"></a>';
+		echo '<a href="galleryAsside/BIG/'.$picture.'" data-lightbox="image-group"><img src="galleryAsside/SMALL/'.$picture.'" alt="'.$alt_S.'"></a>';
 		
 		}
         

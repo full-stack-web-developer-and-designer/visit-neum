@@ -460,7 +460,7 @@ form .form-control .message {
 	outline: none!important;
 	color: #AAA;
 	transition: .3s;
-	padding: 15px 15px 15px 70px;
+	padding: 13px 13px 13px 70px;
 	border:0;
 }
 .form-control.single {

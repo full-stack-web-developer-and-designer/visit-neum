@@ -81,7 +81,7 @@ $postArr = Header::get(1);
 	$ivanaAsside->renderGalleryAsside();
 ?>
   </aside>
-  <script defer src="lightbox2/src/js/lightbox.js"></script>
+  <script src="lightbox2/src/js/lightbox.js"></script>
 <?php
 	include_once 'inc/footer.php';
 	//end #footer
