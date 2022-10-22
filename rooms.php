@@ -29,7 +29,7 @@ $postArr = Header::get(1)
 ?>
 </header><!-- end #header -->
 <?php
-  include 'inc/nav.inc'; //end #nav
+  include 'inc/nav.php'; //end #nav
 ?>
 	<div id="main">
 <p>Uskoro...</p>
