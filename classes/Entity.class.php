@@ -36,8 +36,6 @@ class Entity{
 		$q = trim($q, ', ');
 		//$q .= ")";
 		$q = self::$db->query($q);
-		$sql = "INSERT INTO users (username, password, salt)";
-			echo $sql;
 	}
 	public static function init(){
 		self::$db = DB::getInstance();

@@ -4,10 +4,9 @@
 </div><!-- end .contact_heading-->
 <div class="modal-body">
 <?php
-//$fname_error = $tel_error =/*$txtFrom_error = $txtTo_error = */$userMail_error = $userMessage_error = "";
-include_once './classes/Form_process.class.php';
+include_once 'classes/Form_process.class.php';
 ?>
-<form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form' name='contactOwner' action='' method='POST'>
+<form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form ajax' name='contactOwner' action='' method='POST'>
 <h4 id="responseOwner" class="success">
 <!-- This will hold response from the server --></h4>
   <fieldset>
@@ -16,13 +15,11 @@ include_once './classes/Form_process.class.php';
 			
 		<div class="form-control halb InputIconBg"><input minlength="9" type="text" class="input phone" name="tel" placeholder="Vaš broj telefona..." value="<?php echo Input::get('tel'); ?>"><i class="fas fa-phone-alt" aria-hidden="true"></i><span class="error"><?=$tel_error; ?></span></div><!-- end .form-control -->
 
-		<div class="form-control single InputIconBg"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo Input::get('userMail'); ?>" autocomplete="email"><i id="" class="fas fa-envelope owner_icon" aria-hidden="true"></i><span class="error"><?=$userMail_error; ?></span></div><!-- end .form-control --> 
+		<div class="form-control single InputIconBg"><input type="text" class="input mail" name="userMail" placeholder="Vaš e-mail..." value="<?php echo Input::get('userMail'); ?>" autocomplete="email"><i id="" class="fas fa-envelope" aria-hidden="true"></i><span class="error"><?=$userMail_error; ?></span></div><!-- end .form-control --> 
 			
-		<div class="form-control InputIconBg"><textarea maxlength="1000" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka..."><?php echo Input::get('userMessage'); ?></textarea><i class="fas fa-pencil-alt owner_icon" aria-hidden="true"></i><span class="error"><?=$userMessage_error; ?></span></div><!-- end .form-control -->
+		<div class="form-control InputIconBg"><textarea maxlength="1000" name="userMessage" class="textinput message" cols="46" rows="8" placeholder="Vaša poruka će biti poslata direktno vlasniku objekta."><?php echo Input::get('userMessage'); ?></textarea><i class="fas fa-pencil-alt owner_icon" aria-hidden="true"></i><span class="error"><?=$userMessage_error; ?></span></div><!-- end .form-control -->
 			
 	</fieldset>
-	<!--<input type="hidden" name="token" value="<?php //echo Token::generate(); ?>">-->
-	
 	<input type="hidden" name="pages_id" value="<?=$pages_id?>">
 	<input type="submit" class="btn_submit" id="submitOwner" name="submitOwner" value="POŠALJI"/>
 </form>
