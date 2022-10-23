@@ -1,7 +1,10 @@
 <?php
-// define variables and set to empty values
-$fname = $tel = $userMail = $userMessage = $email_address_id = "";
+// define variables and set to empty values for contact owner
+$fname = $tel = $txtFrom = $txtTo = $userMail = $userMessage = $email_address_id = "";
 $fname_error = $tel_error = $txtFrom_error = $txtTo_error = $userMail_error = $userMessage_error = "";
+// define variables and set to empty values for administrator
+$name = $phone = $email = $message = "";
+$name_error = $phone_error = $email_error = $message_error = "";
 $error=false;
 //Load the config file
 $dbHost = "localhost:3306";
@@ -25,8 +28,9 @@ require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 require 'PHPMailer/Exception.php';
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	$pages_id=$_POST['pages_id'];
+	
 	if(isset($_POST['submitOwner'])){
+		$pages_id=$_POST['pages_id'];
 	$fname = $_POST['fname'];
 	$tel = $_POST['tel'];
 	if(isset($_POST['txtFrom'])){
@@ -100,6 +104,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	//$mailOwner->smtpClose();
 	$mailOwner->Subject = "Nova poruka od visit-neum.com";
 	$mailOwner->isHTML(true);
+	$mailOwner->addBCC('kontakt@visit-neum.com');
 		
 	// SELECT email values from database for man owners of rooms
 	$sql_m = "SELECT owners_email.email_address_id, email_address, owner_name, owner_property, owner_sex, owner_type FROM visitneu_neum.owners_email INNER JOIN visitneu_neum.pages ON (pages.email_address_id = owners_email.email_address_id) WHERE `owner_sex`='M' AND `owner_type`='rooms' AND `pages_id` = ?";
@@ -112,7 +117,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		foreach ($emails_room_m as $email_room_m){
 			//var_dump($email_room_m['email_address']);
 			$mailOwner->addAddress($email_room_m['email_address']);
-				$body_room_m = "<p>Poštovani {$email_room_m['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
+				$body_room_m = "<p>Poštovani {$email_room_m['owner_name']},<br>"."Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:<br><br><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>".$tel."<br><strong>Datum dolaska: </strong>".$txtFrom."<br><strong>Datum odlaska: </strong>".$txtTo."<br><strong>E-mail: </strong>".strtolower($userMail)."<br><strong>Poruka: </strong>".$userMessage."<br><br>Želimo Vam mnogo sreće u daljnjem radu!<br><span style='display:block;font-family:Dancing Script,cursive;font-size:28px;color:#0648a0;font-weight:bold;'>Vaš visit-neum.com</span><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: ".strtoupper($userMail)."</p>";
 				$mailOwner->Body = $body_room_m;
  
 	if($mailOwner->send()){
@@ -147,7 +152,7 @@ else{
 		foreach ($emails_room_f as $email_room_f){
 			// var_dump($email_room_f['email_address']);
 			$mailOwner->addAddress($email_room_f['email_address']);
-			$body_room_f = "<p>Poštovana {$email_room_f['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>Datum dolaska: </strong>" . $txtFrom . "<br><strong>Datum odlaska: </strong>" . $txtTo . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
+			$body_room_f = "<p>Poštovana {$email_room_f['owner_name']},<br>"."Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:<br><br><strong>Od: </strong>".ucwords($fname)."<br><strong>Telefon: </strong>".$tel."<br><strong>Datum dolaska: </strong>".$txtFrom."<br><strong>Datum odlaska: </strong>".$txtTo . "<br><strong>E-mail: </strong>".strtolower($userMail)."<br><strong>Poruka: </strong>".$userMessage."<br><br>Želimo Vam mnogo sreće u daljnjem radu!<br><span style='display:block;font-family:Dancing Script,cursive;font-size:28px;color:#0648a0;font-weight:bold;'>Vaš visit-neum.com</span><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: ".strtoupper($userMail)."</p>";
 			$mailOwner->Body = $body_room_f;
 			if($mailOwner->send()){
 				$mailOwner = "INSERT INTO visitneu_neum.contact_owner (fname, tel, txtFrom, txtTo, userMail, userMessage, email_address_id) VALUES (:fname, :tel, :txtFrom, :txtTo, :userMail, :userMessage, :email_address_id)";
@@ -177,12 +182,11 @@ echo(json_encode($jsonData));
 	$dbstmt->execute();
 	//get emails from db via pdo
 	$emails_other_m = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
-	//$jsonData=[];
+	
 	if(is_array($emails_other_m) && count($emails_other_m) > 0) {
-		//$jsonData=[];
 		foreach ($emails_other_m as $email_other_m){
 			$mailOwner->addAddress($email_other_m['email_address']);
-				$body_other_m = "<p>Poštovani {$email_other_m['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
+				$body_other_m = "<p>Poštovani {$email_other_m['owner_name']},<br>"."Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:<br><strong>Od: </strong>".ucwords($fname)."<br><strong>Telefon: </strong>".$tel."<br><strong>E-mail: </strong>".strtolower($userMail)."<br><strong>Poruka: </strong>".$userMessage."<br><br>Želimo Vam mnogo sreće u daljnjem radu!<br><span style='display:block;font-family:Dancing Script,cursive;font-size:28px;color:#0648a0;font-weight:bold;'>Vaš visit-neum.com</span><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: ".strtoupper($userMail)."</p>";
 				$mailOwner->Body = $body_other_m;
 				if($mailOwner->send()){
 					$mailOwner = "INSERT INTO visitneu_neum.contact_owner (fname, tel, userMail, userMessage, email_address_id) VALUES (:fname, :tel, :userMail, :userMessage, :email_address_id)";
@@ -216,9 +220,8 @@ $emails_other_w = $dbstmt->fetchAll(PDO::FETCH_ASSOC);
 	foreach($emails_other_w as $email_other_w){
 		//var_dump($email_other['email_address']);
 		$mailOwner->addAddress($email_other_w['email_address']);
-		$body_other_w = "<p>Poštovana {$email_other_w['owner_name']}, <br>" . "Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><p><strong>Od: </strong>" . ucwords($fname) . "<br><strong>Telefon: </strong>" . $tel . "<br><strong>E-mail: </strong>" .strtolower($userMail)."<br><strong>Poruka: </strong>" . $userMessage . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($userMail) . "</p>";
+		$body_other_w = "<p>Poštovana {$email_other_w['owner_name']},<br>"."Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:<br><strong>Od: </strong>".ucwords($fname)."<br><strong>Telefon: </strong>".$tel."<br><strong>E-mail: </strong>".strtolower($userMail)."<br><strong>Poruka: </strong>".$userMessage."<br><br>Želimo Vam mnogo sreće u daljnjem radu!<br><span style='display:block;font-family:Dancing Script,cursive;font-size:28px;color:#0648a0;font-weight:bold;'>Vaš visit-neum.com</span><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: ".strtoupper($userMail)."</p>";
 		$mailOwner->Body = $body_other_w;
-		//$jsonData=array();
 		if($mailOwner->send()){
 			// save data to db
 			$mailOwner = "INSERT INTO visitneu_neum.contact_owner(fname, tel, userMail, userMessage, email_address_id) VALUES(:fname, :tel, :userMail, :userMessage, :email_address_id)";
@@ -242,15 +245,7 @@ echo(json_encode($jsonData));
 }//end if for array of emails
 	}//end if validation
 }//end submitOwner
-}//end REQUEST METHOD = POST
-/*
-// define variables and set to empty values
-$name = $phone = $email = $message = "";
-$name_error = $phone_error = $email_error = $message_error = "";
-//$error = false;
-//form is submitted with POST method
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	if(isset($_POST['submit'])) {
+else if(isset($_POST['submit'])) {
 	$name = $_POST['name'];
 	$phone = $_POST['phone'];
 	$email = $_POST['email'];
@@ -269,7 +264,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$phone_error = "Broj telefona ne može biti prazan!";
 	}else{
 		$phone = $_POST['phone'];
-		// check if
+		// check if phone number is correct 
 		if(!preg_match('/^[\+]?[0-9]{9,15}$/', $phone)) {
 			$phone_error = "Broj telefona treba da sadrži minimalno od 9 do 15 brojeva!";
 		}
@@ -311,8 +306,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		// Clear all addresses and attachments for next loop
 		$mail_contact->clearAddresses();
 		$mail_contact->addAddress('kontakt@visit-neum.com');
+		$mail_contact->addReplyTo($email);
 		$mail_contact->Subject = "Nova poruka od visit-neum.com";
-		$body = "<p>Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><br><p><strong>Od: </strong>" . ucwords($name) . "<br><strong>Telefon: </strong>" . $phone ."<br><strong>E-mail: </strong>" .strtolower($email)."<br><strong>Poruka: </strong>" . $message . "<br><br><strong>Napomena: </strong>Molimo Vas da na ovu poruku ne odgovarate. Vaš odgovor pošaljite na: " . strtoupper($email) . "</p>";
+		$body = "<p>Upravo ste primili poruku sa sajta <a href='https://www.visit-neum.com'>visit-neum.com</a><br>Detalji Vaše poruke se nalaze ispod:</p><br><p><strong>Od: </strong>" . ucwords($name) . "<br><strong>Telefon: </strong>" . $phone ."<br><strong>E-mail: </strong>" .strtolower($email)."<br><strong>Poruka: </strong>" . $message . "</p>";
 		$mail_contact->Body = $body;
 		
       if($mail_contact->send()) {
@@ -332,6 +328,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 	echo json_encode($text); 
 } //end if validation
-} // end submit
-} // end REQUEST METHOD = POST
-$pdo=null;*/
+}// end submit
+}//end REQUEST METHOD = POST
+$pdo=NULL;
