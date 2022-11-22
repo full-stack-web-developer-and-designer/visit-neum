@@ -940,6 +940,9 @@ tr {
     padding: 10px 0;
     background-color: #908f8f;
 }
+table#contact a {
+    text-decoration: none;
+}
 #website a:link,
 #website a:visited {
     color: #fff;
