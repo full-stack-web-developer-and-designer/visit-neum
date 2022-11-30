@@ -824,9 +824,6 @@ span#important {
 .offer a {
     text-decoration: none;
 }
-.lSSlideOuter .lSPager.lSpg > li {
-    display: none !important;
-}
 .central {
     letter-spacing: -1px;
     text-align: center;
