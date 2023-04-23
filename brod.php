@@ -10,7 +10,7 @@ $postArr = Header::get(1);
 	$title="Brod Ivana, Neum | Najpovoljnije krstarenje neumskim zaljevom!";
   //Check length of title for SEO (50-70 characters)
   //echo "Length of title is " . strlen($title) . "characters long." . " ";
-	$og_title="Brod Ivana, Neum / Krstarenje neumskim zaljevom...";
+	$og_title="Brod Ivana, Neum | Krstarenje neumskim zaljevom...";
 	$website_url="https://visit-neum.com/Brod-Ivana-Neum.html";
 	$meta['description']="Brod Ivana nudi Vam najbolji izbor da vidite Neum s obe strane obale, te da se  opustite i otkrijete skrivene ljepote ovog divnog grada.";
   //Check length of description for SEO (140-180 characters)
