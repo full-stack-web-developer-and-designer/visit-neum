@@ -6,6 +6,7 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
 <!-- meta tags -->
 <meta name="robots" content="index,follow">
+<title><?php echo $title; ?></title>
 <meta name="description" content="<?php echo $meta['description']; ?>" />
 <meta name="theme-color" content="#0648A0">
 <meta name="keywords" content="<?php echo $meta['keywords']; ?>" />
@@ -115,7 +116,6 @@ window.onorientationchange = function() {
     });
 </script>
 <noscript><p class="errorJS">Za ispravan prikaz naše stranice molimo Vas uključite JavaScript u Vašem pretraživaču!</p></noscript>
-<title><?php echo $title; ?></title>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5G3QT9BQ7"></script>
