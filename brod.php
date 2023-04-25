@@ -12,7 +12,7 @@ $postArr = Header::get(1);
   //echo "Length of title is " . strlen($title) . "characters long." . " ";
 	$og_title="Brod Ivana, Neum | Krstarenje neumskim zaljevom...";
 	$website_url="https://visit-neum.com/Brod-Ivana-Neum.html";
-	$meta['description']="Brod Ivana nudi Vam najbolji izbor da vidite Neum s obe strane obale, te da se  opustite i otkrijete skrivene ljepote ovog divnog grada.";
+	$meta['description']="Vožnja brodom Ivana u Neumu popularna je atrakcija koja privlači turiste i nudi vam mogućnost da se  opustite i otkrijete skrivene ljepote ovog divnog grada.";
   //Check length of description for SEO (140-180 characters)
   //echo "Length of description is " . strlen($meta['description']) . "characters long.";
 	$meta['keywords']="neum, brodovi Neum,brod Neum, jahta Neum, ljetovanje, ljetovanje neum, ljetovanje na moru";
