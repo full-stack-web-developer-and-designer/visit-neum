@@ -2,7 +2,7 @@
   require_once 'core/init.php';
   $pages_id=2;
   $result = Pages::get(2);
-  $postArr = Header::get(1)
+  $postArr = Header::get(2)
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
