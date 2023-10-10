@@ -1,6 +1,6 @@
 <?php
 	require_once 'core/init.php';
-$postArr = Header::get(1);
+$postArr = Header::get(2);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">

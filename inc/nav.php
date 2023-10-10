@@ -16,7 +16,6 @@
 		<li>
 			<a href="/The-Best-Restaurants-in-Neum.html" target="_self">RESTORANI</a>
 		</li >
-		<li><a href='/Brod-Ivana-Neum.html' target="_blank">VOŽNJA BRODOM</a></li>
 		<li><a href='/Rent-a-Car-Neum.html' target="_self">RENT A CAR</a></li>
 		<!-- Link to open the modal -->   
 		<li id="nav_right">
