@@ -28,14 +28,7 @@
 </header><!-- end #header -->
 <?php include 'inc/nav.inc'; //end #nav ?>
 <div id="main">
-  <div id="p_left"><script>var d = new Date()
-  var vrijeme=d.getHours()
-  if (vrijeme>=6 && vrijeme<11)
-	{document.write("<h1><small id='title'>Dobro jutro,</small>" +  " Dobrodošli u Neum..." + "</h1>");}
-  else if(vrijeme>=11 && vrijeme<17)
-	  {document.write("<h1><small id='title'>Dobar dan,</small>" +  " Dobrodošli u Neum..." + "</h1>");}
-  else
-	  {document.write("<h1><small id='title'>Dobro veče,</small>" +  " Dobrodošli u Neum..." + "</h1>");}</script>
+  <div id="p_left"><script>var d=new Date,vrijeme=d.getHours();vrijeme>=6&&vrijeme<11?document.write("<h1><small id='title'>Dobro jutro,</small> Dobrodošli u Neum...</h1>"):vrijeme>=11&&vrijeme<17?document.write("<h1><small id='title'>Dobar dan,</small> Dobrodošli u Neum...</h1>"):document.write("<h1><small id='title'>Dobro veče,</small> Dobrodošli u Neum...</h1>");</script>
   <?php echo $result->render(); ?>		
 	<h2>IZDVAJAMO:</h2> 
 	</div><!-- end #p_left -->
@@ -52,7 +45,7 @@
 </ul>
 </section>
 <!--end #products -->
-<script src='JS/slider.js'></script>
+<script src='JS/slider.min.js'></script>
 	  </div>
 	  </div><!-- end .main-outer -->  
   </div><!-- end #main -->
