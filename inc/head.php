@@ -77,6 +77,9 @@ window.onorientationchange=function(){var a=window.orientation;switch(a){case 0:
 </script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script>
+	window.jQuery || document.write("<script src='./JS/jQuery-1.12.1-ui.min.js'><\/script>");
+</script>
+<script>
    $(document).bind("mobileinit",function(){-1!=navigator.userAgent.indexOf("Android")&&($.mobile.defaultPageTransition="none",$.mobile.defaultDialogTransition="none",$.mobile.transitionFallbacks.slideout="none")});
 </script>
 <noscript><p class="errorJS">Za ispravan prikaz naše stranice molimo Vas uključite JavaScript u Vašem pretraživaču!</p></noscript>
