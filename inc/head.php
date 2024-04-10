@@ -2,24 +2,23 @@
 Wow! Welcome to my code. If you need a professional website don't hesitate to contact me: https://mirnesglamocic.com
 -->
 <head id="head">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
 <!-- meta tags -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
 <meta name="robots" content="index,follow">
 <title><?php echo $title; ?></title>
 <meta name="description" content="<?php echo $meta['description']; ?>" />
 <meta name="theme-color" content="#0648A0">
 <meta name="keywords" content="<?php echo $meta['keywords']; ?>" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="author" content="Mirnes Glamočić">
 <!-- Google / Search Engine Tags -->
 <meta itemprop="description" content="<?php echo $meta['description'];?>">
 <meta itemprop="image" content="<?php echo $og_image;?>">
 <!-- Facebook (meta tags) -->
-<meta property="og:title" content="<?php echo $og_title;?>"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="<?php echo $website_url;?>"/>
-<meta property="og:description" content="<?php echo $og['description'];?>">
+<meta property="og:description" content="<?php echo $meta['description'];?>">
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:locale" content="bs-BA" />
@@ -28,9 +27,9 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="app">
 <meta name=”twitter:site” content=”<?php echo $website_url;?>”>
-<meta name="twitter:title" content="<?php echo $og_title;?>">
-<meta name="twitter:description" content="<?php echo $og['description'];?>">
-<meta name="twitter:image" content="<?php echo $og_image;?>">
+<meta name="twitter:title" content="<?php echo $title;?>">
+<meta name="twitter:description" content="<?php echo $meta['description'];?>">
+<meta name="twitter:image:src" content="<?php echo $twitter_image;?>">
 <meta name="twitter:image:alt" content="<?php echo $image_alt;?>">
 <!-- include google fonts -->
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -45,17 +44,17 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 <script rel="preconnect" src="https://kit.fontawesome.com/ae330ac296.js" crossorigin="anonymous"></script>
 <!-- lightslider css-->
-<link rel="stylesheet" type="text/css" href="lightslider/lightslider.css">
+<link rel="stylesheet" type="text/css" href="lightslider/lightslider.min.css">
 <!-- lightbox css -->
-<link rel="stylesheet" type="text/css" href="/lightbox2/src/css/lightbox.css">
+<link rel="stylesheet" type="text/css" href="/lightbox2/src/css/lightbox.min.css">
 <!-- Desktop CSS -->
-<link rel="stylesheet" href="/CSS/style.css" />
+<link rel="stylesheet" href="/CSS/style.min.css" />
 <!-- Mobile CSS -->
-<link rel="stylesheet" href="/CSS/responsive.css" />
+<link rel="stylesheet" href="/CSS/responsive.min.css" />
 <!-- jQuery -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
-	window.jQuery || document.write("<script src='./JS/jQuery-1.7.2.js'><\/script>");
+	window.jQuery || document.write("<script src='./JS/jQuery-1.7.2.min.js'><\/script>");
 </script>
 <!-- lightslider js-->
 <script src="lightslider/lightslider.js"></script> 
@@ -102,7 +101,7 @@ window.onorientationchange = function() {
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
-	window.jQuery || document.write("<script src='./JS/jQuery-1.12.4.js'><\/script>");
+	window.jQuery || document.write("<script src='./JS/jQuery-1.12.4.min.js'><\/script>");
 </script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script>
