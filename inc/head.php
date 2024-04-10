@@ -57,40 +57,12 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 	window.jQuery || document.write("<script src='./JS/jQuery-1.7.2.min.js'><\/script>");
 </script>
 <!-- lightslider js-->
-<script src="lightslider/lightslider.js"></script> 
+<script src="lightslider/lightslider.min.js"></script> 
 <script defer>
-var navigation=$.noConflict();
-	navigation(document).ready(function($) {
-		var respmenu = $('#respmenu');
-		var menu = $('#nav>ul');
-		$(respmenu).on('click', function(e){
-			e.preventDefault();
-			menu.slideToggle();
-		});
-		$(window).resize(function(){
-			var sirina = $(window).width();
-			if(sirina > 768 && menu.is(':hidden')){
-				menu.removeAttr('style');
-			}
-		});
-	});
+var navigation=$.noConflict();navigation(document).ready(function(n){var e=n("#respmenu"),i=n("#nav>ul");n(e).on("click",function(n){n.preventDefault(),i.slideToggle()}),n(window).resize(function(){n(window).width()>768&&i.is(":hidden")&&i.removeAttr("style")})});
 </script>
 <script defer>
-window.onorientationchange = function() { 
-
-    var orientation = window.orientation; 
-
-        switch(orientation) { 
-
-            case 0:
-
-            case 90:
-
-            case -90: window.location.reload(); 
-
-            break; } 
-
-};
+window.onorientationchange=function(){var a=window.orientation;switch(a){case 0:case 90:case -90:window.location.reload()}};
 </script>
 <!-- jQuery Modal -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
@@ -105,14 +77,7 @@ window.onorientationchange = function() {
 </script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script>
-    $(document).bind("mobileinit", function(){
-       if (navigator.userAgent.indexOf("Android") != -1)
-       {
-         $.mobile.defaultPageTransition = 'none';
-         $.mobile.defaultDialogTransition = 'none';
-         $.mobile.transitionFallbacks.slideout = 'none';
-       }
-    });
+   $(document).bind("mobileinit",function(){-1!=navigator.userAgent.indexOf("Android")&&($.mobile.defaultPageTransition="none",$.mobile.defaultDialogTransition="none",$.mobile.transitionFallbacks.slideout="none")});
 </script>
 <noscript><p class="errorJS">Za ispravan prikaz naše stranice molimo Vas uključite JavaScript u Vašem pretraživaču!</p></noscript>
 </head>
