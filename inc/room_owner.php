@@ -68,7 +68,7 @@ jQuery(document).ready(function(){
 	});
 });
 </script>
-<script src="/JS/form_color.js"></script>
-<script src="/JS/validate_owner.js"></script>
+<script src="/JS/form_color.min.js"></script>
+<script src="/JS/validate_owner.min.js"></script>
 </div><!-- end .modal-->
 </div><!-- end #contact_owner -->
