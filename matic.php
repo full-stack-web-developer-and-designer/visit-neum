@@ -36,7 +36,7 @@
 <div id="main">
 <?php echo $page->render(); ?> 
 <span id="a"></span>
-<script type="text/javascript" src="./JS/review_rooms.js"></script>
+<script type="text/javascript" src="./JS/review_rooms.min.js"></script>
 
 <?php
 	$matic = new GalleryMatic();
@@ -59,6 +59,6 @@
 	//end #footer
 ?>
 </div><!-- end #wrapper -->
-<script src="lightbox2/src/js/lightbox.js"></script>
+<script src="lightbox2/src/js/lightbox.min.js"></script>
 </body>
 </html>

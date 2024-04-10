@@ -2,7 +2,7 @@
 require_once 'core/init.php';
 $header = Header::get(1);
 $pages_id=3;
-$result = Pages::get(3);
+$page = Pages::get(3);
 $contact = Contact::get(2);
 ?>
 <!DOCTYPE html>
@@ -27,18 +27,17 @@ $contact = Contact::get(2);
 <div id="wrapper">
 <header id="header" class="cf">
 <?php 
-  echo $header->render(); 	
-  include 'inc/header.php'; 
+  echo $header->render();
 ?>
 </header><!-- end #header -->
 <?php
-  include 'inc/nav.inc'; //end #nav
+  include './inc/nav.inc'; //end #nav
 ?>
 
 <div id="main">
-<?php echo $result->render(); ?>		
+<?php echo $page->render(); ?>		
 <span id="a"></span>
-<script type="text/javascript" src="JS/review_rooms.js" defer></script>
+<script type="text/javascript" src="JS/review_rooms.min.js" defer></script>
 <?php
 	$mampas = new GalleryMampas();
 	$mampas->renderGallery();
@@ -63,6 +62,6 @@ $contact = Contact::get(2);
 	//end #footer
 ?>
 </div><!-- end #wrapper -->
-<script src="lightbox2/src/js/lightbox.js"></script>
+<script src="lightbox2/src/js/lightbox.min.js"></script>
 </body>
 </html>
