@@ -1,8 +1,9 @@
 <?php
 require_once 'core/init.php';
+$header = Header::get(1);
 $pages_id=3;
 $result = Pages::get(3);
-$postArr = Header::get(1);
+$contact = Contact::get(2);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -16,7 +17,8 @@ $postArr = Header::get(1);
     //Check length of description for SEO (140-180 characters) = 147
     //echo "Length of description is " . strlen($meta['description']) . "characters long.";
 	$meta['keywords']="neum, apartmani, apartmani mampas, mampas, ljetovanje neum, hoteli neum, pansioni neum, privatni smještaj neum, neum smještaj, neum smjestaj, neum apartmani i sobe, neum sobe";
-	$og_image="images/ApartmaniMampas.jpg";
+	$og_image="./gallery/ApartmaniMampas.jpg";
+  $twitter_image="./gallery/ApartmaniMampas.jpg";
 	$image_alt="Apartmani Mampas - Neum";
 	include 'inc/head.php';
 	//end #head
@@ -25,7 +27,7 @@ $postArr = Header::get(1);
 <div id="wrapper">
 <header id="header" class="cf">
 <?php 
-  echo $postArr->render(); 	
+  echo $header->render(); 	
   include 'inc/header.php'; 
 ?>
 </header><!-- end #header -->
@@ -47,46 +49,20 @@ $postArr = Header::get(1);
 </div><!-- end #main -->
 
 <aside id="sidebar">
-    <table id="contact">
-      <thead>
-        <tr>
-          <th colspan="2"><h3>KONTAKT</h3></th>
-        </tr>
-		  </thead>
-       <tbody>
-        <tr>
-          <td class="table_information">Vlasnik:</td>
-          <td>Stjepan Đono</td>
-        </tr>
-        <tr>
-          <td class="table_information">Telefon:</td>
-			<td><a href="tel:+387 63 473 614" title="Pozovite sada">+387 63 473 614</a></td>
-        </tr>
-        <tr>
-          <td class="table_information">Adresa:</td>
-          <td>Magistralni put bb.<br>88390 Neum, BiH</td>
-        </tr>
-        <tr>
-      </tbody>
-		<tfoot>
-        <tr>
-		  <td colspan="2"><p id="price">CIJENA NA UPIT</p>
-          <a href="#contact_owner" rel="modal:open"><button id="question" class="request  modal-btn">POŠALJITE UPIT</button></a>
-          <?php include "inc/room_owner.php"; ?>
-		</td>
-       </tr>
-      </tfoot>    
-      </table>
+  <!-- contact info -->
+  <?php echo $contact->render(); ?>
+  <?php include "./inc/room_owner.php"; ?>
+
 <?php
 	$mampasAsside = new GalleryAssideMampas();
 	$mampasAsside->renderGalleryAsside();
 ?>
 </aside>
- <script src="lightbox2/src/js/lightbox.js"></script>
 <?php
 	include 'inc/footer.php';
 	//end #footer
 ?>
 </div><!-- end #wrapper -->
+<script src="lightbox2/src/js/lightbox.js"></script>
 </body>
 </html>
