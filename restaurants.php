@@ -7,11 +7,7 @@
 <html lang="bs-BA">
 	<?php	
 		$title="Najbolji i Najudbniji restorani u Neumu | Posjetite odmah!";
-		//Check length of title for SEO (50-70 characters)
-		//echo "Length of title is " . strlen($title) . "characters long." . " ";
 		$meta['description']="Na našem sajtu pronaći ćete najbolje, najudobnije i najotmjenije restorane u Neumu – pronađite i rezervišite restoran za svoj objed sa najukusnijim jelima";
-		//Check length of description for SEO (140-180 characters)
-		//echo "Length of description is " . strlen($meta['description']) . "characters long.";
 		$meta['keywords']="restorani neum, pizzerije neum, najbolji restorani u neumu, najbolja hrana u neumu, brod ivana neum";
 		$website_url="https://visit-neum.com/the-best-restaurants-in-neum.html";
 		$og_image="./gallery/visit-neum.jpg";
@@ -20,9 +16,9 @@
 		include 'inc/head.php';
 	?>
 	<style>
-	.accomodation #main {margin: 0 0 10px 0;}
-	#main p{text-align: center;}
-	#sidebar{background: #FFF;}
+		.accomodation #main {margin: 0 0 10px 0;}
+		#main p{text-align: center;}
+		#sidebar{background: #FFF;}
 	</style>
 
 	<body class="accomodation">
