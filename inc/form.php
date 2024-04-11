@@ -12,5 +12,5 @@ include_once 'classes/Form_process.class.php';
 			   </fieldset>
 			   
 			  <input type="submit" id="submit" class="btn_submit" name="submit" value="POŠALJI" /></form>
-<script src="JS/form_color.js"></script>
-<script src="JS/validate_me.js"></script>
+<script src="JS/form_color.min.js"></script>
+<script src="JS/validate_me.min.js"></script>
