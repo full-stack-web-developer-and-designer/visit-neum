@@ -1,7 +1,7 @@
 <?php
 	require_once 'core/init.php';
-$header = Header::get(1);
-$categories = Categories::get(5);
+	$header = Header::get(1);
+	$categories = Categories::get(5);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -24,7 +24,7 @@ $categories = Categories::get(5);
 	#main p{text-align: center;}
 	#sidebar{background: #FFF;}
 	</style>
-	
+
 	<body class="accomodation">
 		<div id="wrapper">
 			<header id="header" class="cf">
