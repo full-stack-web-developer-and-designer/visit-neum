@@ -60,5 +60,4 @@
 		</div><!-- end #wrapper -->
 		<script src="lightbox2/src/js/lightbox.min.js"></script>
 	</body>
-
 </html>
