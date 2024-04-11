@@ -9,7 +9,7 @@
 	$title="Najbolji Hoteli u Neumu | Najniže cijene smještaja |Posjetite odmah!";
 	$meta['description']="Najbolji, najpovoljniji, najudobniji i najluksuzniji Hoteli u Neumu, Bosna i Hercegovina – pronađite i rezervišite smještaj za svoje putovanje.";
 	$meta['keywords']="neum, hoteli, Hoteli neum, apartmani, sobe, ljetovanje, pansioni, privatni smještaj, smjestaj, ljetovanje neum, neum apartmani i sobe";
-	$website_url="https://visit-neum.com/";
+	$website_url="https://visit-neum.com/the-best-hotels-in-neum.html";
 	$og_image="./gallery/visit-neum.jpg";
 	$twitter_image="./gallery/visit-neum.webp";
 	$image_alt="logo | visit-neum.com";
@@ -26,7 +26,7 @@
 			<?php include 'inc/nav.inc'; ?>
 			
 			<div id="main">
-				<?php echo $categories->render(); ?> 
+				<?php echo $categories->render(); ?>
 					<section class="offers">
 						<!-- slider box -->
 						<?php
@@ -36,7 +36,7 @@
 					</section><!--end .offers-->
 			</div><!-- end #main -->
 
-			<aside id="sidebar"> 
+			<aside id="sidebar">
 				<?php include 'inc/weather.inc'; ?>
 			</aside><!-- end #sidebar -->
 		
