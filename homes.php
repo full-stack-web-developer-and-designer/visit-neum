@@ -9,7 +9,7 @@
 		$title="Najbolje kuće za odmor u Neumu | Najniže cijene smještaja!";
 		$meta['description']="Najbolje, najjeftinije i najudobnije kuće za odmor u Neumu, Bosna i Hercegovina – pronađite i rezervišite smještaj za svoje putovanje. Direktan kontakt s vlasnicima!";
 		$meta['keywords']="sobe neum, neum sobe, apartmani i sobe, apartmani mampas, apartmani liberan, sobe, ljetovanje, hoteli, pansioni, privatni smještaj, smjestaj, ljetovanje neum, neum apartmani i sobe, kuće za odmor neum, kuća za odmor";
-		$website_url="https://visit-neum.com";
+		$website_url="https://visit-neum.com/the-best-homes-in-neum.html";
 		$og_image="./gallery/visit-neum.jpg";
 		$twitter_image="./gallery/visit-neum.webp";
 		$image_alt="logo | visit-neum.com";
@@ -18,6 +18,7 @@
 
 	<body class="accomodation">
 		<div id="wrapper">
+			
 			<header id="header" class="cf">
 				<?php echo $header->render(); ?>
 			</header>
