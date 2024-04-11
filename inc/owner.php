@@ -25,5 +25,5 @@ include_once 'classes/Form_process.class.php';
 </form>
 </div><!-- end .modal-->
 </div><!-- end #contact_owner -->
-<script src="/JS/form_color.js"></script>
-<script defer src="/JS/validate_owner.js"></script>
+<script src="/JS/form_color.min.js"></script>
+<script defer src="/JS/validate_owner.min.js"></script>
