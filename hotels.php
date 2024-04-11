@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
-$postArr = Header::get(1);
-$result = Categories::get(1);
+$header = Header::get(1);
+$categories = Categories::get(1);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -13,6 +13,10 @@ $result = Categories::get(1);
     //Check length of description for SEO (140-180 characters)
     // echo "Length of description is " . strlen($meta['description']) . "characters long.";
 	$meta['keywords']="neum, hoteli, Hoteli neum, apartmani, sobe, ljetovanje, pansioni, privatni smještaj, smjestaj, ljetovanje neum, neum apartmani i sobe";
+	$website_url="https://visit-neum.com/";
+	$og_image="./gallery/visit-neum.jpg";
+	$twitter_image="./gallery/visit-neum.webp";
+	$image_alt="logo | visit-neum.com";
 	include 'inc/head.php';
 	//end #head
 ?>
@@ -22,8 +26,7 @@ $result = Categories::get(1);
 <div id="wrapper">
 <header id="header" class="cf">
 <?php 
-  echo $postArr->render(); 	
-  //include 'inc/header.php'; 
+  echo $header->render(); 	
 ?>
 </header><!-- end #header -->
 <?php
@@ -31,7 +34,7 @@ $result = Categories::get(1);
 ?>
 	
 <div id="main">
-<?php echo $result->render(); ?> 
+<?php echo $categories->render(); ?> 
 <section class="offers">
 	<!-- slider box -->
 	<?php
