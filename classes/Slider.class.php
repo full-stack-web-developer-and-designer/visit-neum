@@ -6,7 +6,7 @@ class Slider extends ConnectSlider {
 	$stmt = $this->__connect()->query($sql);
 	
 	while($row = $stmt->fetch()) {
-		echo "<li class='item-a'><article class='product'><a href='$row[href]'><img src='./images/$row[img]' alt='$row[alt]'/><div class='text'><h2>$row[title]</h2></div></a></article></li>";
+		echo "<li class='item-a'><article class='product'><a href='$row[href]'><img src='./gallery/slider/$row[img]' alt='$row[alt]'/><div class='text'><h2>$row[title]</h2></div></a></article></li>";
 		}
 	}
 }

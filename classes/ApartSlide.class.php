@@ -6,7 +6,7 @@ class ApartSlide extends Slider{
         $stmt = $this->__connect()->query($sql);
 
         while($row = $stmt->fetch()) {
-            echo "<article class='offer'><a href='$row[href]'><img src='./images/$row[img]' alt='$row[alt]'/><span><h2>$row[title]</h2></span></a></article>";
+            echo "<article class='offer'><a href='$row[href]'><img src='./gallery/slider/$row[img]' alt='$row[alt]'/><span><h2>$row[title]</h2></span></a></article>";
             }
         }
     }
