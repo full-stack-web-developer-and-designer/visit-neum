@@ -1,7 +1,7 @@
 <?php
 	require_once 'core/init.php';
 	$header = Header::get(1);
-	$result = Pages::get(1);
+	$page = Pages::get(1);
 ?>
 <!DOCTYPE html>
 <html lang="bs-BA">
@@ -13,7 +13,7 @@
     //Check length of description for SEO (140-180 characters)-174
     //echo "Length of description is " . strlen($meta['description']) . "characters long.";
 	$meta['keywords']="Neum, apartmani Neum, sobe Neum, ljetovanje Neum, hoteli Neum, pansioni Neum, privatni smještaj Neum, smjestaj Neum, ljetovanje Neum, Neum apartmani i sobe, sobe Neum, brod ivana neum, apartmani liberan, apartmani mampas, villa matic";
-	$website_url="visit-neum.com";
+	$website_url="https://visit-neum.com";
 	$og_image="./gallery/visit-neum.jpg";
 	$twitter_image="./gallery/visit-neum.webp";
 	$image_alt="logo | visit-neum.com";
@@ -29,7 +29,7 @@
 <?php include 'inc/nav.inc'; //end #nav ?>
 <div id="main">
   <div id="p_left"><script>var d=new Date,vrijeme=d.getHours();vrijeme>=6&&vrijeme<11?document.write("<h1><small id='title'>Dobro jutro,</small> Dobrodošli u Neum...</h1>"):vrijeme>=11&&vrijeme<17?document.write("<h1><small id='title'>Dobar dan,</small> Dobrodošli u Neum...</h1>"):document.write("<h1><small id='title'>Dobro veče,</small> Dobrodošli u Neum...</h1>");</script>
-  <?php echo $result->render(); ?>		
+  <?php echo $page->render(); ?>		
 	<h2>IZDVAJAMO:</h2> 
 	</div><!-- end #p_left -->
 	  <div class="main-outer">
