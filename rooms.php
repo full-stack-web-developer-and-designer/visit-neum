@@ -13,7 +13,7 @@ $categories = Categories::get(4);
     //Check length of description for SEO (140-180 characters)
     //echo "Length of description is " . strlen($meta['description']) . "characters long.";
 	$meta['keywords']="sobe neum, neum sobe, apatmani i sobe, apartmani mampas, apartmani liberan, sobe, ljetovanje, hoteli, pansioni, privatni smještaj, smjestaj, ljetovanje neum, neum apartmani i sobe";
-	$website_url="https://visit-neum.com";
+	$website_url="https://visit-neum.com/the-best-rooms-in-neum.html";
 	$og_image="./gallery/visit-neum.jpg";
 	$twitter_image="./gallery/visit-neum.webp";
 	$image_alt="logo | visit-neum.com";
