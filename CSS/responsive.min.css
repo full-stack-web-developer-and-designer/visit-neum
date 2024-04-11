@@ -1390,6 +1390,9 @@
     #map_matic {
         height: 244px;
     }
+    #map_blanka {
+        height: 284px;
+    }
     #map_brod,
     #brod_video {
         height: 307.5px;
@@ -1553,6 +1556,9 @@
     }
     #map_matic {
         height: 281px;
+    }
+    #map_blanka {
+        height: 285px;
     }
     #map_brod,
     #brod_video {

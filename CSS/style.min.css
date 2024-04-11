@@ -853,6 +853,9 @@ a:nth-of-type(4n) .imgCentral {
 #map_matic {
     height: 266px;
 }
+#map_blanka {
+    height: 252px;
+}
 #map_mampas {
     height: 349px;
 }
@@ -1029,16 +1032,23 @@ table#contact a {
 }
 #home_page,
 #copyright_info {
-    text-decoration: none;
     color: #FFF;
 }
-#home_page:hover,
-#copyright_info:hover {
+#home_page {
+    text-decoration: none;
+}
+#copyright_info,
+#home_page:hover {
     text-decoration: underline;
 }
-#home_page:active,
-#copyright_info:active {
+#copyright_info:hover {
     text-decoration: none;
+}
+#home_page:active {
+    text-decoration: none;
+}
+#copyright_info:active {
+    text-decoration: underline;
 }
 ::-moz-selection {
     color: #fff;
