@@ -22,7 +22,7 @@
 		include './inc/head.php';
 		//end #head
 	?>
-	
+
 	<body>
 		<div id="wrapper">
 			<header id="header" class="cf">
