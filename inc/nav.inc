@@ -14,7 +14,7 @@
 			<a href="/the-best-rooms-in-neum.html" target="_self">SOBE</a>
 		</li>
 		<li>
-			<a href="/the-best-homes-in-neum.html" target="_self">KUĆE ZA ODMOR</a>
+			<a href="/the-best-homes-in-neum.html" target="_blank">KUĆE ZA ODMOR</a>
 		</li> 
 		<li>
 			<a href="/the-best-restaurants-in-neum.html" target="_self">RESTORANI</a>
