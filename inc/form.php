@@ -1,5 +1,5 @@
 <?php
-include_once 'classes/Form_process.class.php';
+include_once 'form_process.php';
 ?>
 <form  spellcheck="false" autocomplete="off" id='contact_me' class='form ajax' name='contact_me' action='' method='POST'> 
 <h4 id="response" class="success"><!-- This will hold response from the server --></h4>
