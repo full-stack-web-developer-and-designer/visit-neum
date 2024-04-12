@@ -2,10 +2,8 @@
 class GalleryBlanka extends Gallery {
 	// Fetch data from MySQL using PDO - PHP Data Object	
 	public function renderGallery(){
-		$question = "SELECT * FROM visitneu_gallery.lightbox WHERE alt='Holiday Home Blanka Neum';";
+		$question = "SELECT * FROM visitneu_neum.lightbox WHERE pages_id='5';";
 		$resultat=$this->__connection()->query($question);
-		//$resultat->execute();
-		//$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		while ($row = $resultat->fetch()) {
 		$img = $row['img'];
 		$alt = $row['alt'];
