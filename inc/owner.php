@@ -4,7 +4,7 @@
 </div><!-- end .contact_heading-->
 <div class="modal-body">
 <?php
-include_once 'classes/Form_process.class.php';
+include_once 'form_process.php';
 ?>
 <form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form ajax' name='contactOwner' action='' method='POST'>
 <h4 id="responseOwner" class="success">
