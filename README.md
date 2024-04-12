@@ -19,6 +19,6 @@ For faster page loading, all images, CSS and JavaScript code are compressed.
 
 To check how it looks, please click preview.
 ##
-[PREVIEW](http://shoutbox.epizy.com/)
+[PREVIEW](http://visit-neum.com/)
 ##
 [![mockup of project visit-neum.com by web developer, UI/UX and web designer Mirnes Glamočić](/visit-neum.webp)](https://full-stack-web-developer-and-designer.github.io/tictactoe)
