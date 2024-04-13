@@ -15,15 +15,22 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <!-- Google / Search Engine Tags -->
 <meta itemprop="description" content="<?php echo $meta['description'];?>">
 <meta itemprop="image" content="<?php echo $og_image;?>">
-<!-- Facebook (meta tags) -->
-<meta property="og:type" content="website"/>
+<!-- Facebook & Viber -->
+<meta name="title" property="og:title" content="<?php echo $title;?>">
+<!-- Facebook, Viber, LinkedIn, Whatsapp & KakaoTalk(meta tags) -->
 <meta property="og:url" content="<?php echo $website_url;?>"/>
-<meta property="og:description" content="<?php echo $meta['description'];?>">
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="<?php echo $og_image;?>"/>
+<meta property="og:image:type" content="image/jpg">
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="<?php echo $title;?>">
+<meta property="og:site_name" content="<?php echo $title;?>">
 <meta property="og:locale" content="bs-BA" />
-<meta property="og:image" content="<?php echo $og_image;?>"/>
-<meta property="og:site_name" content="<?php echo $website_url;?>">
+<meta property="fb:app_id" content="986204576263666">
+<meta property="og:description" content="<?php echo $meta['description'];?>">
+<!-- LinkedIn, Whatsapp & KakaoTalk(meta tag) -->
+<meta property="og:title" content="<?php echo $title;?>">
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="app">
 <meta name=”twitter:site” content=”<?php echo $website_url;?>”>
@@ -32,14 +39,17 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <meta name="twitter:image:src" content="<?php echo $twitter_image;?>">
 <meta name="twitter:image:alt" content="<?php echo $image_alt;?>">
 <!-- include google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:400,400i,700,700i|Dancing+Script&display=swap&amp;subset=latin-ext" rel="stylesheet"
 >
-<link rel="icon" href="images/iconified/favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="images/apple-touch-icon-iphone-60x60.png">
-<link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-ipad-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-iphone-retina-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-ipad-retina-152x152.png">
+<!-- favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon-iphone-60x60.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-touch-icon-ipad-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-iphone-retina-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-ipad-retina-152x152.png">
 <!-- include fontawesome --> 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 <script rel="preconnect" src="https://kit.fontawesome.com/ae330ac296.js" crossorigin="anonymous"></script>
