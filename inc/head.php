@@ -8,9 +8,9 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=3.0">
 <meta name="robots" content="index,follow">
 <title><?php echo $title; ?></title>
-<meta name="description" content="<?php echo $meta['description']; ?>" />
+<meta name="description" content="<?php echo $meta['description']; ?>">
 <meta name="theme-color" content="#0648A0">
-<meta name="keywords" content="<?php echo $meta['keywords']; ?>" />
+<meta name="keywords" content="<?php echo $meta['keywords']; ?>">
 <meta name="author" content="Mirnes Glamočić">
 <!-- Google / Search Engine Tags -->
 <meta itemprop="description" content="<?php echo $meta['description'];?>">
@@ -18,15 +18,15 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <!-- Facebook & Viber -->
 <meta name="title" property="og:title" content="<?php echo $title;?>">
 <!-- Facebook, Viber, LinkedIn, Whatsapp & KakaoTalk(meta tags) -->
-<meta property="og:url" content="<?php echo $website_url;?>"/>
-<meta property="og:type" content="website"/>
-<meta property="og:image" content="<?php echo $og_image;?>"/>
+<meta property="og:url" content="<?php echo $website_url;?>">
+<meta property="og:type" content="website">
+<meta property="og:image" content="<?php echo $og_image;?>">
 <meta property="og:image:type" content="image/jpg">
-<meta property="og:image:width" content="1200"/>
-<meta property="og:image:height" content="630"/>
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="<?php echo $title;?>">
 <meta property="og:site_name" content="<?php echo $title;?>">
-<meta property="og:locale" content="bs-BA" />
+<meta property="og:locale" content="bs-BA">
 <meta property="fb:app_id" content="986204576263666">
 <meta property="og:description" content="<?php echo $meta['description'];?>">
 <!-- LinkedIn, Whatsapp & KakaoTalk(meta tag) -->
@@ -58,9 +58,9 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <!-- lightbox css -->
 <link rel="stylesheet" type="text/css" href="/lightbox2/src/css/lightbox.min.css">
 <!-- Desktop CSS -->
-<link rel="stylesheet" href="/CSS/style.min.css" />
+<link rel="stylesheet" href="/CSS/style.min.css">
 <!-- Mobile CSS -->
-<link rel="stylesheet" href="/CSS/responsive.min.css" />
+<link rel="stylesheet" href="/CSS/responsive.min.css">
 <!-- jQuery -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>
@@ -75,10 +75,10 @@ var navigation=$.noConflict();navigation(document).ready(function(n){var e=n("#r
 window.onorientationchange=function(){var a=window.orientation;switch(a){case 0:case 90:case -90:window.location.reload()}};
 </script>
 <!-- jQuery Modal -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 <!--jQuery validate plugin -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <!-- jQuery datepicker -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
