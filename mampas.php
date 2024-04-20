@@ -1,23 +1,16 @@
 <?php
 	require_once 'core/init.php';
+	$meta = Meta::get(3);
 	$header = Header::get(1);
 	$pages_id=3;
 	$page = Pages::get(3);
 	$contact = Contact::get(2);
 ?>
 <!DOCTYPE html>
-<html lang="bs-BA">
-	<?php	
-		$title="Apartmani Mampas Neum | Najniže cijene smještaja! | Posjetite odmah!";
-		$meta['description']="Ukoliko tražite idealno mjesto za Vaš odmor u Neumu, Apartmani Mampas su pravo rješenje za vas! Nalaze se u neposrednoj blizini jadranskog mora.";
-		$meta['keywords']="neum, apartmani, apartmani mampas, mampas, ljetovanje neum, hoteli neum, pansioni neum, privatni smještaj neum, neum smještaj, neum smjestaj, neum apartmani i sobe, neum sobe";
-		$website_url="https://visit-neum.com/Apartments-Mampas.html";
-		$og_image="./gallery/ApartmaniMampas.jpg";
-		$twitter_image="./gallery/ApartmaniMampas.jpg";
-		$image_alt="Apartmani Mampas - Neum";
-		include 'inc/head.php';
+<html itemscope lang="bs-BA">
+	<?php
+		echo $meta->render();
 	?>
-	
 	<body>
 		<div id="wrapper">
 			<header id="header" class="cf">

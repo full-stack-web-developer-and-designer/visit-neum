@@ -1,23 +1,16 @@
 <?php
   require_once 'core/init.php';
-  $header = Header::get(1);
-  $pages_id=2;
-  $page = Pages::get(2);
-  $contact = Contact::get(1);
+	$meta = Meta::get(2);
+	$header = Header::get(1);
+	$pages_id=2;
+	$page = Pages::get(2);
+	$contact = Contact::get(1);
 ?>
 <!DOCTYPE html>
-<html lang="bs-BA">
-	<?php	
-		$title="Hotel Villa Matić, Neum | Najniže cijene smještaja!Posjetite odmah!";
-		$meta['description']="Hotel Villa MATIĆ nudi usluge smještaja u 50 luksuzno opremljenih smještajnih jedinica, kao i restoran, recepciju, parking, garažu...prekrasan pogled na jadransko more.";
-		$meta['keywords']="neum, hoteli, Hoteli Neum, apartmani, sobe, ljetovanje,  matić, matic, vila matić, pansioni, privatni smještaj, smjestaj, ljetovanje neum, neum apartmani i sobe";
-		$website_url="https://visit-neum.com/Hotel-Villa-Matic.html";
-		$og_image="./gallery/HotelVillaMatic.jpg";
-		$twitter_image="./gallery/HotelVillaMatic.webp";
-		$image_alt="Hotel Villa Matić - Neum";
-		include './inc/head.php';
+<html itemscope lang="bs-BA">
+	<?php
+		echo $meta->render();
 	?>
-
 	<body>
 		<div id="wrapper">
 			<header id="header" class="cf">
@@ -46,6 +39,7 @@
 				<!-- contact info -->
 				<?php echo $contact->render(); ?>
 				<?php include "./inc/room_owner.php"; ?>
+				
 				<?php
 					$maticAsside = new GalleryAssideMatic();
 					$maticAsside->renderGalleryAsside();
