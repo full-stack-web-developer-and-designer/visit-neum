@@ -4,7 +4,7 @@
 	$categories = Categories::get(2);
 ?>
 <!DOCTYPE html>
-<html lang="bs-BA">
+<html itemscope lang="bs-BA">
 	<?php	
 		$title="Najbolji Apartmani u Neumu! | Najniže cijene smještaja!";
 		$meta['description']="Pronađite najbolje, najpovoljnije i najudobnije apartmane u Neumu! Direktan kontakt s vlasnicima! Prekrasni apartmani s pogledom na more! Najpovoljnije cijene smještaja! Posjetite odmah!";
@@ -27,7 +27,7 @@
 				
 			<div id="main">
 				<?php echo $categories->render(); ?>
-					<section class="offers">
+					<section class="offers" aria-label='Najbolji i najjeftiniji apartmani u Neumu'>
 						<!-- slider box -->
 						<?php
 						$apart = new ApartSlide();
