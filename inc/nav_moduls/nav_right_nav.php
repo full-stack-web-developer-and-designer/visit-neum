@@ -1,8 +1,8 @@
-<a href="#kontakt" class="button" rel="modal:open"><button class="nav_right modal-btn">OGLASI SE</button></a>
+<a href="#kontakt" class="button nav_right modal-btn" rel="modal:open">OGLASI SE</a>
 <!-- Modal HTML embedded directly into document -->		
 <div id="kontakt" class="modal">
 	<div class="modal_heading">
-		<h2>Poboljšajte svoj profit, oglasite se odmah!</h2><a href="#" rel="modal:close"><button class="close_btn">&times;</button></a>
+		<h2>Poboljšajte svoj profit, oglasite se odmah!</h2><a href="#" class="close_btn" rel="modal:close">&times;</a>
 	</div><!-- end .modal_heading-->
 		<div class="modal-body">
 			<div id="intro">
