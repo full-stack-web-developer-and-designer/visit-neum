@@ -4,7 +4,7 @@
 	$categories = Categories::get(1);
 ?>
 <!DOCTYPE html>
-<html lang="bs-BA">
+<html itemscope lang="bs-BA">
 <?php	
 	$title="Najbolji Hoteli u Neumu | Najniže cijene smještaja |Posjetite odmah!";
 	$meta['description']="Najbolji, najpovoljniji, najudobniji i najluksuzniji Hoteli u Neumu, Bosna i Hercegovina – pronađite i rezervišite smještaj za svoje putovanje.";
@@ -27,7 +27,7 @@
 			
 			<div id="main">
 				<?php echo $categories->render(); ?>
-					<section class="offers">
+					<section class="offers" aria-label='Najbolji i najjeftiniji hoteli u Neumu'>
 						<!-- slider box -->
 						<?php
 						$hotel = new HotelSlide();
