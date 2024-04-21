@@ -10,7 +10,6 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <title><?php echo $title; ?></title>
 <meta name="description" content="<?php echo $meta['description']; ?>">
 <meta name="theme-color" content="#0648A0">
-<meta name="keywords" content="<?php echo $meta['keywords']; ?>">
 <meta name="author" content="Mirnes Glamočić">
 <!-- Google / Search Engine Tags -->
 <meta itemprop="description" content="<?php echo $meta['description'];?>">
@@ -42,7 +41,7 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto:400,400i,700,700i|Dancing+Script&display=swap&amp;subset=latin-ext" rel="stylesheet"
+<link href="https://fonts.googleapis.com/css?family=Oswald:400,700%7CRoboto:400,400i,700,700i%7CDancing+Script&display=swap&amp;subset=latin-ext" rel="stylesheet"
 >
 <!-- favicon -->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -68,17 +67,17 @@ Wow! Welcome to my code. If you need a professional website don't hesitate to co
 </script>
 <!-- lightslider js-->
 <script src="lightslider/lightslider.min.js"></script> 
-<script defer>
+<script>
 var navigation=$.noConflict();navigation(document).ready(function(n){var e=n("#respmenu"),i=n("#nav>ul");n(e).on("click",function(n){n.preventDefault(),i.slideToggle()}),n(window).resize(function(){n(window).width()>768&&i.is(":hidden")&&i.removeAttr("style")})});
 </script>
-<script defer>
+<script>
 window.onorientationchange=function(){var a=window.orientation;switch(a){case 0:case 90:case -90:window.location.reload()}};
 </script>
 <!-- jQuery Modal -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css">
 <!--jQuery validate plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 <!-- jQuery datepicker -->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
@@ -89,11 +88,6 @@ window.onorientationchange=function(){var a=window.orientation;switch(a){case 0:
 <script>
 	window.jQuery || document.write("<script src='./JS/jQuery-1.12.1-ui.min.js'><\/script>");
 </script>
-<script>
-   $(document).bind("mobileinit",function(){-1!=navigator.userAgent.indexOf("Android")&&($.mobile.defaultPageTransition="none",$.mobile.defaultDialogTransition="none",$.mobile.transitionFallbacks.slideout="none")});
-</script>
-<noscript><p class="errorJS">Za ispravan prikaz naše stranice molimo Vas uključite JavaScript u Vašem pretraživaču!</p></noscript>
-</head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5G3QT9BQ7"></script>
 <script>
@@ -103,3 +97,4 @@ window.onorientationchange=function(){var a=window.orientation;switch(a){case 0:
 
   gtag('config', 'G-B5G3QT9BQ7');
 </script>
+</head>
