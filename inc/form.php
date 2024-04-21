@@ -1,8 +1,8 @@
 <?php
 include_once 'form_process.php';
 ?>
-<form  spellcheck="false" autocomplete="off" id='contact_me' class='form ajax' name='contact_me' action='' method='POST'> 
-<h4 id="response" class="success"><!-- This will hold response from the server --></h4>
+<form  spellcheck="false" autocomplete="off" id='contact_me' class='form ajax' name='contact_me' action='<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>' method='POST'>
+<p id="response" class="success"><!-- This will hold response from the server --></p>
       <fieldset>
             <legend>Vaši podaci</legend>
 					<div class="form-control InputIconBg"><input type="text" class="input username" name="name" id="name" placeholder="Vaše ime i prezime..." value="<?php echo Input::get('name'); ?>"><i class="contact_icon fas fa-user" aria-hidden="true"></i><span class="error"><?=$name_error; ?></span></div><!-- end .form-control -->
@@ -11,6 +11,6 @@ include_once 'form_process.php';
 					<div class="form-control InputIconBg"><textarea maxlength="1000" name="message" class="textinput message" cols="46" rows="7" id="message" placeholder="Vaša poruka..."><?php if (isset($_POST['message'])) echo $_POST['message']; ?></textarea><i class="fas fa-pencil-alt contact_icon" aria-hidden="true"></i><span class="error"><?= $message_error; ?></span></div><!-- end .form-control -->
 			   </fieldset>
 			   
-			  <input type="submit" id="submit" class="btn_submit" name="submit" value="POŠALJI" /></form>
+			  <input type="submit" id="submit" class="btn_submit" name="submit" value="POŠALJI"></form>
 <script src="JS/form_color.min.js"></script>
 <script src="JS/validate_me.min.js"></script>
