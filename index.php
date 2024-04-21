@@ -2,6 +2,7 @@
 	require_once 'core/init.php';
 	$meta = Meta::get(1);
 	$header = Header::get(1);
+	$pages_id=1;
 	$page = Pages::get(1);
 ?>
 <!DOCTYPE html>
@@ -12,23 +13,23 @@
 	<body class = "accomodation">
 		<div id="wrapper">
 			<header id="header" class="cf">
-			<?php echo $header->render(); ?>
+			<?php
+			echo $header->render();
+			?>
 			</header>
-
 			<?php include 'inc/nav.inc'; ?>
-			
 			<div id="main">
-				<div id="p_left"><script>var d=new Date,vrijeme=d.getHours();vrijeme>=6&&vrijeme<11?document.write("<h1><small id='title'>Dobro jutro,</small> Dobrodošli u Neum...</h1>"):vrijeme>=11&&vrijeme<17?document.write("<h1><small id='title'>Dobar dan,</small> Dobrodošli u Neum...</h1>"):document.write("<h1><small id='title'>Dobro veče,</small> Dobrodošli u Neum...</h1>");</script>
+				<div id="p_left">
 				<?php echo $page->render(); ?>
 					<h2>IZDVAJAMO:</h2>
 				</div><!-- end #p_left -->
 
 				<div class="main-outer">
 					<div>
-						<iframe src="https://www.jabuka.tv/nlb/tecaj.html" scrolling="no" __idm_frm__="8589934611" rel="noreferrer" id="exchangeRates"   sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" title="Tečajni kalkulator"></iframe>
+						<iframe src="https://www.jabuka.tv/nlb/tecaj.html" scrolling="no" rel="noreferrer" id="exchangeRates"   sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" title="Tečajni kalkulator"></iframe>
 					</div>
 					<div>
-						<section class='products'>
+						<section class='products' aria-label='Najbolji i najjeftiniji hoteli, apartmani, ville i sobe u Neumu'>
 							<ul id='autoplay' class='cs-hidden'>
 							<?php
 								$index = new Slider();
