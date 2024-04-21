@@ -4,10 +4,11 @@
 </div><!-- end .contact_heading-->
 <div class="modal-body">
 <?php
-include_once 'form_process.php';
+	include_once 'form_process.php';
 ?>
-<form  spellcheck="false" autocomplete="off" autocorrect="off" id='contactOwner' class='form ajax' name='contactOwner' action='' method='POST'>
-<h4 id="responseOwner" class="success"><!-- This will hold response from the server --></h4>
+<form  spellcheck="false" autocomplete="off" id='contactOwner' class='form ajax' name='contactOwner' action='#' method='POST'>
+<script>document.querySelector("form").setAttribute("action", "")</script>
+<p id="responseOwner" class="success"><!-- This will hold response from the server --></p>
   <fieldset>
     <legend>Vaši podaci</legend>
 		<div class="form-control halb InputIconBg"><input minlength="6" type="text" class="input username" name="fname" placeholder="Vaše ime i prezime..." value="<?php echo Input::get('fname'); ?>" ><i class="fas fa-user" aria-hidden="true"></i><span class="error"><?=$fname_error; ?></span></div><!-- end .form-control -->
@@ -24,7 +25,7 @@ include_once 'form_process.php';
 			
 	</fieldset>
 	<input type="hidden" name="pages_id" value="<?=$pages_id?>">
-	<input type="submit" class="btn_submit" id="submitOwner" name="submitOwner" value="POŠALJI"/>
+	<input type="submit" class="btn_submit" id="submitOwner" name="submitOwner" value="POŠALJI">
 </form>
 <script>
 jQuery(document).ready(function(){
