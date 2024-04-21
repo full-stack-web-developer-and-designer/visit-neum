@@ -1,6 +1,6 @@
 <div id="contact_owner" class="modal">
 <div class="modal_heading">
-<h2>Izvršite Vašu rezervaciju na vrijeme!</h2><a href="#" rel="modal:close"><button class="close_btn">&times;</button></a>
+<h2>Izvršite Vašu rezervaciju na vrijeme!</h2><a href="#" class="close_btn" rel="modal:close">&times;</a>
 </div><!-- end .contact_heading-->
 <div class="modal-body">
 <?php
