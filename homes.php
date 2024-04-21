@@ -4,11 +4,10 @@
 	$categories = Categories::get(5);
 ?>
 <!DOCTYPE html>
-<html lang="bs-BA">
+<html itemscope lang="bs-BA">
 	<?php	
 		$title="Najbolje kuće za odmor u Neumu | Najniže cijene smještaja!";
 		$meta['description']="Najbolje, najjeftinije i najudobnije kuće za odmor u Neumu, Bosna i Hercegovina – pronađite i rezervišite smještaj za svoje putovanje. Direktan kontakt s vlasnicima!";
-		$meta['keywords']="sobe neum, neum sobe, apartmani i sobe, apartmani mampas, apartmani liberan, sobe, ljetovanje, hoteli, pansioni, privatni smještaj, smjestaj, ljetovanje neum, neum apartmani i sobe, kuće za odmor neum, kuća za odmor";
 		$website_url="https://visit-neum.com/the-best-homes-in-neum.html";
 		$og_image="./gallery/visit-neum.jpg";
 		$twitter_image="./gallery/visit-neum.webp";
@@ -27,7 +26,7 @@
 			
 			<div id="main">
 				<?php echo $categories->render(); ?>
-				<section class="offers">
+				<section class="offers" aria-label='Najbolje i najjeftinije kuće za odmor u Neumu'>
 					<!-- slider box -->
 					<?php
 						$home = new HomeSlide();
