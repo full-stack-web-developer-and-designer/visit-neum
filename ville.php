@@ -31,8 +31,14 @@
   include 'inc/nav.inc';
 ?>
 <div id="main">
-	<?php //echo $categories->render(); ?>
-	<p>Uskoro...</p>
+	<?php echo $categories->render(); ?>
+	<section class="offers" aria-label='Najbolje i najjeftinije Ville u Neumu'>
+						<!-- slider box -->
+						<?php
+						$villa = new VillaSlide();
+						$villa->renderSlider();
+						?>
+					</section><!--end .offers-->
 </div><!-- end #main --> 
 <aside id="sidebar">
 	<?php include 'inc/weather.inc'; ?>
