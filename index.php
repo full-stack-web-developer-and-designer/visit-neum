@@ -25,9 +25,9 @@
 				</div><!-- end #p_left -->
 
 				<div class="main-outer">
-					<div>
+					<!--<div>
 						<iframe src="https://www.jabuka.tv/nlb/tecaj.html" scrolling="no" rel="noreferrer" id="exchangeRates"   sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts" title="Tečajni kalkulator"></iframe>
-					</div>
+					</div>-->
 					<div>
 						<section class='products' aria-label='Najbolji i najjeftiniji hoteli, apartmani, ville i sobe u Neumu'>
 							<ul id='autoplay' class='cs-hidden'>
