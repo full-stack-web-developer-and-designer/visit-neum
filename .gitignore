@@ -11,3 +11,4 @@ PHPMailer/
 *.ico
 form_process.php
 *.jpg
+*.json
